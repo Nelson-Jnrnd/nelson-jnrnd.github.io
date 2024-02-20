@@ -1,0 +1,45 @@
+# careers section data
+# if you don't have language feature(language.yml is empty), ignore "i18n" items
+- name:
+    detail: HEIG / Abraxas
+    i18n: company_a
+  desc:
+    detail: I began working part-time as a backend Java developer at Abraxas, while also serving as a teacher assistant in the Object-Oriented Programming course at HEIG-VD.
+    i18n: company_a_desc
+  date:
+    detail: Sep. 2023
+    i18n: company_a_date
+  job:
+    detail: Ra&D Collaborator
+    i18n: company_a_job
+  icon: fa-briefcase
+  present: true
+
+- name:
+    detail: Bachelor's degree
+    i18n: company_b
+  desc:
+    detail: I graduated from HEIG-VD in Computer Science and Communication Systems in the Software Development orientation.
+    i18n: company_b_desc
+  date:
+    detail: Sep. 2023
+    i18n: company_b_date
+  job:
+    detail: Student
+    i18n: company_b_job
+  icon: fa-graduation-cap
+
+
+- name:
+    detail: Professionnal School
+    i18n: company_b
+  desc:
+    detail: I earned my CFC in Software Development, along with a Professional Maturity Certificate, from the Centre de Formation Professionnelle et Technique (CFPT) in Geneva.
+    i18n: company_b_desc
+  date:
+    detail: Sep. 2020
+    i18n: company_b_date
+  job:
+    detail: Student
+    i18n: company_b_job
+  icon: fa-graduation-cap
