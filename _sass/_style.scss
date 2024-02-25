@@ -2453,14 +2453,18 @@ body {
     }
     .navbar-brand {
       &:focus, &:hover {
-        background: #3385FF;
-        color: #fff;
+        //background: #3385FF;
+        //color: #fff;
+        color: #3385FF;
+        background: #fff;
       }
-      color: #fff;
+      //color: #fff;
+      color: #3385FF;
       height: auto;
       display: block;
       font-size: 14px;
-      background: #3385FF;
+      //background: #3385FF;
+      background: #fff;
       padding: 15px 20px;
       border-radius: 0 0 5px 5px;
       font-weight: 700;
@@ -2648,14 +2652,16 @@ body {
   .testimonials {
     padding-top: 80px;
     padding-bottom: 90px;
-    background-color: #3385FF;
-    background-image: url(../assets/img/landing/avatar_all.png);
+    background-color: #3385ff00;
+    background-image: url(../assets/img/landing/avatar_all.jpeg);
+    //background-size: contain;
+    background-repeat: no-repeat;
   }
   .contact {
-    background-image: url(../assets/img/landing/word_map.png);
+    //background-image: url(../assets/img/landing/word_map.png);
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    margin-top: 60px;
+    margin-top: 10px;
   }
   section {
     &.timeline {
