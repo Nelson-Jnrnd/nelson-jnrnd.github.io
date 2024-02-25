@@ -5,143 +5,139 @@
     <description>Welcome to my portfolio! I&apos;m a software developer with a B.Sc. in Computer Science and Communication Systems from HEIG-VD in the Software Development orientation, graduated in 2023. Here, you&apos;ll find my projects that demonstrate my skills and dedication to explore my passions in software, machine learning and data analysis.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 20 Feb 2024 01:10:13 +0100</pubDate>
-    <lastBuildDate>Tue, 20 Feb 2024 01:10:13 +0100</lastBuildDate>
+    <pubDate>Sun, 25 Feb 2024 16:56:44 +0100</pubDate>
+    <lastBuildDate>Sun, 25 Feb 2024 16:56:44 +0100</lastBuildDate>
     <generator>Jekyll v3.9.5</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>Alpine in 2024: A Fresh but Rough Start</title>
+        <description>&lt;p&gt;Hey everyone, F1 is starting next week and I’m analysing how the winter and the 3 days of testing went for Alpine. I went over most of the interviews of the offseason to paint a general idea of how the team is feeling ahead of the first race.&lt;/p&gt;
 
-&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+&lt;h2 id=&quot;postmortem-of-the-2023-season&quot;&gt;Postmortem of the 2023 season&lt;/h2&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It’s no secret that last year was a disappointment with the team being leapfrogged by both McLaren and Aston Martin. The reason was a car that was difficult to upgrade :&lt;/p&gt;
 
-&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“I think we had a great year [in 2022], that year, I think every time we touched the development of the car, we put load, and we took a lot of weight off the car as well. So there was there was a lot of performance to be had.”&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;“We knew we weren’t quite where we wanted to be this year, we knew that our developments were plateauing a little bit on the car, because of limitations that we had.”&lt;/em&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;p&gt;- &lt;strong&gt;Matt Harman&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The A523’s Achilles’ heel was its narrow operational window, leading to a season of inconsistent results :&lt;/p&gt;
 
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“It’s not because it’s difficult to set up, it’s because the window is so narrow – so you’re having to make compromises. It’s tricky. You go to a circuit where ride is important to the driver – and we can’t put the car there because of the performance loss.”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;- &lt;strong&gt;Matt Harman&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;what-changed-&quot;&gt;What changed ?&lt;/h2&gt;
+
+&lt;p&gt;Amidst the departures of big management figures Alpine is changing everything on the A524 as the main objectives are to improve both performance window and upgradeability.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“The A524? We have learned on the aero side, on the tire usage side, tyre performance, tyre degradation. That we have learned. And we decided to go for something which looks better, and let’s see on the track if it will be better or not.”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt; - &lt;strong&gt;Bruno Famin&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You might remember the huge cooling vents that appeared on some track last year. This was another area of performance looked at by the team.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“One of the things that you can’t see is underneath the bodywork, and under there is what we call the internal bodywork. This allows us to control all the mass flow through the car, from the beginning, as it enters into the sidepod, all the way through to the rear. That allows us to make sure that we optimise the cooling behaviour of the car.”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;“We were a little bit more open than we’d like to have been last year. This year, we are in a much better position. That reduces the drag of the car and allows us to have an optimal lap time.”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;- &lt;strong&gt;Matt Harman&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;objectives-going-into-this-year&quot;&gt;Objectives going into this year&lt;/h2&gt;
+
+&lt;p&gt;Both drivers and directors hints at future struggles.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“We have a new concept, the car is totally new, and when you do that you normally take a step back. I don’t say that this is the case, because we haven’t put the car down yet. But the plan is to improve it through the year and get more progress, the more that we go through the laps. It’s going to be crucial to get a good feedback straight away, to know where we have to improve, to see if the concept choices that we took are the right ones. It’s not necessarily that crucial where we start, but it’s going to be where we are mid-season.”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;- &lt;strong&gt;Esteban Ocon&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Bruno Famin seems more conservative than his predecessor Rossi and take 2024 as a fresh start.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“We are not going to set any expectation in terms of results, positions. A good 2024 season will be first to see a good improvement in the way we work all together at the factory, to be able to unleash the creativity, to extract more from our talented people, all the talented people we have in Enstone and in Viry.”&lt;/em&gt; &lt;/p&gt;
+
+  &lt;p&gt;- &lt;strong&gt;Bruno Famin&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;All of this is very negative but Gasly is still optimist about the dynamic shift.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“I can see the mentality in the team. I can see the spirit, I can see the recruitment. I see where we’re heading as a race team. We are making the right steps.”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;“Obviously, it’s not that straightforward in F1 when you come with a completely new concept, it might not provide all the rewards you expect from the beginning.”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;“You’ve just got to be open-minded about it. But looking at the others, we get inspired by what they’re doing. There are definitely a couple of stories from last season, which definitely brings hope and motivation to the entire team.”&lt;/em&gt; &lt;/p&gt;
+
+  &lt;p&gt;- &lt;strong&gt;Pierre Gasly&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;preseason-testing&quot;&gt;Preseason testing&lt;/h2&gt;
+
+&lt;p&gt;Alpine focused mainly on C1 and C3 tires, respectively the Hards and the softs for next week’s Bahrain Grand Prix. It’s the only team bar McLaren that did not bring any tires softer than C3. This seems to be an intent of reducing the amount of variables during the test. And be ready to extract the most usable data out of the Grand Prix weekend as possible.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/preseason_2023/tire_selection.jpeg&quot; width=&quot;75%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see on the following graphs the team mostly did very short runs perhaps as they experimented with the setup. Each strings of dots represent a stint (ignoring in and out laps) you can identify that the team pitted if two dots are not linked.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_1_gasly.png&quot; width=&quot;30%&quot; /&gt;
+&lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_2_gasly.png&quot; width=&quot;30%&quot; /&gt;
+&lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_3_gasly.png&quot; width=&quot;30%&quot; /&gt;
+&lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_1_ocon.png&quot; width=&quot;30%&quot; /&gt;
+&lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_2_ocon.png&quot; width=&quot;30%&quot; /&gt;
+&lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_3_ocon.png&quot; width=&quot;30%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Contrary to other teams, Alpine never did a run longer than 10 laps, which makes comparing laptime more difficult as their is more uncertainty around the amount of fuel in the car. Regardless I compared all of Alpine’s “long” stints to those of other teams on the same day and same compound to reduce variables.&lt;/p&gt;
+
+&lt;p&gt;While looking at those graph, keep in mind that some teams stints were longer, meaning Alpine could have had less fuel in the car which would be a bias in favor of Alpine.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/preseason_2023/c1_c2.png&quot; width=&quot;75%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Lap times in testing are to be taken with a grain of salt of course, as you can see Ferrari and Sauber being quicker than Red Bull on C1 long runs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_3_c3.png&quot; width=&quot;75%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Still what I think we can take out is that Alpine seems to have higher degradation compared to other teams, especially compared to their overall performance on those stints.&lt;/p&gt;
+
+&lt;h2 id=&quot;first-impressions-after-the-tests&quot;&gt;First impressions after the tests&lt;/h2&gt;
+
+&lt;p&gt;The sentiment is confirmed at the end of the tests by Gasly.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“It’s not going to be an easy first race, we’re not going to start from where we would have liked.”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;“The good thing is we’ve identified very clearly what we’ve got to work on as a team. Now, whether we’re able to fix it with car setup or not, for the first few races of the season, time will tell, but for sure there’ll be an aggressive plan of upgrades which we will need to close the gap.”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;“It has been very clear with Esteban, we had very similar feedback straight away.”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;“But I think we’ll have to be patient, even if it’s not what we like as drivers, but clearly it might take some time before we really unlock the performance we want from that car.”&lt;/em&gt; &lt;/p&gt;
+
+  &lt;p&gt;- &lt;strong&gt;Pierre Gasly&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The team is bracing for a tough start of the season but a good thing is that they identified the areas of improvement.&lt;/p&gt;
+
+&lt;p&gt;What did you take away from this test ? Do you think Alpine will be able to leap up the grid during the season like McLaren ?&lt;/p&gt;
 </description>
-        <pubDate>Mon, 19 Feb 2024 19:55:51 +0100</pubDate>
-        <link>http://localhost:4000/docs/jekyll/update/2024/02/19/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://localhost:4000/docs/jekyll/update/2024/02/19/welcome-to-jekyll.html</guid>
+        <pubDate>Sun, 25 Feb 2024 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/python/2024/02/25/3-steps-to-setup-website-with-Jalpc.html</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2024/02/25/3-steps-to-setup-website-with-Jalpc.html</guid>
+        
+        <category>F1 Analysis</category>
         
         
-        <category>docs</category>
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>code snippet test</title>
-        <description>&lt;p&gt;This is a raw snippet:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;hello world
-123
-This is a text snippet
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This is a JavaScript snippet:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const add = (a, b) =&amp;gt; a + b
-const minus = (a, b) =&amp;gt; a - b
-
-console.log(add(100,200))  // 300
-console.log(minus(100,200))  // -100
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This is a Python snippet:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def say_hello():
-    print(&quot;hello world!&quot;)
-
-say_hello()   // &quot;hello world!&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Side note comment: applied a bug fix similar to &lt;a href=&quot;https://github.com/Atlas7/atlas7.github.io/commit/6659f4a47f6ec66987adb0f683a9c6f3842252ae#diff-818954a41dbfb01af70050a459c603b9&quot;&gt;this commit&lt;/a&gt; to ensure code snippet does not collapse unexpectly upon clicking on it. This issue is tracked &lt;a href=&quot;https://github.com/jarrekk/Jalpc/issues/97&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 21 Dec 2017 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/html/2017/12/21/test-code-snippets.html</link>
-        <guid isPermaLink="true">http://localhost:4000/html/2017/12/21/test-code-snippets.html</guid>
-        
-        <category>Jalpc</category>
-        
-        <category>Jekyll</category>
-        
-        
-        <category>HTML</category>
-        
-      </item>
-    
-      <item>
-        <title>3 Steps (2 minutes) to Setup Your Personal Website with Jalpc</title>
-        <description>&lt;p&gt;Everyone wants to have a personal website, you can display your infomation to public, post blogs and make friends. If you are CS engineer, haveing a self website will benefit your interview.&lt;/p&gt;
-
-&lt;p&gt;So, if you like this website &lt;a href=&quot;https://jarrekk.github.io/Jalpc/&quot;&gt;https://jarrekk.github.io/Jalpc/&lt;/a&gt; or &lt;a href=&quot;http://www.jarrekk.com&quot;&gt;http://www.jarrekk.com&lt;/a&gt; and are willing to have a website, here is a way to build your website in 3 steps(2 minutes). Following are steps to setup your website(make sure you have basic knowledge of &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; and &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;, if you want to custom css/js &lt;a href=&quot;https://github.com/npm/npm&quot;&gt;NPM&lt;/a&gt; is needed):&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Fork &lt;a href=&quot;https://github.com/jarrekk/Jalpc&quot;&gt;this project – Jalpc&lt;/a&gt; at &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;. If you want to edit website at github, do it as following gif or clone forked repository. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git clone git@github.com:github_username/Jalpc.git&lt;/code&gt;.&lt;/p&gt;
-
-    &lt;p&gt;&lt;!-- ![edit](/Jalpc/static/assets/img/blog/3steps/edit.gif) --&gt;
- &lt;img src=&quot;/Jalpc/static/assets/img/blog/3steps/edit.gif&quot; width=&quot;75%&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Enter into repository directory and edit following file list:&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;_config.yml&lt;/strong&gt;: edit ‘Website settings’, ‘author’, ‘comment’ and ‘analytics’ items.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;_data/landing.yml&lt;/strong&gt;: custom sections of index page.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;_data/index/&lt;/strong&gt;: edit sections’ data to yours at index page, please notice comment at each file.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;_data/blog.yml&lt;/strong&gt;: edit navbar(categories) of blog page, if you have different/more blog page, copy &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;blog/python.html&lt;/code&gt; and change it to your category HTML file, and edit &lt;strong&gt;Python&lt;/strong&gt;, &lt;strong&gt;/python/&lt;/strong&gt; to your category name at items &lt;strong&gt;title&lt;/strong&gt; and &lt;strong&gt;permalink&lt;/strong&gt;, make sure title is the same as permalink but capitalized first letter(except HTML).&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;CNAME&lt;/strong&gt;: If you wanna release website at your own domain name: edit it and create &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; branch; if you want to use &lt;em&gt;github_username.github.io&lt;/em&gt;: leave it blank.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;Go to repo’s settings panel, config &lt;strong&gt;GitHub Pages&lt;/strong&gt; section to make sure website is released.&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Push changes to your github repository and view your website, done!&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;From now on, you can post your blog to this website by creating md files at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post/&lt;/code&gt; directory and push it to GitHub, you can clear files at this directory before you post blogs.&lt;/p&gt;
-
-&lt;p&gt;If you like this repository, I appreciate you star this repository. Please don’t hesitate to mail me or post issues on GitHub if you have any questions. Hope you have a happy blog time!😊&lt;/p&gt;
-</description>
-        <pubDate>Tue, 31 Jan 2017 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/html/2017/01/31/3-steps-to-setup-website-with-Jalpc.html</link>
-        <guid isPermaLink="true">http://localhost:4000/html/2017/01/31/3-steps-to-setup-website-with-Jalpc.html</guid>
-        
-        <category>Jalpc</category>
-        
-        <category>Jekyll</category>
-        
-        
-        <category>HTML</category>
+        <category>Python</category>
         
       </item>
     
