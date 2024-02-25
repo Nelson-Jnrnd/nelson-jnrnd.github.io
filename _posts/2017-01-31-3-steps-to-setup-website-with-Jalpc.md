@@ -5,7 +5,7 @@ date:   2024-02-25
 desc: "Analysis of the preseason 2024 of Alpine F1 Team"
 keywords: "Alpine F1, F1 2024, A524, Harman, Gasly, Ocon, Famin, Preseason, Testing, Motorsport"
 categories: [Python]
-tags: [F1 Analysis]
+tags: [F1 Analysis, Alpine, F1 2024]
 icon: icon-python
 ---
 Hey everyone, F1 is starting next week and I’m analysing how the winter and the 3 days of testing went for Alpine. I went over most of the interviews of the offseason to paint a general idea of how the team is feeling ahead of the first race.
