@@ -93,12 +93,14 @@ While looking at those graph, keep in mind that some teams stints were longer, m
 <div class="image-container">
     <img src="{{ site.img_path }}/preseason_2023/c1_c2.png" class="responsive-img-large">
 </div>
-Lap times in testing are to be taken with a grain of salt of course, as you can see Ferrari and Sauber being quicker than Red Bull on C1 long runs.
+Lap times in testing are to be taken with a grain of salt of course, as you can see Ferrari and Sauber being quicker than Red Bull on C1 long runs. But looking at the data Alpine seem to have higher degradation compared to other teams, especially compared to their overall performance on those stints. On the hard tire, most teams had minimal degradation, as the car burned through fuel weight their lap time stayed constant or even improved. This is not the case with the A524 who lost about 0.8s in lap time after only 8 laps. This of course could be related to their run plan, battery usage or other reasons, so this information is not to be taken out of context.
+
+Alpine's degradation on the softer tire was more in line with the other teams, except Red Bull and Aston Martin, which is not surprising as both teams were very kind on their tires last year. (We can note that Haas could well have improved their tire degradation, an issue they have been managing for quite a few seasons).
 <div class="image-container">
     <img src="{{ site.img_path }}/preseason_2023/day_3_c3.png" class="responsive-img-large">
 </div>
 
-Still what I think we can take out is that Alpine's test were more focused on exploration than optimization as they probably tested many setup configurations. Performance wise, the pace between teams is too close to tell as the midfield will be tight for sure, but it looks like Alpine will be fighting at the back of it instead of at the front as they used to. They also seem to have higher degradation compared to other teams, especially compared to their overall performance on those stints.
+What I think we can take out is that Alpine's test were more focused on exploration than optimization as they probably tested many setup configurations. Performance wise, the pace between teams is too close to tell as the midfield will be tight for sure, but it looks like Alpine will be fighting at the back of it instead of at the front as they used to.
 
 ## First impressions after the tests
 
