@@ -2654,9 +2654,11 @@ body {
     padding-bottom: 90px;
     background-color: #3385ff00;
     background-image: url(../assets/img/landing/avatar_all.jpeg);
-    //background-size: contain;
+    background-size: cover; /* Ensures the background covers the available space without losing its aspect ratio */
+    background-position: center; /* Centers the background image */
     background-repeat: no-repeat;
   }
+  
   .contact {
     //background-image: url(../assets/img/landing/word_map.png);
     background-position: 50% 50%;
