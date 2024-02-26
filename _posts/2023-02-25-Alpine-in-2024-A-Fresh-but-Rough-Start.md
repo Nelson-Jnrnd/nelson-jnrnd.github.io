@@ -8,7 +8,7 @@ categories: [Python]
 tags: [F1 Analysis, Alpine, F1 2024]
 icon: icon-python
 ---
-Hey everyone, F1 is starting next week and I’m analysing how the winter and the 3 days of testing went for Alpine. I went over most of the interviews of the offseason to paint a general idea of how the team is feeling ahead of the first race.
+Hey everyone, F1 is starting next week, and I’m analyzing how the winter and the 3 days of testing went for Alpine. I went over most of the interviews of the off season to paint a general idea of how the team is feeling ahead of the first race.
 
 ## Postmortem of the 2023 season
 
@@ -68,12 +68,14 @@ All of this is very negative but Gasly is still optimist about the dynamic shift
 
 ## Preseason testing
 
-Alpine focused mainly on C1 and C3 tires, respectively the Hards and the softs for next week’s Bahrain Grand Prix. It’s the only team bar McLaren that did not bring any tires softer than C3. This seems to be an intent of reducing the amount of variables during the test. And be ready to extract the most usable data out of the Grand Prix weekend as possible.
+Alpine focused mainly on C1 and C3 tires, respectively the hards and the softs for next week’s Bahrain Grand Prix. It’s the only team bar McLaren that did not bring any tires softer than C3. This seems to be an intent of reducing the amount of variables during the test. And be ready to extract the most usable data out of the Grand Prix weekend as possible.
 
 <div class="image-container">
     <img src="{{ site.img_path }}/preseason_2023/tire_selection.jpeg" class="responsive-img-large">
 </div>
 As you can see on the following graphs the team mostly did very short runs perhaps as they experimented with the setup. Each strings of dots represent a stint (ignoring in and out laps) you can identify that the team pitted if two dots are not linked.
+
+For example Gasly's first and second outings in practice 1 were 2 laps long on the hard tire. The y-axis shows us that the second laps were more than 10 seconds slower suggesting a fast lap - cool lap run. This trend continued for the first 28 laps in which he entered the pits 9 times. It's only on its 10th outing that Pierre Gasly did 4 consecutive laps at full pace.
 
 <div class="image-container">
   <img src="{{ site.img_path }}/preseason_2023/day_1_gasly.png" class="responsive-img">
@@ -84,7 +86,7 @@ As you can see on the following graphs the team mostly did very short runs perha
   <img src="{{ site.img_path }}/preseason_2023/day_3_ocon.png" class="responsive-img">
 </div>
 
-Contrary to other teams, Alpine never did a run longer than 10 laps, which makes comparing laptime more difficult as their is more uncertainty around the amount of fuel in the car. Regardless I compared all of Alpine’s “long” stints to those of other teams on the same day and same compound to reduce variables.
+Contrary to other teams, Alpine never did a run longer than 10 laps, which makes comparing lap time more difficult as there is more uncertainty around the amount of fuel in the car. Regardless I compared all of Alpine’s “long” stints to those of other teams (on the same day and same compound to reduce variables).
 
 While looking at those graph, keep in mind that some teams stints were longer, meaning Alpine could have had less fuel in the car which would be a bias in favor of Alpine.
 
@@ -96,7 +98,7 @@ Lap times in testing are to be taken with a grain of salt of course, as you can 
     <img src="{{ site.img_path }}/preseason_2023/day_3_c3.png" class="responsive-img-large">
 </div>
 
-Still what I think we can take out is that Alpine seems to have higher degradation compared to other teams, especially compared to their overall performance on those stints.
+Still what I think we can take out is that Alpine's test were more focused on exploration than optimization as they probably tested many setup configurations. Performance wise, the pace between teams is too close to tell as the midfield will be tight for sure, but it looks like Alpine will be fighting at the back of it instead of at the front as they used to. They also seem to have higher degradation compared to other teams, especially compared to their overall performance on those stints.
 
 ## First impressions after the tests
 
@@ -112,6 +114,6 @@ The sentiment is confirmed at the end of the tests by Gasly.
 > 
 > \- **Pierre Gasly**
 
-The team is bracing for a tough start of the season but a good thing is that they identified the areas of improvement.
+The team is bracing for a tough start of the season, but a good thing is that they identified the areas of improvement.
 
 What did you take away from this test ? Do you think Alpine will be able to leap up the grid during the season like McLaren ?
