@@ -5,8 +5,8 @@
     <description>Welcome to my portfolio! I&apos;m a software developer with a B.Sc. in Computer Science and Communication Systems from HEIG-VD in the Software Development orientation, graduated in 2023. Here, you&apos;ll find my projects that demonstrate my skills and dedication to explore my passions in software, machine learning and data analysis.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 25 Feb 2024 17:59:24 +0100</pubDate>
-    <lastBuildDate>Sun, 25 Feb 2024 17:59:24 +0100</lastBuildDate>
+    <pubDate>Mon, 26 Feb 2024 15:30:54 +0100</pubDate>
+    <lastBuildDate>Mon, 26 Feb 2024 15:30:54 +0100</lastBuildDate>
     <generator>Jekyll v3.9.5</generator>
     
       <item>
@@ -87,26 +87,31 @@
 
 &lt;p&gt;Alpine focused mainly on C1 and C3 tires, respectively the Hards and the softs for next week’s Bahrain Grand Prix. It’s the only team bar McLaren that did not bring any tires softer than C3. This seems to be an intent of reducing the amount of variables during the test. And be ready to extract the most usable data out of the Grand Prix weekend as possible.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/preseason_2023/tire_selection.jpeg&quot; width=&quot;75%&quot; /&gt;&lt;/p&gt;
-
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/preseason_2023/tire_selection.jpeg&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
 &lt;p&gt;As you can see on the following graphs the team mostly did very short runs perhaps as they experimented with the setup. Each strings of dots represent a stint (ignoring in and out laps) you can identify that the team pitted if two dots are not linked.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_1_gasly.png&quot; width=&quot;30%&quot; /&gt;
-&lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_2_gasly.png&quot; width=&quot;30%&quot; /&gt;
-&lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_3_gasly.png&quot; width=&quot;30%&quot; /&gt;
-&lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_1_ocon.png&quot; width=&quot;30%&quot; /&gt;
-&lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_2_ocon.png&quot; width=&quot;30%&quot; /&gt;
-&lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_3_ocon.png&quot; width=&quot;30%&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;image-container&quot;&gt;
+  &lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_1_gasly.png&quot; class=&quot;responsive-img&quot; /&gt;
+  &lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_2_gasly.png&quot; class=&quot;responsive-img&quot; /&gt;
+  &lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_3_gasly.png&quot; class=&quot;responsive-img&quot; /&gt;
+  &lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_1_ocon.png&quot; class=&quot;responsive-img&quot; /&gt;
+  &lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_2_ocon.png&quot; class=&quot;responsive-img&quot; /&gt;
+  &lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_3_ocon.png&quot; class=&quot;responsive-img&quot; /&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Contrary to other teams, Alpine never did a run longer than 10 laps, which makes comparing laptime more difficult as their is more uncertainty around the amount of fuel in the car. Regardless I compared all of Alpine’s “long” stints to those of other teams on the same day and same compound to reduce variables.&lt;/p&gt;
 
 &lt;p&gt;While looking at those graph, keep in mind that some teams stints were longer, meaning Alpine could have had less fuel in the car which would be a bias in favor of Alpine.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/preseason_2023/c1_c2.png&quot; width=&quot;75%&quot; /&gt;&lt;/p&gt;
-
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/preseason_2023/c1_c2.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
 &lt;p&gt;Lap times in testing are to be taken with a grain of salt of course, as you can see Ferrari and Sauber being quicker than Red Bull on C1 long runs.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_3_c3.png&quot; width=&quot;75%&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_3_c3.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Still what I think we can take out is that Alpine seems to have higher degradation compared to other teams, especially compared to their overall performance on those stints.&lt;/p&gt;
 

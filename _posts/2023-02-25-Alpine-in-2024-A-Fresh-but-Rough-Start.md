@@ -70,26 +70,31 @@ All of this is very negative but Gasly is still optimist about the dynamic shift
 
 Alpine focused mainly on C1 and C3 tires, respectively the Hards and the softs for next week’s Bahrain Grand Prix. It’s the only team bar McLaren that did not bring any tires softer than C3. This seems to be an intent of reducing the amount of variables during the test. And be ready to extract the most usable data out of the Grand Prix weekend as possible.
 
-<img src="{{ site.img_path }}/preseason_2023/tire_selection.jpeg" width="75%">
-
+<div class="image-container">
+    <img src="{{ site.img_path }}/preseason_2023/tire_selection.jpeg" class="responsive-img-large">
+</div>
 As you can see on the following graphs the team mostly did very short runs perhaps as they experimented with the setup. Each strings of dots represent a stint (ignoring in and out laps) you can identify that the team pitted if two dots are not linked.
 
-<img src="{{ site.img_path }}/preseason_2023/day_1_gasly.png" width="30%">
-<img src="{{ site.img_path }}/preseason_2023/day_2_gasly.png" width="30%">
-<img src="{{ site.img_path }}/preseason_2023/day_3_gasly.png" width="30%">
-<img src="{{ site.img_path }}/preseason_2023/day_1_ocon.png" width="30%">
-<img src="{{ site.img_path }}/preseason_2023/day_2_ocon.png" width="30%">
-<img src="{{ site.img_path }}/preseason_2023/day_3_ocon.png" width="30%">
+<div class="image-container">
+  <img src="{{ site.img_path }}/preseason_2023/day_1_gasly.png" class="responsive-img">
+  <img src="{{ site.img_path }}/preseason_2023/day_2_gasly.png" class="responsive-img">
+  <img src="{{ site.img_path }}/preseason_2023/day_3_gasly.png" class="responsive-img">
+  <img src="{{ site.img_path }}/preseason_2023/day_1_ocon.png" class="responsive-img">
+  <img src="{{ site.img_path }}/preseason_2023/day_2_ocon.png" class="responsive-img">
+  <img src="{{ site.img_path }}/preseason_2023/day_3_ocon.png" class="responsive-img">
+</div>
 
 Contrary to other teams, Alpine never did a run longer than 10 laps, which makes comparing laptime more difficult as their is more uncertainty around the amount of fuel in the car. Regardless I compared all of Alpine’s “long” stints to those of other teams on the same day and same compound to reduce variables.
 
 While looking at those graph, keep in mind that some teams stints were longer, meaning Alpine could have had less fuel in the car which would be a bias in favor of Alpine.
 
-<img src="{{ site.img_path }}/preseason_2023/c1_c2.png" width="75%">
-
+<div class="image-container">
+    <img src="{{ site.img_path }}/preseason_2023/c1_c2.png" class="responsive-img-large">
+</div>
 Lap times in testing are to be taken with a grain of salt of course, as you can see Ferrari and Sauber being quicker than Red Bull on C1 long runs.
-
-<img src="{{ site.img_path }}/preseason_2023/day_3_c3.png" width="75%">
+<div class="image-container">
+    <img src="{{ site.img_path }}/preseason_2023/day_3_c3.png" class="responsive-img-large">
+</div>
 
 Still what I think we can take out is that Alpine seems to have higher degradation compared to other teams, especially compared to their overall performance on those stints.
 
