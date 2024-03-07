@@ -5,13 +5,197 @@
     <description>Welcome to my portfolio! I&apos;m a software developer with a B.Sc. in Computer Science and Communication Systems from HEIG-VD in the Software Development orientation, graduated in 2023. Here, you&apos;ll find my projects that demonstrate my skills and dedication to explore my passions in software, machine learning and data analysis.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 26 Feb 2024 16:06:29 +0100</pubDate>
-    <lastBuildDate>Mon, 26 Feb 2024 16:06:29 +0100</lastBuildDate>
+    <pubDate>Fri, 08 Mar 2024 00:50:22 +0100</pubDate>
+    <lastBuildDate>Fri, 08 Mar 2024 00:50:22 +0100</lastBuildDate>
     <generator>Jekyll v3.9.5</generator>
     
       <item>
+        <title>Alpine in 2024: Bahrain, Rock Bottom</title>
+        <description>&lt;p&gt;Hey everyone, I’m a bit late with the Saudi weekend already starting, but I’m analyzing in depth the Bahrain weekend of Alpine. To try to gather insights into the French Team performance.&lt;/p&gt;
+
+&lt;h1 id=&quot;free-practice&quot;&gt;Free Practice&lt;/h1&gt;
+
+&lt;p&gt;As the first weekend starts, it’s a cold shower for the team in blue. The performance of the car is not here, as announced, but the reality still hurts.&lt;/p&gt;
+
+&lt;p&gt;The practice run-plan by Alpine was in line with the other teams, mostly focusing on soft and medium tires. As you can see in the following graph, only Red Bull used the hards.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/fp_tires.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Lots of short outings at the start of every session as the team dial in setups, but this is usual. The most important session during the Bahrain Grand Prix is FP2 as it takes place in the evening, in the conditions the most similar to those of qualifying and the race.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/fp_stint_len.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The bigger the circle, the more stint was made of that length. As such, Alpine focused less on long runs than Haas, Mercedes or RB but so did other teams.&lt;/p&gt;
+
+&lt;p&gt;There’s not a lot we can take out from free practice, the teams having spent already 3 full days testing on this track they already have plenty of data on the configuration.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/fp_2_long_runs.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;What we can do is compare the long runs that took place in the practice. I won’t do any deep analysis as I’m late posting this and the race already took place, but it’s clear Alpine has the slowest car going into the weekend.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“We need to work on our speed over one lap but on the long runs we are closer to the others.”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt; - &lt;strong&gt;Esteban Ocon&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;qualifying&quot;&gt;Qualifying&lt;/h1&gt;
+
+&lt;p&gt;P19 and P20… locking out the back row of the grid, there couldn’t be a worse start of the season for the team. Where and how much are they losing on one lap pace is what I’ll be looking at in this section.&lt;/p&gt;
+
+&lt;p&gt;Firstly I’ll compare the performance of &lt;strong&gt;Ocon&lt;/strong&gt; and &lt;strong&gt;Gasly&lt;/strong&gt; :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ocon : 1:30.793&lt;/li&gt;
+  &lt;li&gt;Gasly : 1:30.948&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/q_inner.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I won’t analyze in depth the laps as they were quite close in performance with only about 0.15 seconds of difference. I’m using it more as a guarantee that the lap will we use to represent Alpine in the following section is mistake-free and representative of the car’s pace.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/q_inner_speed.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The first thing we notice is a slight over speed for Ocon (worth only barely 0.05s) going into the first corner as he got a very light tow from Albon.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/q_inner_t1.png&quot; class=&quot;responsive-img&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There’s little to take from the middle sectors as both drivers traded blows equally, but we can confirm, looking at speed on the straights and the overall performance in corners, that both setups shared similar aero drag.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/q_inner_s2.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It’s in the last sector that Ocon gained about 2 tenths on his teammate. Keeping higher minimum speed into T13 and higher entry speed into the last corner. The brake shapes being relatively similar, I’m making the hypothesis that due to Gasly’s rushed out lap his tires were overheating (It’s impossible to know for sure from publicly available data).&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/q_inner_s3.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/q_inner_brake_s3.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;From now on I’ll use Ocon’s lap when comparing the performance of the team to their rivals. We’ll first have an overlook of Alpine’s sector times compared to the field before diving into telemetry analysis of their direct rivals.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/q_gaps.png&quot; class=&quot;responsive-img&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;First off, let’s look at the gap around a complete lap. Keep in mind these times are from the end of Q1 meaning the front-runners like Ferrari and Red Bull were not pushing 100%. Alpine’s gap to Ferrari is less than a second, which is the gap they had to in Bahrain last year. Essentially, it isn’t as much Alpine losing pace as it’s the others bottom teams making gains. Sauber and Alpine look to be the back runners although the gap to the front of the midfield (Williams) is only 0.5 seconds away.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/q_sectors_percent.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Surprisingly, even with its overweight chassis, which would cost them most in the sinuous sections, the second sector is the only sector where the A524 is not slowest.&lt;/p&gt;
+
+&lt;p&gt;In Bahrain, the first and last sector are mostly straight sections. The difference being that sector 1 contains slower corners in turn 1 and 4 while sector 3 has the fast turn 13 and quite fast turn 14. Looking at the performance, Alpine’s gap was smallest in S3. We could derive from this that Alpine is decent (or rather less bad) in high speed corners.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/trackmap.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Gasly responded “It’s not as much. It’s not as bad as you mentioned” when Jolyon Palmer mentioned the rumors of the A524 being 11 kg overweight. A known decent approximation for the cost of weight on an F1 car is about 0.03 seconds for every 1 kg of extra weight. Taking a guess we can imagine the car to be only 7-8 kg overweight which would bring a loss in lap time of 2 tenths. Considering the closeness of the field this would bring the Alpine right in the fight of the midfield.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/q_telemetry_1.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For clarity’s sake we’ll analyze the telemetry of only the closest 4 team to Alpine: RB, Williams, Haas and Sauber. The first noticeable point is that the time lost in sector 1 comes in the braking zone of T1. Ocon has to break earlier than Haas or Williams and harder than Sauber and RB. This causes Ocon to effectively be about 5 m “late” under breaking causing a loss of up to 5 tenths. On the other hand, the car looks decent on traction, regaining some lost time. Turn 4 is the same but less exacerbated, Alpine is first on the brake and caries less speed in the corner causing further loss of time (except Haas but looking at the dip in speed on exit it is likely due to over-steer).&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/q_telemetry_2.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Finally, a good corner ! In the high speed esses of 5, 6 and 7 the Alpine has the highest minimum speed regaining up to 2 tenths on the competition. The slow and downhill turns 8 and 9 are more of the same, with Alpine losing time on the brakes. (We can note how crazy good the RB is in this section, gaining nearly 0.7 s in 2 corners !)&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/q_telemetry_3.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;All cars seem to be pretty equal in the fasts turn 11, 12, 13 (with a big loss of time for Haas due to Hulkenberg locking up). One interesting thing of note is that on the last two straights Alpine is losing time, about a tenth. But on the first two straights of the lap they weren’t. Which makes me wonder if it’s due to the way they use the battery over the lap.&lt;/p&gt;
+
+&lt;p&gt;To sum up, the car seems to struggle under breaking and in slow sections perhaps as it lacks mechanical grip, on the other hand it looks decent in high speed sections meaning the car has pretty good downforce. The top speed also doesn’t look too bad around one lap; but of course we don’t know how much less downforce Alpine could afford because of the weaker engine.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“The car doesn’t react how I would like it to, but we have to do with what we have.”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;- &lt;strong&gt;Pierre Gasly&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“It’s a general lack of performance. Too little driveability. The handling is not good. It’s a bit of everything. You’d expect the car to be terrible to drive, but it’s not.”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;- &lt;strong&gt;Bruno Famin&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;race&quot;&gt;Race&lt;/h1&gt;
+
+&lt;p&gt;Now the race. To improve clarity I’ll once again only consider Alpine’s direct competitor, the other bottom 4 teams. To have comparable data, we’ll first look at the strategies employed by each of the team. For each team I picked the driver with the most “usual” race. Meaning I discarded Bottas, Hulkenberg and Sargeant because of their incidents during the race.&lt;/p&gt;
+
+&lt;p&gt;As you can see in the following graph, the strategy employed on those cars were soft, hard, hard. (Except Gasly making an extra stop). Which is good news for us as it will make comparing pace much easier.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/r_strategy.png&quot; class=&quot;responsive-img&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To start off, we can look at the race of both Alpine’s drivers. It’s clear that Esteban Ocon struggled heavily in the second stint on hards. With inconsistencies and an overall pace slower by 2 tenths. The third stint was closer, but the difference in strategy make comparison impossible. For these reasons I will focus on the two first stints of Gasly as they represent the pace of the car better.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/r_inner.png&quot; class=&quot;responsive-img&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Stints during the race are inconsistent because of fighting and other incidents but global take away is that Alpine is closer to the pack in race pace particularly on the harder tire but still behind. Another point would be that they seem to have much higher degradation than their competitors. Something that we could already see in the preseason tests as I pointed in my previous &lt;a href=&quot;https://nelson-jnrnd.github.io/python/2024/02/25/Alpine-in-2024-A-Fresh-but-Rough-Start.html&quot;&gt;post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/bahrain_2024/r_comparison.png&quot; class=&quot;responsive-img&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;moving-forward&quot;&gt;Moving forward&lt;/h1&gt;
+
+&lt;p&gt;The Saudi Arabian Grand Prix is coming fast and the team will not have time to upgrade the car as confirmed by Famin.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“We’re going to work, we’ve got a few days but there won’t be any evolutions on the car. We have a lot to learn about the car, things to fine-tune, because even though we’ve tried to optimize the car, there are still things to do on the set-up. But there won’t be any revolution and we need to work step by step.”&lt;/em&gt; &lt;/p&gt;
+
+  &lt;p&gt;- &lt;strong&gt;Bruno Famin&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But looking at their performance in high speed corners and as said by Esteban Ocon, Saudi Arabia should fit their car better than Bahrain :&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“Jeddha should be a track that fit our car better. So we hope it will work out better there than here (in Bahrain)”&lt;/em&gt; &lt;/p&gt;
+
+  &lt;p&gt;- &lt;strong&gt;Esteban Ocon&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Thu, 07 Mar 2024 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/python/2024/03/07/Alpine-in-2024-Bahrain-Rock-Bottom.html</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2024/03/07/Alpine-in-2024-Bahrain-Rock-Bottom.html</guid>
+        
+        <category>F1 Analysis</category>
+        
+        <category>Alpine</category>
+        
+        <category>F1 2024</category>
+        
+        
+        <category>Python</category>
+        
+      </item>
+    
+      <item>
         <title>Alpine in 2024: A Fresh but Rough Start</title>
-        <description>&lt;p&gt;Hey everyone, F1 is starting next week and I’m analysing how the winter and the 3 days of testing went for Alpine. I went over most of the interviews of the offseason to paint a general idea of how the team is feeling ahead of the first race.&lt;/p&gt;
+        <description>&lt;p&gt;Hey everyone, F1 is starting next week, and I’m analyzing how the winter and the 3 days of testing went for Alpine. I went over most of the interviews of the off season to paint a general idea of how the team is feeling ahead of the first race.&lt;/p&gt;
 
 &lt;h2 id=&quot;postmortem-of-the-2023-season&quot;&gt;Postmortem of the 2023 season&lt;/h2&gt;
 
@@ -85,12 +269,14 @@
 
 &lt;h2 id=&quot;preseason-testing&quot;&gt;Preseason testing&lt;/h2&gt;
 
-&lt;p&gt;Alpine focused mainly on C1 and C3 tires, respectively the Hards and the softs for next week’s Bahrain Grand Prix. It’s the only team bar McLaren that did not bring any tires softer than C3. This seems to be an intent of reducing the amount of variables during the test. And be ready to extract the most usable data out of the Grand Prix weekend as possible.&lt;/p&gt;
+&lt;p&gt;Alpine focused mainly on C1 and C3 tires, respectively the hards and the softs for next week’s Bahrain Grand Prix. It’s the only team bar McLaren that did not bring any tires softer than C3. This seems to be an intent of reducing the amount of variables during the test. And be ready to extract the most usable data out of the Grand Prix weekend as possible.&lt;/p&gt;
 
 &lt;div class=&quot;image-container&quot;&gt;
     &lt;img src=&quot;/static/assets/img/blog/preseason_2023/tire_selection.jpeg&quot; class=&quot;responsive-img-large&quot; /&gt;
 &lt;/div&gt;
 &lt;p&gt;As you can see on the following graphs the team mostly did very short runs perhaps as they experimented with the setup. Each strings of dots represent a stint (ignoring in and out laps) you can identify that the team pitted if two dots are not linked.&lt;/p&gt;
+
+&lt;p&gt;For example Gasly’s first and second outings in practice 1 were 2 laps long on the hard tire. The y-axis shows us that the second laps were more than 10 seconds slower suggesting a fast lap - cool lap run. This trend continued for the first 28 laps in which he entered the pits 9 times. It’s only on its 10th outing that Pierre Gasly did 4 consecutive laps at full pace.&lt;/p&gt;
 
 &lt;div class=&quot;image-container&quot;&gt;
   &lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_1_gasly.png&quot; class=&quot;responsive-img&quot; /&gt;
@@ -101,19 +287,21 @@
   &lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_3_ocon.png&quot; class=&quot;responsive-img&quot; /&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Contrary to other teams, Alpine never did a run longer than 10 laps, which makes comparing laptime more difficult as their is more uncertainty around the amount of fuel in the car. Regardless I compared all of Alpine’s “long” stints to those of other teams on the same day and same compound to reduce variables.&lt;/p&gt;
+&lt;p&gt;Contrary to other teams, Alpine never did a run longer than 10 laps, which makes comparing lap time more difficult as there is more uncertainty around the amount of fuel in the car. Regardless I compared all of Alpine’s “long” stints to those of other teams (on the same day and same compound to reduce variables).&lt;/p&gt;
 
 &lt;p&gt;While looking at those graph, keep in mind that some teams stints were longer, meaning Alpine could have had less fuel in the car which would be a bias in favor of Alpine.&lt;/p&gt;
 
 &lt;div class=&quot;image-container&quot;&gt;
     &lt;img src=&quot;/static/assets/img/blog/preseason_2023/c1_c2.png&quot; class=&quot;responsive-img-large&quot; /&gt;
 &lt;/div&gt;
-&lt;p&gt;Lap times in testing are to be taken with a grain of salt of course, as you can see Ferrari and Sauber being quicker than Red Bull on C1 long runs.&lt;/p&gt;
+&lt;p&gt;Lap times in testing are to be taken with a grain of salt of course, as you can see Ferrari and Sauber being quicker than Red Bull on C1 long runs. But looking at the data Alpine seem to have higher degradation compared to other teams, especially compared to their overall performance on those stints. On the hard tire, most teams had minimal degradation, as the car burned through fuel weight their lap time stayed constant or even improved. This is not the case with the A524 who lost about 0.8s in lap time after only 8 laps. This of course could be related to their run plan, battery usage or other reasons, so this information is not to be taken out of context.&lt;/p&gt;
+
+&lt;p&gt;Alpine’s degradation on the softer tire was more in line with the other teams, except Red Bull and Aston Martin, which is not surprising as both teams were very kind on their tires last year. (We can note that Haas could well have improved their tire degradation, an issue they have been managing for quite a few seasons).&lt;/p&gt;
 &lt;div class=&quot;image-container&quot;&gt;
     &lt;img src=&quot;/static/assets/img/blog/preseason_2023/day_3_c3.png&quot; class=&quot;responsive-img-large&quot; /&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Still what I think we can take out is that Alpine seems to have higher degradation compared to other teams, especially compared to their overall performance on those stints.&lt;/p&gt;
+&lt;p&gt;What I think we can take out is that Alpine’s test were more focused on exploration than optimization as they probably tested many setup configurations. Performance wise, the pace between teams is too close to tell as the midfield will be tight for sure, but it looks like Alpine will be fighting at the back of it instead of at the front as they used to.&lt;/p&gt;
 
 &lt;h2 id=&quot;first-impressions-after-the-tests&quot;&gt;First impressions after the tests&lt;/h2&gt;
 
@@ -131,7 +319,7 @@
   &lt;p&gt;- &lt;strong&gt;Pierre Gasly&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;The team is bracing for a tough start of the season but a good thing is that they identified the areas of improvement.&lt;/p&gt;
+&lt;p&gt;The team is bracing for a tough start of the season, but a good thing is that they identified the areas of improvement.&lt;/p&gt;
 
 &lt;p&gt;What did you take away from this test ? Do you think Alpine will be able to leap up the grid during the season like McLaren ?&lt;/p&gt;
 </description>
