@@ -5,9 +5,111 @@
     <description>Welcome to my portfolio! I&apos;m a software developer with a B.Sc. in Computer Science and Communication Systems from HEIG-VD in the Software Development orientation, graduated in 2023. Here, you&apos;ll find my projects that demonstrate my skills and dedication to explore my passions in software, machine learning and data analysis.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Mar 2024 00:50:22 +0100</pubDate>
-    <lastBuildDate>Fri, 08 Mar 2024 00:50:22 +0100</lastBuildDate>
+    <pubDate>Mon, 25 Mar 2024 18:39:03 +0100</pubDate>
+    <lastBuildDate>Mon, 25 Mar 2024 18:39:03 +0100</lastBuildDate>
     <generator>Jekyll v3.9.5</generator>
+    
+      <item>
+        <title>Alpine in 2024: Saudi Arabia, Confirmation</title>
+        <description>&lt;p&gt;After the difficult weekend of Bahrain, the team headed to Jeddah. This was an interesting weekend as it was the first time we saw the A524 on a different track.&lt;/p&gt;
+
+&lt;h1 id=&quot;qualifying-pace&quot;&gt;Qualifying pace&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;/python/2024/03/07/Alpine-in-2024-Bahrain-Rock-Bottom.html&quot;&gt;The conclusions I made from last weekend&lt;/a&gt; were that the car is struggling on low speed sections from its overweight chassis and lack of mechanical grip. The team communicated that the car lacked in traction, but it was difficult to see in the data, we’ll see if this is more apparent on this circuit. However, it was decent in the high speed sections of sector 2, we’ll see if this confirms itself this week.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/saudi_arabia_2024/qualifying/q1_gaps.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Alpine is now 3 tenths away from the next team which seems to be more than Bahrain. We will dive into how that happened by first looking at the laps of both Alpine drivers. They were incredibly close with only 0.004s separating them, but there is more to it.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/saudi_arabia_2024/qualifying/trackmap.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/saudi_arabia_2024/qualifying/q1_ocon_gasly_2.png&quot; class=&quot;responsive-img-xlarge&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;–&amp;gt; Looking at the telemetry there is a clear difference in setup as Ocon is consistently quicker on the straights and Gasly is able to carry more speed into the corners.&lt;/p&gt;
+
+&lt;p&gt;–&amp;gt; Ocon loses big chunks of time in the high speed turn 4, 13 and 22. Summing up to about 4 tenths. Most of the time is gained back slowly on the straights.&lt;/p&gt;
+
+&lt;p&gt;–&amp;gt; Running higher downforce Gasly would be expected to gain time in the first and last corner, but he struggled with sliding on exit as he explained on his post qualifying interview.&lt;/p&gt;
+
+&lt;p&gt;For the comparison with the other teams I displayed under the gap to Ocon and Gasly as they both used a very different setup.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/saudi_arabia_2024/qualifying/q1_gaps_sector_percent_ocon.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+    &lt;img src=&quot;/static/assets/img/blog/saudi_arabia_2024/qualifying/q1_gaps_sector_percent_gasly.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Overall, we paint a similar picture as Bahrain with the car being closer to the pack in high speed (Sector 2) and struggling in the lower speed sections (Sector 1). For the telemetry analysis I’m using Ocon’s data, as his top speed was more in line with other teams.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/saudi_arabia_2024/qualifying/top_speed.png&quot; class=&quot;responsive-img&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As you can see below, most of the time is lost in the turn 1 section. Under breaking compared to Haas, on traction compared to RB and Sauber or both for Williams.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/saudi_arabia_2024/qualifying/telemetry_s1.png&quot; class=&quot;responsive-img-xlarge&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In the high speed turns of sector 2, the car either gain time or is equal to other bottom fielders. The lower downforce Ocon and Hulkenberg are running is helping in this section but there is notable performance in turn 15-16 that is not drag related.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/saudi_arabia_2024/qualifying/telemetry_s2.png&quot; class=&quot;responsive-img-xlarge&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In sector 3 though, Ocon has to brake harder and lose time on all teams; except Haas because of they have a similar aero setup (Although Hulkenberg chose to brake later, keeping up with the others in entry but losing more time on exit). Once again in the last corner Ocon has to brake very early to have a decent exit.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/saudi_arabia_2024/qualifying/telemetry_s3.png&quot; class=&quot;responsive-img-xlarge&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Pace wise, this confirms the issues revealed by the drivers and Bruno Famin last week. The car is struggling on traction, and they have to compromise under braking because of it. On other part of the track, they are more in line with the very tight midfield.&lt;/p&gt;
+
+&lt;h1 id=&quot;tire-strategy&quot;&gt;Tire strategy&lt;/h1&gt;
+
+&lt;p&gt;In free practice, both drivers followed an identical run plan. Short one laps run on medium and softs followed by longer stints on mediums for practice 1 and 2. Practice 3 being reserved for low fuel qualifying runs.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/saudi_arabia_2024/free_practice/p1_comparison.png&quot; class=&quot;responsive-img&quot; /&gt;
+    &lt;img src=&quot;/static/assets/img/blog/saudi_arabia_2024/free_practice/p2_comparison.png&quot; class=&quot;responsive-img&quot; /&gt;
+    &lt;img src=&quot;/static/assets/img/blog/saudi_arabia_2024/free_practice/p3_comparison.png&quot; class=&quot;responsive-img&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;An interesting fact of the weekend is that Alpine did not try the hards at all during the practices. This is quite unusual as the expected fastest strategy heading into the weekend is medium → hard.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/saudi_arabia_2024/free_practice/compounds.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;They might have been looking to test different setups on the same tire to have more data or perhaps the strategist were banking on a stoppage happening later in the race. Prioritizing a longer stint on the medium, waiting to pit for soft under safety car/ red flag.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/saudi_arabia_2024/race/strategies.png&quot; class=&quot;responsive-img&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Unfortunately, a safety car on lap 7 compromised that strategy and forced Alpine onto a long stint on the untested hard tire.&lt;/p&gt;
+
+&lt;p&gt;I will not further analyse the race pace as Magnussen’s train and Gasly’s DNF make the data pretty pointless.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 21 Mar 2024 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/python/2024/03/21/Alpine-in-2024-Saudi-Arabia-Confirmation.html</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2024/03/21/Alpine-in-2024-Saudi-Arabia-Confirmation.html</guid>
+        
+        <category>F1 Analysis</category>
+        
+        <category>Alpine</category>
+        
+        <category>F1 2024</category>
+        
+        
+        <category>Python</category>
+        
+      </item>
     
       <item>
         <title>Alpine in 2024: Bahrain, Rock Bottom</title>

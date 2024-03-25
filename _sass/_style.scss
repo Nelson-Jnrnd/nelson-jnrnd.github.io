@@ -2823,7 +2823,7 @@ body {
   justify-content: space-around; /* Adjusts the spacing around the images */
 }
 
-.responsive-img, .responsive-img-large {
+.responsive-img, .responsive-img-medium, .responsive-img-large, .responsive-img-xlarge {
   max-width: 100%;
   height: auto;
   margin-bottom: 20px; /* Adds some space below each image */
@@ -2834,7 +2834,14 @@ body {
   .responsive-img {
     width: 30%; /* On larger screens, images take up roughly 30% of the container width */
   }
+  .responsive-img-medium {
+    width: 45%;
+  }
   .responsive-img-large {
     width: 75%;
   }
+  .responsive-img-xlarge {
+    width: 95%;
+  }
+
 }

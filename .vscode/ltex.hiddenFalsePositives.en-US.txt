@@ -1,0 +1,1 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAn interesting fact of the weekend is that Alpine did not try the hards at all during the practices.\\E$"}
