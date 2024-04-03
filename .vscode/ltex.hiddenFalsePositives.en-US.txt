@@ -1,1 +1,2 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAn interesting fact of the weekend is that Alpine did not try the hards at all during the practices.\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QOcon did not struggle with warming up his hards, hard to say why, perhaps a difference in setup between both cars or struggles from Gasly.\\E$"}
