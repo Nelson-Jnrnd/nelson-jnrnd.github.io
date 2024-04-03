@@ -62,7 +62,7 @@ We can also notice the longer pit stop of Gasly, about 1.5 seconds slower than h
 To estimate the time lost by the alternate strategy, the best comparison would be Hulkenberg and Magnussen, as Ocon did an unplanned pit stop on lap 17 to remove a tear-off stuck inside his brake duct we cannot use his data.
 
 <div class="image-container">
-    <img src="{{ site.img_path }}/australia_2024/race/gap_mag_hul.png" class="responsive-img-large">
+    <img src="{{ site.img_path }}/australia_2024/race/gap_mag_hul.png" class="responsive-img-medium">
 </div>
 
 1. Magnussen had about a 2 seconds lead when he pitted on lap 8.
@@ -72,7 +72,7 @@ To estimate the time lost by the alternate strategy, the best comparison would b
 Interestingly Gasly really struggled to get his hards up to speed as he lost nearly 3 seconds in the laps following his pit stop. In the blue circles we can see Albon being right on the pace after pitting while Gasly in the pink circles lost time in the warm up phase.
 
 <div class="image-container">
-    <img src="{{ site.img_path }}/australia_2024/race/gap_GAS_ALB_1_54.png" class="responsive-img-large">
+    <img src="{{ site.img_path }}/australia_2024/race/gap_GAS_ALB_1_54.png" class="responsive-img-medium">
 </div>
 
 ## Pace comparison
@@ -80,13 +80,13 @@ Interestingly Gasly really struggled to get his hards up to speed as he lost nea
 To compare both Alpine driver's pace, we can look at their stints on the hards as after's Ocon extra stop, they had a near identical strategy. There is a lot of impurity as the front-runners started lapping them in the middle of the race, but their pace was very close. With Gasly struggling on his warm up of his first set of hard and having generally less degradation. On the last stint Gasly had much better pace, but as Ocon was dead last and realistically out of the fight he might have slowed down on purpose.
 
 <div class="image-container">
-    <img src="{{ site.img_path }}/australia_2024/race/team_pace_label.png" class="responsive-img-large">
+    <img src="{{ site.img_path }}/australia_2024/race/team_pace_label.png" class="responsive-img-medium">
 </div>
 
 I'm once again comparing only the laps on the hards to better estimate the pace order of the cars. It's a bit hard to see as we're comparing a lot of drivers, but in race trim Gasly's Alpine was one of the quickest. In my opinion it’s quite misleading because of Gasly’s alternative strategy he was most of the time on a fresher tire.
 
 <div class="image-container">
-    <img src="{{ site.img_path }}/australia_2024/race/pace_comparison.png" class="responsive-img-large">
+    <img src="{{ site.img_path }}/australia_2024/race/pace_comparison.png" class="responsive-img-medium">
 </div>
 
 We can see this more clearly comparing the distance between Gasly and Magnussen on the traditional strategy. Because of the offset strategy, Gasly spent more laps with fresher tires (lap 19 to 33 and 43 to the end). The pace wasn’t terrible but the slow start of the stints for Gasly meant Magnussen gained more time in 7 or so laps than Gasly in 15.
