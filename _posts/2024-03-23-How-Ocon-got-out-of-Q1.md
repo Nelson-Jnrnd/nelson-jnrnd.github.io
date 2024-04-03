@@ -10,15 +10,36 @@ icon: icon-python
 ---
 For the first time this season an Alpine got into Q2. And listening at the reaction of Ocon it seems to be quite an achievement. In this post I'll be comparing the laps of both Alpine drivers to determine where and how the time was gained.
 
-| Ocon  | 78.659 | 78.217 | 77.617 |
-|-------|--------|--------|--------|
-| Gasly | 78.554 | 77.982 | 78.088 |
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<tbody>
+  <tr>
+    <td class="tg-0pky">Ocon</td>
+    <td class="tg-0pky">78.659</td>
+    <td class="tg-0pky">78.217</td>
+    <td class="tg-0pky">77.617</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Gasly</td>
+    <td class="tg-0pky">78.554</td>
+    <td class="tg-0pky">77.982</td>
+    <td class="tg-0pky">78.088</td>
+  </tr>
+</tbody>
+</table>
 
 Both drivers did 3 laps, and while Pierre was the fastest during most of the session, it was the last run that mattered. Ocon improved his time by nearly 8 tenths while Gasly got slower.
 
 ### Trackmap
 <div class="image-container">
-    <img src="{{ site.img_path }}/australia_2024/qualifying/trackmap.png" class="responsive-img-large">
+    <img src="{{ site.img_path }}/australia_2024/qualifying/track_map.jp2" class="responsive-img-large">
 </div>
 ---
 <div class="image-container">
