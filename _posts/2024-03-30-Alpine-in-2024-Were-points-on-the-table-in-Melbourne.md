@@ -92,7 +92,7 @@ I'm once again comparing only the laps on the hards to better estimate the pace 
 We can see this more clearly comparing the distance between Gasly and Magnussen on the traditional strategy. Because of the offset strategy, Gasly spent more laps with fresher tires (lap 19 to 33 and 43 to the end). The pace wasn’t terrible but the slow start of the stints for Gasly meant Magnussen gained more time in 7 or so laps than Gasly in 15.
 
 <div class="image-container">
-    <img src="{{ site.img_path }}/australia_2024/race/gap_mag_gas_strat.png" class="responsive-img-xlarge">
+    <img src="{{ site.img_path }}/australia_2024/race/gap_mag_gas_strat.png" class="responsive-img-large">
 </div>
 
 We can notice lap 38 to 40 where Alpine let Gasly out. Losing lots of time being overtaken by Stroll, Tsunoda and Hulkenberg instead of pitting, as they hoped of a safety car.
@@ -104,7 +104,7 @@ We can notice lap 38 to 40 where Alpine let Gasly out. Losing lots of time being
 Ocon who was on a more regular strategy at the start, was matching Magnussen before his pitstop which is very positive for Alpine’s pace.
 
 <div class="image-container">
-    <img src="{{ site.img_path }}/australia_2024/race/gap_oco_mag_strat.png" class="responsive-img-xlarge">
+    <img src="{{ site.img_path }}/australia_2024/race/gap_oco_mag_strat.png" class="responsive-img-large">
 </div>
 
 1. Ocon matching and even pulling away from Magnussen after overcutting him.

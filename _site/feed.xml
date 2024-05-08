@@ -5,9 +5,348 @@
     <description>Welcome to my portfolio! I&apos;m a software developer with a B.Sc. in Computer Science and Communication Systems from HEIG-VD in the Software Development orientation, graduated in 2023. Here, you&apos;ll find my projects that demonstrate my skills and dedication to explore my passions in software, machine learning and data analysis.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 Mar 2024 18:39:03 +0100</pubDate>
-    <lastBuildDate>Mon, 25 Mar 2024 18:39:03 +0100</lastBuildDate>
+    <pubDate>Wed, 08 May 2024 13:09:02 +0200</pubDate>
+    <lastBuildDate>Wed, 08 May 2024 13:09:02 +0200</lastBuildDate>
     <generator>Jekyll v3.9.5</generator>
+    
+      <item>
+        <title>Alpine in 2024: New Front Wing in Japan</title>
+        <description>&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/japan_2024/trackmap.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In Japan, Alpine unveiled their first significant upgrade for the A524—a new front wing aimed at reducing the car’s weight. Ahead of the weekend, Pierre Gasly highlighted the upgrade will be minor from a performance standpoint.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“We don’t expect it to be major – we know it’s not going to bring us where we want to be but it’s a first step in the right direction, so definitely looking forward to see what it brings.”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;- &lt;strong&gt;Pierre Gasly&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;qualifying&quot;&gt;Qualifying&lt;/h1&gt;
+
+&lt;p&gt;For the second consecutive race, an Alpine car progressed beyond Q1, with Esteban Ocon clinching 15th place. This post delves into Q1, focusing on how Ocon managed to outqualify Gasly for the fourth time.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/japan_2024/q1_gaps_drivers.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The Q1 session showed significant inter-team variations, as the five eliminated drivers hailed from distinct teams, suggesting that driver performance played a key role. A notable three-tenths gap emerged between the Alpine teammates, in the following graph we can see where that difference was made.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/japan_2024/internal_delta.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The time difference between them remained marginal until the last sector, where Ocon made significant gains from Turn 14 to 130R, and again in the final chicane.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/japan_2024/turn_14.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;At the exit of Turn 14, Gasly corrected a severe slide, delaying throttle application and losing time down to the last corner. In the last chicane, although he managed to maintain control, he had to modulate the throttle to preserve rear traction, losing additional time.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/japan_2024/turn_18.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The start of the lap being very close between both drivers, it looks like the rears on Gasly’s cars overheat causing traction issue at the end of the lap. This seems to be a recurring issue from Pierre’s side of the garage as they already suffered from it in Saudi Arabia.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;video autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot; class=&quot;responsive-img-large&quot;&gt;
+        &lt;source src=&quot;/static/assets/img/blog/japan_2024/gasly_snap_suzuka.mov&quot; type=&quot;video/mp4&quot; /&gt;
+    &lt;/video&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;alpine-upgrades&quot;&gt;Alpine Upgrades&lt;/h2&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/japan_2024/q2_improvements.png&quot; class=&quot;responsive-img-small&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Next, I will compare the car’s performance against other teams to gauge the upgrade’s effectiveness. Since Ocon did not improve from Q1 to Q2, it seems he might have reached the car’s potential in Q1, unlike other drivers who improved.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/japan_2024/q2_gaps_sector_percent.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Looking at where the time was lost, Alpine actually holds its own in the fast flowing esses of sector 1, as we’ve noticed at Saudi Arabia and in the fast turns 5, 6, 7 in Bahrain where Alpine already was amongst the quickest (of the back markers). It’s in the third sector where Alpine is loses big amounts to everyone.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/japan_2024/telemetry_s1_annoted.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Quite a few insights we can take from the first turns. First off, there’s quite a big difference in top speed between the teams with Alpine sitting in the middle. Haas and Williams opting for lower downforce they gain up to nearly a tenth on the straight but lose a big amount of time in the turns. Interestingly contrary to Williams and Haas, it’s not in the esses but in the last corner, turn 6 that Alpine loses time.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/japan_2024/telemetry_s2_annoted.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In sector 2, Alpine has lower speed through the double right of 8 and 9. The more weekend goes by the clearer that Alpine struggles in mid to lower speed corners where traction plays a big role. In the hairpin they actually hold their own compared to RB and Sauber but lost time on Haas and Williams as they both braked later and had better traction out of the turn. Lastly, in the high speed section of 13 and 14 Alpine is decent, although we can notice very good performance from RB.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/japan_2024/telemetry_s3_annoted.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In the final chicane, Alpine lost an additional tenth, braking earlier than all teams except Williams. This underscores their challenges with low-speed direction changes and possibly overheating issues as well. Gasly faced clear difficulties with overheating rear tires. While Ocon may have coped slightly better, he still experienced some of the same issues. This could explain the disparity in performance between Turn 10, where they were reasonably competitive, and Turn 16, where their performance significantly dropped off—similar to Williams, who also reported struggles with overheating tires during qualifying.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;Despite the upgrade the characteristics of the car remains the same with struggles on traction hindering their performance in low to medium speed turns. Their relative good performance in the high speed sections seems to remain stable as well. We’ll have to wait for further upgrades to see the team challenge properly the midfield.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 21 Apr 2024 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/python/2024/04/21/Alpine-in-2024-New-Front-Wing-in-Japan.html</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2024/04/21/Alpine-in-2024-New-Front-Wing-in-Japan.html</guid>
+        
+        <category>F1 Analysis</category>
+        
+        <category>Alpine</category>
+        
+        <category>F1 2024</category>
+        
+        <category>Qualifying</category>
+        
+        
+        <category>Python</category>
+        
+      </item>
+    
+      <item>
+        <title>Alpine in 2024: Were points on the table in Melbourne ?</title>
+        <description>&lt;p&gt;This Australian Grand Prix points were available for midfielders as Tsunoda, Hulkenberg and Magnussen scored when Verstappen, Hamilton and Russell retired. I’ll be analyzing the races of both Alpine drivers and try to determine if had things gone differently they could have been part of the scoring cars.&lt;/p&gt;
+
+&lt;h2 id=&quot;ocons-overcut&quot;&gt;Ocon’s overcut&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“I was in front of Kevin, fighting with Alex, in front of Nico as well, so we were going to be in the mix for those ninth, 10th, 11th positions. It was going to be a fun race but unfortunately cut short with that issue with the tear-off.”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;- &lt;strong&gt;Esteban Ocon&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/race/lap_5.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Following the race start, the layout of the race looked something like this. Ocon was part of a 3 car pack with Magnussen and Albon. Hulkenberg on hards fell back from the DRS train with Gasly behind. On lap 6, Albon pitted triggering an early series of stops. Magnussen responded on the next lap but was undercut by Albon.&lt;/p&gt;
+
+&lt;p&gt;Alpine instead chose to overcut as they had a lot of pace in hand. Looking at the laps 6 to 8, Ocon set lap times 5 to 7 tenths quicker than Albon and Magnussen on fresh tires (respectively laps 8 to 10 and laps 9 to 11). Unfortunately a slower stop meant they lost most of the time gained on track against Albon. With a pit stop as fast as Williams’s, Ocon could have been able to keep the position at pit exit, effectively overcutting both.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/race/pit_seq_1.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;The lap times without in/out laps mean the addition of laps between 5 and 11 without the in and out lap for each driver.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;## Gasly’s strategy&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“We tried with the strategy, tried to put ourselves in some stage of the race a decent position in case there is any red flag”&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;- &lt;strong&gt;Pierre Gasly&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/race/strategies.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Next up, I’m trying to gather if the strategy the team opted with Gasly was better or worse than the regular medium → hard → hard. By pitting on lap 18 like Hulkenberg, Gasly did the longest stint on the mediums of all the midfield. Surprisingly, he managed to keep up with Hulkenberg on the hards as on lap 15 he was still within a 1 second before getting overtaken by the front-runner who pitted.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/race/lap_15.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This strategy was in some way a hopping for a safety car between lap 10 and 20, which did happen on lap 17 as they pitted under the virtual safety car caused by Hamilton retiring. Unfortunately, the short length of the stoppage meant the race returned to green while Hulkenberg and Gasly were still in the pits, gaining less time than usual.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/race/pit_times.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We can also notice the longer pit stop of Gasly, about 1.5 seconds slower than his direct competitor (and show how good Williams’s stop was for Albon). This meant Gasly came out behind Zhou and 7 seconds behind Hulkenberg.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/race/lap_18.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To estimate the time lost by the alternate strategy, the best comparison would be Hulkenberg and Magnussen, as Ocon did an unplanned pit stop on lap 17 to remove a tear-off stuck inside his brake duct we cannot use his data.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/race/gap_mag_hul.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Magnussen had about a 2 seconds lead when he pitted on lap 8.&lt;/li&gt;
+  &lt;li&gt;Kmag came out about 18 seconds behind Hulkenberg and gained time with his fresher rubber.&lt;/li&gt;
+  &lt;li&gt;Hulkenberg pitted under VSC on lap 18 which meant his pit stop costed only 12 seconds roughly. Which made it equivalent in terms of track position to Magnussen’s strategy, although Hulk had now fresher tire to play with. Essentially, Hulkenberg and Gasly benefited from 8 laps fresher tire thanks to this strategy.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Interestingly Gasly really struggled to get his hards up to speed as he lost nearly 3 seconds in the laps following his pit stop. In the blue circles we can see Albon being right on the pace after pitting while Gasly in the pink circles lost time in the warm up phase.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/race/gap_GAS_ALB_1_54.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;## Pace comparison&lt;/p&gt;
+
+&lt;p&gt;To compare both Alpine driver’s pace, we can look at their stints on the hards as after’s Ocon extra stop, they had a near identical strategy. There is a lot of impurity as the front-runners started lapping them in the middle of the race, but their pace was very close. With Gasly struggling on his warm up of his first set of hard and having generally less degradation. On the last stint Gasly had much better pace, but as Ocon was dead last and realistically out of the fight he might have slowed down on purpose.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/race/team_pace_label.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m once again comparing only the laps on the hards to better estimate the pace order of the cars. It’s a bit hard to see as we’re comparing a lot of drivers, but in race trim Gasly’s Alpine was one of the quickest. In my opinion it’s quite misleading because of Gasly’s alternative strategy he was most of the time on a fresher tire.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/race/pace_comparison.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We can see this more clearly comparing the distance between Gasly and Magnussen on the traditional strategy. Because of the offset strategy, Gasly spent more laps with fresher tires (lap 19 to 33 and 43 to the end). The pace wasn’t terrible but the slow start of the stints for Gasly meant Magnussen gained more time in 7 or so laps than Gasly in 15.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/race/gap_mag_gas_strat.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We can notice lap 38 to 40 where Alpine let Gasly out. Losing lots of time being overtaken by Stroll, Tsunoda and Hulkenberg instead of pitting, as they hoped of a safety car.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/race/lap_38.png&quot; class=&quot;responsive-img-medium&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ocon who was on a more regular strategy at the start, was matching Magnussen before his pitstop which is very positive for Alpine’s pace.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/race/gap_oco_mag_strat.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Ocon matching and even pulling away from Magnussen after overcutting him.&lt;/li&gt;
+  &lt;li&gt;Ocon did not struggle with warming up his hards, hard to say why, perhaps a difference in setup between both cars or struggles from Gasly.&lt;/li&gt;
+  &lt;li&gt;Ocon gaining time on Magnussen after his extra pit stop with fresher rubber though.&lt;/li&gt;
+  &lt;li&gt;Ocon slowing down on his last stint&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Gasly’s had little hopes of getting in the points considering his strategy did not pay off. His struggle on the warm-ups and the slow pit stop ended any chances of points for him. Ocon had a proper chance to at least fight for P10 with Albon and Magnussen if not for the tear off as the pace was promising. It’s impossible to know for sure how the pace would have looked throughout the hard stints, but the fight was on which is an improvement from the last 2 GP.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 30 Mar 2024 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/python/2024/03/30/Alpine-in-2024-Were-points-on-the-table-in-Melbourne.html</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2024/03/30/Alpine-in-2024-Were-points-on-the-table-in-Melbourne.html</guid>
+        
+        <category>F1 Analysis</category>
+        
+        <category>Alpine</category>
+        
+        <category>F1 2024</category>
+        
+        <category>Race</category>
+        
+        
+        <category>Python</category>
+        
+      </item>
+    
+      <item>
+        <title>How Ocon got out of Q1 - Australia 2024</title>
+        <description>&lt;p&gt;For the first time this season an Alpine got into Q2. And listening at the reaction of Ocon it seems to be quite an achievement. In this post I’ll be comparing the laps of both Alpine drivers to determine where and how the time was gained.&lt;/p&gt;
+
+&lt;style type=&quot;text/css&quot;&gt;
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+&lt;/style&gt;
+
+&lt;table class=&quot;tg&quot;&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;Ocon&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;78.659&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;78.217&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;77.617&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;Gasly&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;78.554&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;77.982&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;78.088&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Both drivers did 3 laps, and while Pierre was the fastest during most of the session, it was the last run that mattered. Ocon improved his time by nearly 8 tenths while Gasly got slower.&lt;/p&gt;
+
+&lt;h3 id=&quot;trackmap&quot;&gt;Trackmap&lt;/h3&gt;
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/qualifying/track_map.jp2&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+&lt;hr /&gt;
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/qualifying/internal_delta.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;where-time-was-gained--lost&quot;&gt;Where time was gained / lost&lt;/h2&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/qualifying/turn_3.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Down to turn 3, Ocon braked much later carrying more speed into the corner gaining two tenths. Interesting to notes different techniques between the two drivers as Gasly let the car roll at the apex while Ocon keeps applying the brakes all the way through.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/qualifying/turn_9.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The fast turn 9/10 is where Gasly lost another good bit of time, braking much earlier than Ocon losing about two tenths once more.&lt;/p&gt;
+
+&lt;p&gt;## Different driving styles&lt;/p&gt;
+
+&lt;p&gt;Both drivers were very closely matched in the final sector, but I think it illustrates perfectly a difference in driving style.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/qualifying/turn_11.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Turn 11 both drivers have a different approach with Gasly choosing to slow the car more and accelerate right at the apex. While Ocon carried more speed but couldn’t accelerate as soon without running too wide on the exit.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/qualifying/turn_12.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In the last three corners the difference is even more pronounced with Ocon often trail-braking into corners and being “smoother” overall with the brakes while Gasly prefers to brake as hard as possible and settle the car early in the corner, rotate and be on the throttle earlier.&lt;/p&gt;
+
+&lt;h2 id=&quot;shifting-issues&quot;&gt;Shifting issues&lt;/h2&gt;
+
+&lt;p&gt;At the end of qualifying Pierre noted that he could not improve in his last attempt as he couldn’t downshift in turn 1 and 6. &lt;a href=&quot;https://www.formula1.com/en/latest/video.frustrated-gasly-reveals-gearbox-issue-hit-on-the-lap-that-mattered-in-q1.1794294481057411877.html&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/qualifying/turn_1.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We’re working with incomplete information, as the brake pedal pressure is not publicly available. But looking at the speed trace, Ocon braked earlier and longer yet carried more speed into the corner. From this we can derive that he had to be more gentle on the brakes. There’s not any visible gear issues in the data as Gasly downshifted for when it’s expected for his braking point though this might not be representative of what Pierre felt in the car.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;/static/assets/img/blog/australia_2024/qualifying/turn_6.png&quot; class=&quot;responsive-img-large&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m a bit puzzled about Gasly’s comment on turn 6 as he barely lost 0.01 second and I don’t see any shift problems, but perhaps the data doesn’t record attempted shifts.&lt;/p&gt;
+
+&lt;p&gt;Overall looks like an extraordinary lap by Ocon as he couldn’t reproduce his time in Q2. With data available it’s difficult to understand how big Pierre’s issues were and how it impacted him. Although most of time lost doesn’t look to be related to shifting issues it could very well have been caused by a loss in confidence in the car.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 23 Mar 2024 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/python/2024/03/23/How-Ocon-got-out-of-Q1.html</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2024/03/23/How-Ocon-got-out-of-Q1.html</guid>
+        
+        <category>F1 Analysis</category>
+        
+        <category>Alpine</category>
+        
+        <category>F1 2024</category>
+        
+        <category>Qualifying</category>
+        
+        
+        <category>Python</category>
+        
+      </item>
     
       <item>
         <title>Alpine in 2024: Saudi Arabia, Confirmation</title>
