@@ -2,35 +2,30 @@
 # If you don't have language feature(language.yml is empty), ignore "i18n" items
 # Suggest projects' img be located at '/static/assets/img/landing', and edit following img items.
 - name: F1 Pit Predictor
-  i18n: jalpc
   gh_user: nelson-jnrnd
   repo: f1-pit-predictor-dataset
   img: /static/assets/img/landing/f1.jpg
-  desc: In my bachelor's thesis, I compiled a dataset encompassing all Formula One races between 2018 and 2023. This dataset was utilized to train a machine learning algorithm capable of providing real-time strategic recommendations.
+  desc: In my bachelor's thesis, I compiled a dataset of Formula One races to train a machine learning algorithm capable of providing real-time strategic recommendations.
 
 - name: F1 Telemetry Charts
-  i18n: jalpca
   gh_user: nelson-jnrnd
   repo: F1_Telemetry_Charts
   img: /static/assets/img/landing/f1_2.png
   desc: Compilation of notebooks and scripts dedicated to create analysis of formula one sessions and comparing the performance of drivers and team.
 
 - name: Careot
-  i18n: cpython
   gh_user: les-crepes
   repo: CAREOT_APP
   img: /static/assets/img/landing/careot.png
   desc: Careot is a mobile diet tracking application based on Flutter and Firebase.
 
 - name: Spaceship 3000
-  i18n: google
   gh_user: LucaCoduriV
   repo: MCR_Spaceship3000
   img: /static/assets/img/landing/spaceship.png
   desc: Spaceship shooter game featuring dynamic, on-the-fly graphics style switching, implemented using the visitor design pattern.
 
 - name: MonoBattle
-  i18n: googlea
   gh_user: nelson-jnrnd
   repo: MonoBattle
   img: /static/assets/img/landing/monobattle.png
