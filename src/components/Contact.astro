@@ -1,0 +1,66 @@
+---
+// Contact — pinned-note concept. Links use placeholder handles from the design
+// (see public/cv/README.md and the project README for what to fill in).
+const email = "hello@example.com";
+const cvHref = "/cv/nelson-jeanrenaud-cv.pdf";
+const linkedinHref = "https://www.linkedin.com/in/njeanrenaud";
+const githubHref = "https://github.com/njeanrenaud";
+---
+
+<section class="block contact" id="contact">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <span class="section-head__num">04 /</span>
+      <h2 class="section-head__title">Send a note</h2>
+    </header>
+
+    <div class="pinnote reveal">
+      <div>
+        <div class="pinnote__avail">Available — open to opportunities</div>
+        <h2>Let’s talk about <span class="highlight">technical software</span>.</h2>
+        <p class="pinnote__copy">
+          I’m open to software engineering roles, technical projects, or simply a good conversation about technical
+          software.
+        </p>
+        <span class="pinnote__loc">
+          <svg class="loc-icon" viewBox="0 0 12 14" aria-hidden="true">
+            <path d="M6 .8C3.2.8 1 3 1 5.7c0 3.6 5 7.5 5 7.5s5-3.9 5-7.5C11 3 8.8.8 6 .8z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path>
+            <circle cx="6" cy="5.7" r="1.6" fill="currentColor"></circle>
+          </svg>
+          Based in Bussigny, Switzerland
+        </span>
+      </div>
+
+      <div class="notetabs">
+        <a class="notetab notetab--primary" href={`mailto:${email}`}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"
+            ><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.6"></path><path d="M4 7l8 7 8-7" fill="none" stroke="currentColor" stroke-width="1.6"></path></svg
+          >
+          <span class="notetab__label">Email</span>
+          <span class="notetab__value">write a note →</span>
+        </a>
+        <a class="notetab notetab--attached" href={cvHref} download>
+          <svg viewBox="0 0 24 24" aria-hidden="true"
+            ><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z M14 3v6h6 M9 14h6 M9 17h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg
+          >
+          <span class="notetab__label">Download CV</span>
+          <span class="notetab__value">A4 · attached</span>
+        </a>
+        <a class="notetab" href={linkedinHref} target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"
+            ><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"></rect><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg
+          >
+          <span class="notetab__label">LinkedIn</span>
+          <span class="notetab__value">/in/njeanrenaud</span>
+        </a>
+        <a class="notetab" href={githubHref} target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"
+            ><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.8 1a9.5 9.5 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .6 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5 4-1.3 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path></svg
+          >
+          <span class="notetab__label">GitHub</span>
+          <span class="notetab__value">@njeanrenaud</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
