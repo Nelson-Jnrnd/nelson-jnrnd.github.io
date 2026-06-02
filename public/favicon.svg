@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" width="34" height="34">
+  <rect x="3" y="3" width="28" height="28" rx="6" fill="#fbf6ec" stroke="#1d1b16" stroke-width="2" transform="rotate(-2 17 17)"/>
+  <rect x="5" y="5" width="28" height="28" rx="6" fill="none" stroke="#2d4a3a" stroke-width="0" transform="rotate(-2 17 17)"/>
+  <text x="17" y="22" text-anchor="middle" font-family="Georgia, 'Source Serif 4', serif" font-size="14" font-weight="600" fill="#1d1b16" transform="rotate(-2 17 17)">NJ</text>
+</svg>
