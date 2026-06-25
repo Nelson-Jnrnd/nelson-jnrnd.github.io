@@ -1,20 +1,18 @@
 ---
-import FieldMap from "./FieldMap.astro";
+// Minimal top bar: name on the left, quiet anchor nav on the right.
 ---
 
 <header class="site-header">
-  <div class="inner">
-    <a href="#top" class="brand" aria-label="Nelson Jeanrenaud — home">
-      <span class="brand__mark" aria-hidden="true">
-        <img src="/images/logo.png" alt="" />
-      </span>
-      <span>
-        <span class="brand__name">Nelson Jeanrenaud</span>
-        <span class="brand__sub">Software engineer · field notes v1</span>
-      </span>
+  <div class="wrap inner">
+    <a href="#top" class="brand" aria-label="Nelson Jeanrenaud — top">
+      <span class="brand__dot" aria-hidden="true"></span>
+      <span>Nelson Jeanrenaud</span>
     </a>
-
-    <!-- Compact folded-map navigation — unfolds on hover/focus/tap -->
-    <FieldMap />
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">about</a>
+      <a href="#work">work</a>
+      <a href="#projects">projects</a>
+      <a href="#contact">contact</a>
+    </nav>
   </div>
 </header>

@@ -1,7 +1,7 @@
 {
   "name": "nelson-jnrnd-portfolio",
   "version": "1.0.0",
-  "description": "Personal portfolio website of Nelson Jeanrenaud — Engineering Field Notes edition.",
+  "description": "Personal site of Nelson Jeanrenaud — a minimal, document-style portfolio.",
   "type": "module",
   "scripts": {
     "dev": "astro dev",

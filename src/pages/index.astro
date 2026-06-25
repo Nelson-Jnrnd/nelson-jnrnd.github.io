@@ -1,21 +1,252 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
-import Hero from "../components/Hero.astro";
-import Work from "../components/Work.astro";
-import Toolkit from "../components/Toolkit.astro";
-import About from "../components/About.astro";
-import Contact from "../components/Contact.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+
+const email = "nelsonjeanrenaud@gmail.com";
+const github = "https://github.com/nelson-jnrnd";
+const linkedin = "https://www.linkedin.com/in/nelson-jeanrenaud-b32374222";
+const cv = "/cv/nelson-jeanrenaud-cv.pdf";
 ---
 
 <BaseLayout>
   <SiteHeader />
-  <a id="top"></a>
-  <Hero />
-  <Work />
-  <Toolkit />
-  <About />
-  <Contact />
+  <span id="top"></span>
+
+  <main class="wrap">
+    <!-- ───────────────── Intro ───────────────── -->
+    <section class="section intro" aria-label="Introduction">
+      <div class="intro__top">
+        <div class="intro__id">
+          <h1>Nelson Jeanrenaud</h1>
+          <p class="intro__role">
+            software engineer <span class="sep">·</span> switzerland
+          </p>
+        </div>
+        <img
+          class="portrait"
+          src="/images/portrait.jpg"
+          alt="Nelson Jeanrenaud"
+          width="104"
+          height="104"
+          loading="eager"
+        />
+      </div>
+
+      <div class="intro__body">
+        <p>
+          I'm Nelson, a software engineer based in Switzerland. Most of my work sits somewhere
+          between software, hardware, people, and messy real-world constraints.
+        </p>
+        <p class="lead">
+          I like systems that are understandable, useful, and not painful to maintain. These days
+          that mostly means <span class="accent-gold">.NET, Blazor, C#</span>, industrial software,
+          and <span class="accent-green">computer-vision-adjacent</span> tools.
+        </p>
+        <span class="status">
+          <span class="status__dot" aria-hidden="true"></span>
+          Open to interesting work &amp; conversations
+        </span>
+      </div>
+    </section>
+
+    <!-- ───────────────── About ───────────────── -->
+    <section class="section" id="about" aria-label="About">
+      <p class="kicker">About</p>
+      <h2>A bit about how I work</h2>
+      <p>
+        I studied computer science and communication systems at <strong>HEIG-VD</strong> (software
+        engineering focus) and have been writing software professionally since 2023 — backend work,
+        R&amp;D, a stint teaching, and a healthy amount of figuring things out as I go.
+      </p>
+      <p>
+        I care less about chasing the newest framework and more about building things that still make
+        sense six months later. I like understanding a domain properly, sketching a system before I
+        write it, and keeping the code calm enough that the next person — usually future me — isn't
+        miserable.
+      </p>
+      <p class="lead">
+        Before all that: a B.Sc. at HEIG-VD in 2023 (thesis on machine learning for Formula 1
+        pit-stop decisions) and a federal IT diploma in software development from CFPT Geneva in 2020.
+      </p>
+    </section>
+
+    <!-- ───────────────── Currently / Work ───────────────── -->
+    <section class="section" id="work" aria-label="Work">
+      <p class="kicker">Currently</p>
+      <h2>What I'm working on</h2>
+      <p>
+        Right now I'm the software architect and full-stack developer on an industrial
+        computer-vision and automation R&amp;D project at HEIG-VD's Institute of Industrial
+        Automation. Day to day that's C#/.NET, ASP.NET Core, Blazor and WPF — plus a lot of
+        translating what industrial partners actually need into something maintainable. (The specifics
+        stay with the partners.)
+      </p>
+
+      <p class="kicker" style="margin-top: 2.25rem;">Work</p>
+      <h2>Where I've worked</h2>
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__org"><span class="at">HEIG-VD</span> · Institute of Industrial Automation</span>
+          <span class="entry__date">Apr 2025 — Present</span>
+        </div>
+        <h3 class="entry__title">Software architect &amp; full-stack developer</h3>
+        <p class="entry__desc">
+          Architecture and full-stack development of an industrial computer-vision and automation
+          system — turning partner needs and operational constraints into requirements, domain
+          models, and software that holds up. Mostly C#/.NET, ASP.NET Core, Blazor and WPF.
+        </p>
+      </div>
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__org"><span class="at">Abraxas Informatik AG</span> · Morges</span>
+          <span class="entry__date">Aug 2023 — Oct 2024</span>
+        </div>
+        <h3 class="entry__title">Software developer</h3>
+        <p class="entry__desc">
+          Maintained and extended CARI, a large Java application used by Swiss road traffic offices.
+          Legacy code, a small agile team, and the steady work of debugging, reviewing, and improving
+          things one increment at a time.
+        </p>
+      </div>
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__org"><span class="at">HEIG-VD</span> · Teaching assistant</span>
+          <span class="entry__date">Aug 2023 — Oct 2024</span>
+        </div>
+        <h3 class="entry__title">Object-oriented programming &amp; cloud computing</h3>
+        <p class="entry__desc">
+          Helped students through Java object-oriented modelling and cloud topics — AWS/GCP, Docker,
+          Kubernetes, a little Terraform and Ansible. Teaching something is still the fastest way I
+          know to find the gaps in my own understanding.
+        </p>
+      </div>
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__org"><span class="at">Swiss Armed Forces</span></span>
+          <span class="entry__date">2024 — 2025</span>
+        </div>
+        <h3 class="entry__title">Compulsory military service</h3>
+        <p class="entry__desc">
+          Switzerland's compulsory service, done in chunks between jobs.
+        </p>
+      </div>
+    </section>
+
+    <!-- ───────────────── Projects ───────────────── -->
+    <section class="section" id="projects" aria-label="Selected projects">
+      <p class="kicker">Selected projects</p>
+      <h2>Things I've built for myself</h2>
+
+      <div class="project">
+        <div class="project__head">
+          <h3>Formula 1 data analysis</h3>
+          <span class="project__meta">Python · 2021 — present</span>
+        </div>
+        <p class="project__desc">
+          Tooling for telemetry and session analysis — pulling race data, automating charts, and
+          generating performance reports. It started as a way to understand races better and turned
+          into a long-running playground for the kind of data work I actually enjoy.
+        </p>
+      </div>
+
+      <div class="project">
+        <div class="project__head">
+          <h3>Pit-stop decision modelling</h3>
+          <span class="project__meta">B.Sc. thesis · 2023</span>
+        </div>
+        <p class="project__desc">
+          Machine learning for the call to pit in Formula 1: data prep, random forests, and neural
+          nets, with a focus on explainability — why the model says what it says, not just what.
+          Graded 5.6/6.
+        </p>
+      </div>
+    </section>
+
+    <!-- ───────────────── Toolkit ───────────────── -->
+    <section class="section" id="toolkit" aria-label="Toolkit">
+      <p class="kicker">Toolkit</p>
+      <h2>What I reach for</h2>
+      <div class="tk">
+        <div class="tk__row">
+          <span class="tk__label">Mostly</span>
+          <span class="tk__items">C#, .NET, ASP.NET Core, Blazor, WPF</span>
+        </div>
+        <div class="tk__row">
+          <span class="tk__label">Also</span>
+          <span class="tk__items">Java, Python, SQL</span>
+        </div>
+        <div class="tk__row">
+          <span class="tk__label">Design</span>
+          <span class="tk__items">object-oriented design, clean architecture, DDD, UML, REST</span>
+        </div>
+        <div class="tk__row">
+          <span class="tk__label">Infra</span>
+          <span class="tk__items">Git, Docker, Kubernetes, GCP, AWS, Terraform, Ansible, CI/CD</span>
+        </div>
+        <div class="tk__row">
+          <span class="tk__label">Data</span>
+          <span class="tk__items">Pandas, NumPy, scikit-learn, TensorFlow, a bit of computer vision</span>
+        </div>
+      </div>
+      <p class="lead" style="margin-top: 1.25rem; font-size: 0.95rem;">
+        Tools are tools — these are just the ones I reach for most often.
+      </p>
+    </section>
+
+    <!-- ───────────────── Interests ───────────────── -->
+    <section class="section" id="interests" aria-label="Interests">
+      <p class="kicker">Off the clock</p>
+      <h2>Other things I'm into</h2>
+      <p>
+        Outside of work I'm usually somewhere around motorsport, tennis, board games, music,
+        dinosaurs, or one too many side-project ideas. There's also a dog, Laïka, who has strong
+        opinions about my working hours.
+      </p>
+      <div class="tags" aria-label="Interests">
+        <span class="tag">Motorsport</span>
+        <span class="tag">Tennis</span>
+        <span class="tag">Board games</span>
+        <span class="tag">Magic: The Gathering</span>
+        <span class="tag">Dungeons &amp; Dragons</span>
+        <span class="tag">Dinosaurs</span>
+        <span class="tag">Music</span>
+        <span class="tag">Dogs</span>
+      </div>
+    </section>
+
+    <!-- ───────────────── Contact ───────────────── -->
+    <section class="section" id="contact" aria-label="Contact">
+      <p class="kicker">Contact</p>
+      <h2>Get in touch</h2>
+      <p class="contact__lead">
+        Easiest way to reach me is email. Happy to talk about software, industrial or R&amp;D work,
+        motorsport data — or to trade good board game recommendations.
+      </p>
+      <div class="links">
+        <div class="link-row">
+          <span class="link-row__key">Email</span>
+          <span class="link-row__val"><a href={`mailto:${email}`}>{email}</a></span>
+        </div>
+        <div class="link-row">
+          <span class="link-row__key">GitHub</span>
+          <span class="link-row__val"><a href={github} target="_blank" rel="noopener noreferrer">github.com/nelson-jnrnd</a></span>
+        </div>
+        <div class="link-row">
+          <span class="link-row__key">LinkedIn</span>
+          <span class="link-row__val"><a href={linkedin} target="_blank" rel="noopener noreferrer">in/nelson-jeanrenaud</a></span>
+        </div>
+        <div class="link-row">
+          <span class="link-row__key">CV</span>
+          <span class="link-row__val"><a href={cv} download>Download (PDF)</a></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <SiteFooter />
 </BaseLayout>
