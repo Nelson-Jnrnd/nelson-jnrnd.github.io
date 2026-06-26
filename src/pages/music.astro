@@ -1,0 +1,267 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+
+// Last.fm config. These are read at build time and inlined into the client
+// script below. The API key is read-only and only ever sees public scrobble
+// data, so it is fine to ship to the browser (it ends up in the page source of
+// any "now playing" widget anyway). Build env vars
+// (PUBLIC_LASTFM_USERNAME / PUBLIC_LASTFM_API_KEY) override these — see README.
+const LASTFM_USERNAME = import.meta.env.PUBLIC_LASTFM_USERNAME ?? "NestorDHCP";
+const LASTFM_API_KEY =
+  import.meta.env.PUBLIC_LASTFM_API_KEY ?? "130e996340687500f9e282660628d30f";
+---
+
+<BaseLayout
+  title="Music · Nelson Jeanrenaud"
+  description="What Nelson Jeanrenaud has been listening to lately, from Last.fm."
+>
+  <SiteHeader />
+  <span id="top"></span>
+
+  <main class="wrap music">
+    <section class="section music__head" aria-label="Music">
+      <p class="kicker">Music</p>
+      <h2>Here's what I've been listening to lately.</h2>
+    </section>
+
+    <!-- ─── Current / Last played ─── -->
+    <section class="section music__now" aria-label="Now playing" aria-live="polite">
+      <div class="np" id="np" data-state="loading">
+        <!-- vinyl + meta are injected here by the script -->
+        <div class="np__placeholder" aria-hidden="true">
+          <div class="vinyl vinyl--lg">
+            <div class="vinyl__spin">
+              <div class="vinyl__art vinyl__art--empty"></div>
+              <div class="vinyl__grooves"></div>
+            </div>
+            <div class="vinyl__hole"></div>
+          </div>
+        </div>
+        <p class="music__quiet" id="np-quiet">Loading…</p>
+      </div>
+    </section>
+
+    <!-- ─── Recently played shelf ─── -->
+    <section class="section music__recent" aria-label="Recently played">
+      <p class="kicker">Recently played</p>
+      <ul class="shelf" id="shelf" aria-busy="true"></ul>
+      <p class="music__quiet music__quiet--shelf" id="shelf-quiet" hidden></p>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<script define:vars={{ LASTFM_USERNAME, LASTFM_API_KEY }}>
+  const ENDPOINT = "https://ws.audioscrobbler.com/2.0/";
+  // Last.fm serves this image when a release has no cover art.
+  const PLACEHOLDER = "2a96cbd8b46e442fc41c2b86b821562f";
+
+  const npEl = document.getElementById("np");
+  const npQuiet = document.getElementById("np-quiet");
+  const shelfEl = document.getElementById("shelf");
+  const shelfQuiet = document.getElementById("shelf-quiet");
+
+  /** Pick the largest usable cover, or "" if none / placeholder only. */
+  function coverUrl(images) {
+    if (!Array.isArray(images)) return "";
+    for (let i = images.length - 1; i >= 0; i--) {
+      const url = images[i] && images[i]["#text"];
+      if (url && !url.includes(PLACEHOLDER)) return url;
+    }
+    return "";
+  }
+
+  function relativeTime(unixSeconds) {
+    if (!unixSeconds) return "";
+    const diff = Date.now() - unixSeconds * 1000;
+    const mins = Math.round(diff / 60000);
+    if (mins < 1) return "just now";
+    if (mins < 60) return `${mins} min ago`;
+    const hours = Math.round(mins / 60);
+    if (hours < 24) return `${hours} hr ago`;
+    const days = Math.round(hours / 24);
+    if (days < 7) return `${days} day${days === 1 ? "" : "s"} ago`;
+    const weeks = Math.round(days / 7);
+    return `${weeks} wk${weeks === 1 ? "" : "s"} ago`;
+  }
+
+  /** Build a vinyl record element for a track. */
+  function vinyl(track, { large } = {}) {
+    const art = coverUrl(track.image);
+
+    const disc = document.createElement("div");
+    disc.className = "vinyl" + (large ? " vinyl--lg" : "");
+
+    const spin = document.createElement("div");
+    spin.className = "vinyl__spin";
+
+    const face = document.createElement("div");
+    face.className = "vinyl__art" + (art ? "" : " vinyl__art--empty");
+    if (art) face.style.backgroundImage = `url("${art}")`;
+
+    const grooves = document.createElement("div");
+    grooves.className = "vinyl__grooves";
+
+    spin.append(face, grooves);
+
+    const hole = document.createElement("div");
+    hole.className = "vinyl__hole";
+
+    disc.append(spin, hole);
+    return disc;
+  }
+
+  function renderNowPlaying(track) {
+    const playing =
+      track["@attr"] && track["@attr"].nowplaying === "true";
+    const title = (track.name || "").trim();
+    const artist = (track.artist && track.artist["#text"] || "").trim();
+    const album = (track.album && track.album["#text"] || "").trim();
+    const when = track.date && track.date.uts ? Number(track.date.uts) : 0;
+
+    npEl.setAttribute("data-state", playing ? "playing" : "idle");
+    npEl.classList.toggle("is-playing", playing);
+    npEl.replaceChildren();
+
+    const figure = document.createElement("div");
+    figure.className = "np__vinyl";
+    figure.append(vinyl(track, { large: true }));
+
+    const meta = document.createElement("div");
+    meta.className = "np__meta";
+
+    const status = document.createElement("p");
+    status.className = "np__status";
+    if (playing) {
+      const dot = document.createElement("span");
+      dot.className = "np__dot";
+      dot.setAttribute("aria-hidden", "true");
+      status.append(dot, document.createTextNode("Now playing"));
+    } else {
+      const rel = relativeTime(when);
+      status.textContent = rel ? `Last played · ${rel}` : "Last played";
+    }
+
+    const h = document.createElement("p");
+    h.className = "np__title";
+    if (track.url) {
+      const a = document.createElement("a");
+      a.href = track.url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.textContent = title || "Unknown track";
+      h.append(a);
+    } else {
+      h.textContent = title || "Unknown track";
+    }
+
+    const sub = document.createElement("p");
+    sub.className = "np__sub";
+    sub.textContent = album ? `${artist} — ${album}` : artist;
+
+    meta.append(status, h, sub);
+    npEl.append(figure, meta);
+  }
+
+  function renderShelf(tracks) {
+    shelfEl.replaceChildren();
+    for (const track of tracks) {
+      const title = (track.name || "").trim();
+      const artist = (track.artist && track.artist["#text"] || "").trim();
+
+      const li = document.createElement("li");
+      li.className = "shelf__item";
+
+      const link = document.createElement("a");
+      link.className = "record";
+      link.href = track.url || "#";
+      if (track.url) {
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+      }
+      link.setAttribute(
+        "aria-label",
+        artist ? `${title} by ${artist}` : title
+      );
+      link.append(vinyl(track));
+
+      const cap = document.createElement("span");
+      cap.className = "record__cap";
+      const t = document.createElement("span");
+      t.className = "record__title";
+      t.textContent = title;
+      const a = document.createElement("span");
+      a.className = "record__artist";
+      a.textContent = artist;
+      cap.append(t, a);
+
+      link.append(cap);
+      li.append(link);
+      shelfEl.append(li);
+    }
+    shelfEl.setAttribute("aria-busy", "false");
+  }
+
+  function quietNow(message) {
+    npEl.setAttribute("data-state", "empty");
+    npEl.classList.remove("is-playing");
+    npEl.replaceChildren();
+    const ph = document.createElement("div");
+    ph.className = "np__vinyl";
+    ph.append(vinyl({}, { large: true }));
+    const p = document.createElement("p");
+    p.className = "music__quiet";
+    p.textContent = message;
+    npEl.append(ph, p);
+  }
+
+  function quietShelf(message) {
+    shelfEl.setAttribute("aria-busy", "false");
+    shelfEl.replaceChildren();
+    shelfQuiet.textContent = message;
+    shelfQuiet.hidden = false;
+  }
+
+  async function load() {
+    if (!LASTFM_USERNAME || !LASTFM_API_KEY) {
+      quietNow("Nothing to show right now.");
+      quietShelf("");
+      return;
+    }
+
+    const url =
+      `${ENDPOINT}?method=user.getrecenttracks` +
+      `&user=${encodeURIComponent(LASTFM_USERNAME)}` +
+      `&api_key=${encodeURIComponent(LASTFM_API_KEY)}` +
+      `&format=json&limit=12`;
+
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      const tracks =
+        data && data.recenttracks && Array.isArray(data.recenttracks.track)
+          ? data.recenttracks.track
+          : [];
+
+      if (!tracks.length) {
+        quietNow("Nothing to show right now.");
+        quietShelf("");
+        return;
+      }
+
+      renderNowPlaying(tracks[0]);
+      const rest = tracks.slice(1, 11);
+      if (rest.length) renderShelf(rest);
+      else quietShelf("");
+    } catch (err) {
+      quietNow("Couldn't reach Last.fm just now.");
+      quietShelf("");
+    }
+  }
+
+  load();
+</script>
