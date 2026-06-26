@@ -24,8 +24,7 @@ const LASTFM_API_KEY =
 
   <main class="wrap music">
     <section class="section music__head" aria-label="Music">
-      <p class="kicker">Music</p>
-      <h2>Here's what I've been listening to lately.</h2>
+      <h1 class="music__title">Music</h1>
     </section>
 
     <!-- ─── Current / Last played ─── -->
@@ -205,7 +204,26 @@ const LASTFM_API_KEY =
       shelfEl.append(li);
     }
     shelfEl.setAttribute("aria-busy", "false");
+    updateShelfScroll();
   }
+
+  /** Fade only the edge(s) that have off-screen records. */
+  function updateShelfScroll() {
+    const slack = shelfEl.scrollWidth - shelfEl.clientWidth;
+    if (slack <= 4) {
+      shelfEl.removeAttribute("data-scroll");
+      return;
+    }
+    const x = shelfEl.scrollLeft;
+    const atStart = x <= 4;
+    const atEnd = x >= slack - 4;
+    shelfEl.setAttribute(
+      "data-scroll",
+      atStart ? "start" : atEnd ? "end" : "middle"
+    );
+  }
+  shelfEl.addEventListener("scroll", updateShelfScroll, { passive: true });
+  window.addEventListener("resize", updateShelfScroll, { passive: true });
 
   function quietNow(message) {
     npEl.setAttribute("data-state", "empty");
