@@ -35,67 +35,49 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
 
       <div class="intro__body">
         <p>
-          I'm Nelson, a software engineer based in Switzerland. Most of my work sits somewhere
-          between software, hardware, people, and messy real-world constraints.
+          I'm Nelson. I sit in front of a screen and read code. I used to write it; now I talk with
+          people and LLMs.
         </p>
         <p class="lead">
-          I like systems that are understandable, useful, and not painful to maintain. These days
-          that mostly means <span class="accent-gold">.NET, Blazor, C#</span>, industrial software,
-          and <span class="accent-green">computer-vision-adjacent</span> tools.
+          I still like systems that are useful and don't make the maintainer — usually
+          <span class="accent-gold">future me</span> — miserable.
         </p>
         <span class="status">
           <span class="status__dot" aria-hidden="true"></span>
-          Open to interesting work &amp; conversations
+          Open to work
         </span>
       </div>
     </section>
 
-    <!-- ───────────────── About ───────────────── -->
-    <section class="section" id="about" aria-label="About">
-      <p class="kicker">About</p>
-      <h2>A bit about how I work</h2>
-      <p>
-        I studied computer science and communication systems at <strong>HEIG-VD</strong> (software
-        engineering focus) and have been writing software professionally since 2023 — backend work,
-        R&amp;D, a stint teaching, and a healthy amount of figuring things out as I go.
-      </p>
-      <p>
-        I care less about chasing the newest framework and more about building things that still make
-        sense six months later. I like understanding a domain properly, sketching a system before I
-        write it, and keeping the code calm enough that the next person — usually future me — isn't
-        miserable.
-      </p>
-      <p class="lead">
-        Before all that: a B.Sc. at HEIG-VD in 2023 (thesis on machine learning for Formula 1
-        pit-stop decisions) and a federal IT diploma in software development from CFPT Geneva in 2020.
-      </p>
-    </section>
-
-    <!-- ───────────────── Currently / Work ───────────────── -->
+    <!-- ───────────────── Work ───────────────── -->
     <section class="section" id="work" aria-label="Work">
-      <p class="kicker">Currently</p>
-      <h2>What I'm working on</h2>
-      <p>
-        Right now I'm the software architect and full-stack developer on an industrial
-        computer-vision and automation R&amp;D project at HEIG-VD's Institute of Industrial
-        Automation. Day to day that's C#/.NET, ASP.NET Core, Blazor and WPF — plus a lot of
-        translating what industrial partners actually need into something maintainable. (The specifics
-        stay with the partners.)
-      </p>
-
-      <p class="kicker" style="margin-top: 2.25rem;">Work</p>
-      <h2>Where I've worked</h2>
+      <p class="kicker">Work</p>
+      <h2>What I'm doing now</h2>
 
       <div class="entry">
         <div class="entry__head">
-          <span class="entry__org"><span class="at">HEIG-VD</span> · Institute of Industrial Automation</span>
+          <span class="entry__org"><span class="at">HEIG-VD</span> · Institute of Industrial Automation · Yverdon-les-Bains</span>
           <span class="entry__date">Apr 2025 — Present</span>
         </div>
         <h3 class="entry__title">Software architect &amp; full-stack developer</h3>
         <p class="entry__desc">
-          Architecture and full-stack development of an industrial computer-vision and automation
-          system — turning partner needs and operational constraints into requirements, domain
-          models, and software that holds up. Mostly C#/.NET, ASP.NET Core, Blazor and WPF.
+          Right now I'm the software architect and full-stack dev on an agricultural automation
+          R&amp;D project at HEIG-VD's Institute of Industrial Automation. The stack:
+          <span class="accent-green">C# → ASP.NET Core → Blazor + WPF</span>.
+        </p>
+      </div>
+
+      <h2 style="margin-top: 2.5rem;">Where I've been useful</h2>
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__org"><span class="at">Swiss Armed Forces</span> · Maintenance School 43 · Thun</span>
+          <span class="entry__date">Jul 2024 — Nov 2024</span>
+        </div>
+        <h3 class="entry__title">Communication diagnostician</h3>
+        <p class="entry__desc">
+          Basic military training and maintenance, plus diagnosis of military radio communication
+          equipment.
         </p>
       </div>
 
@@ -107,50 +89,40 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
         <h3 class="entry__title">Software developer</h3>
         <p class="entry__desc">
           Maintained and extended CARI, a large Java application used by Swiss road traffic offices.
-          Legacy code, a small agile team, and the steady work of debugging, reviewing, and improving
-          things one increment at a time.
+          Mostly legacy code and the steady work of debugging, reviewing, refactoring, and improving
+          things one PR at a time.
         </p>
       </div>
 
       <div class="entry">
         <div class="entry__head">
-          <span class="entry__org"><span class="at">HEIG-VD</span> · Teaching assistant</span>
+          <span class="entry__org"><span class="at">HEIG-VD</span> · Institute of Information &amp; Communication Technology · Yverdon-les-Bains</span>
           <span class="entry__date">Aug 2023 — Oct 2024</span>
         </div>
-        <h3 class="entry__title">Object-oriented programming &amp; cloud computing</h3>
+        <h3 class="entry__title">Teaching assistant</h3>
         <p class="entry__desc">
-          Helped students through Java object-oriented modelling and cloud topics — AWS/GCP, Docker,
-          Kubernetes, a little Terraform and Ansible. Teaching something is still the fastest way I
-          know to find the gaps in my own understanding.
-        </p>
-      </div>
-
-      <div class="entry">
-        <div class="entry__head">
-          <span class="entry__org"><span class="at">Swiss Armed Forces</span></span>
-          <span class="entry__date">2024 — 2025</span>
-        </div>
-        <h3 class="entry__title">Compulsory military service</h3>
-        <p class="entry__desc">
-          Switzerland's compulsory service, done in chunks between jobs.
+          Assisted both the OOP and Cloud Computing bachelor courses — helping students with
+          object-oriented modelling (Java) and cloud topics (AWS/GCP, Docker, Kubernetes, Terraform
+          and Ansible).
         </p>
       </div>
     </section>
 
     <!-- ───────────────── Projects ───────────────── -->
     <section class="section" id="projects" aria-label="Selected projects">
-      <p class="kicker">Selected projects</p>
-      <h2>Things I've built for myself</h2>
+      <p class="kicker">Projects</p>
+      <h2>What I've built for myself</h2>
 
       <div class="project">
         <div class="project__head">
           <h3>Formula 1 data analysis</h3>
-          <span class="project__meta">Python · 2021 — present</span>
+          <span class="project__meta">Python · 2021 — 2024</span>
         </div>
         <p class="project__desc">
-          Tooling for telemetry and session analysis — pulling race data, automating charts, and
-          generating performance reports. It started as a way to understand races better and turned
-          into a long-running playground for the kind of data work I actually enjoy.
+          Ran a blog where, each race weekend, I dove deep into the available data to find the how and
+          why behind particular results, and to follow the improvements made to the cars across the
+          season. For that I built tooling for telemetry and session analysis in Python — pulling race
+          data and generating performance reports and charts.
         </p>
       </div>
 
@@ -160,8 +132,9 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
           <span class="project__meta">B.Sc. thesis · 2023</span>
         </div>
         <p class="project__desc">
-          Machine learning for the call to pit in Formula 1: data prep, random forests, and neural
-          nets, with a focus on explainability — why the model says what it says, not just what.
+          Machine learning for the call to pit in Formula 1: gathering and preparing data, then
+          exploring models (RF/NN/RNN) to capture the relationship between race strategy and situation
+          data. With a focus on explainability (XAI) — digging into why the model says what it says.
           Graded 5.6/6.
         </p>
       </div>
@@ -169,43 +142,34 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
 
     <!-- ───────────────── Toolkit ───────────────── -->
     <section class="section" id="toolkit" aria-label="Toolkit">
-      <p class="kicker">Toolkit</p>
-      <h2>What I reach for</h2>
+      <p class="kicker">Tools</p>
+      <h2>How I build without making future me hate me</h2>
       <div class="tk">
         <div class="tk__row">
-          <span class="tk__label">Mostly</span>
-          <span class="tk__items">C#, .NET, ASP.NET Core, Blazor, WPF</span>
+          <span class="tk__label">Languages</span>
+          <span class="tk__items">C#, Java, Python, SQL, JavaScript</span>
         </div>
         <div class="tk__row">
-          <span class="tk__label">Also</span>
-          <span class="tk__items">Java, Python, SQL</span>
+          <span class="tk__label">Frameworks</span>
+          <span class="tk__items">ASP.NET Core, Blazor, WPF, AngularJS, Spring</span>
         </div>
         <div class="tk__row">
-          <span class="tk__label">Design</span>
-          <span class="tk__items">object-oriented design, clean architecture, DDD, UML, REST</span>
-        </div>
-        <div class="tk__row">
-          <span class="tk__label">Infra</span>
+          <span class="tk__label">Infrastructure</span>
           <span class="tk__items">Git, Docker, Kubernetes, GCP, AWS, Terraform, Ansible, CI/CD</span>
         </div>
         <div class="tk__row">
           <span class="tk__label">Data</span>
-          <span class="tk__items">Pandas, NumPy, scikit-learn, TensorFlow, a bit of computer vision</span>
+          <span class="tk__items">Pandas, NumPy, scikit-learn, TensorFlow</span>
         </div>
       </div>
-      <p class="lead" style="margin-top: 1.25rem; font-size: 0.95rem;">
-        Tools are tools — these are just the ones I reach for most often.
-      </p>
     </section>
 
     <!-- ───────────────── Interests ───────────────── -->
     <section class="section" id="interests" aria-label="Interests">
-      <p class="kicker">Off the clock</p>
-      <h2>Other things I'm into</h2>
+      <p class="kicker">Interests</p>
+      <h2>What I do outside of work</h2>
       <p>
-        Outside of work I'm usually somewhere around motorsport, tennis, board games, music,
-        dinosaurs, or one too many side-project ideas. There's also a dog, Laïka, who has strong
-        opinions about my working hours.
+        Usually hanging out in the sun, playing tennis, watching racecars, and listening to music.
       </p>
       <div class="tags" aria-label="Interests">
         <span class="tag">Motorsport</span>
@@ -222,11 +186,7 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
     <!-- ───────────────── Contact ───────────────── -->
     <section class="section" id="contact" aria-label="Contact">
       <p class="kicker">Contact</p>
-      <h2>Get in touch</h2>
-      <p class="contact__lead">
-        Easiest way to reach me is email. Happy to talk about software, industrial or R&amp;D work,
-        motorsport data — or to trade good board game recommendations.
-      </p>
+      <h2>How to reach me</h2>
       <div class="links">
         <div class="link-row">
           <span class="link-row__key">Email</span>
