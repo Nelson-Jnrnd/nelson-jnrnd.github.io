@@ -57,17 +57,25 @@ update the CV, replace `public/cv/nelson-jeanrenaud-cv.pdf`.
 
 `/music` shows the current/last-played track as a (spinning, when playing)
 vinyl record plus a small shelf of recently played tracks, pulled live from
-[Last.fm](https://www.last.fm/api). It reads two build-time env vars:
+[Last.fm](https://www.last.fm/api).
+
+The account (`NestorDHCP`) and a read-only Last.fm API key are baked into
+`src/pages/music.astro` as defaults — the key only ever sees public scrobble
+data and ends up in the page source of any "now playing" widget anyway, so it's
+safe to ship to the browser. (Last.fm's *shared secret* is **not** used or
+stored: it's only needed for signed/authenticated calls, and this page just
+reads public data.)
+
+To point the page at a different account or key without editing the source, set
+two build-time env vars, which override the defaults:
 
 - `PUBLIC_LASTFM_USERNAME` — the Last.fm account to show.
-- `PUBLIC_LASTFM_API_KEY` — a Last.fm API key (read-only; it only ever sees
-  public scrobble data, so it's safe to ship to the browser).
+- `PUBLIC_LASTFM_API_KEY` — the Last.fm API key.
 
-In CI these come from the repo's **Settings → Secrets and variables →
-Actions**: add `PUBLIC_LASTFM_USERNAME` as a *Variable* and
-`PUBLIC_LASTFM_API_KEY` as a *Secret* (the deploy workflow passes both to the
-build). For local dev, put them in a `.env` file at the repo root. If either is
-missing the page just renders a quiet empty state.
+In CI these can come from the repo's **Settings → Secrets and variables →
+Actions** (username as a *Variable*, key as a *Secret*); the deploy workflow
+passes both to the build. For local dev, put them in a `.env` file at the repo
+root. If a value is empty the page just renders a quiet empty state.
 
 ## Deployment
 

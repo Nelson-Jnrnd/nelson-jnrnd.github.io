@@ -4,11 +4,13 @@ import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 
 // Last.fm config. These are read at build time and inlined into the client
-// script below. The API key is read-only and only ever sees public data, so
-// it is fine to ship to the browser. Set them as build env vars
-// (PUBLIC_LASTFM_USERNAME / PUBLIC_LASTFM_API_KEY) — see README.
-const LASTFM_USERNAME = import.meta.env.PUBLIC_LASTFM_USERNAME ?? "";
-const LASTFM_API_KEY = import.meta.env.PUBLIC_LASTFM_API_KEY ?? "";
+// script below. The API key is read-only and only ever sees public scrobble
+// data, so it is fine to ship to the browser (it ends up in the page source of
+// any "now playing" widget anyway). Build env vars
+// (PUBLIC_LASTFM_USERNAME / PUBLIC_LASTFM_API_KEY) override these — see README.
+const LASTFM_USERNAME = import.meta.env.PUBLIC_LASTFM_USERNAME ?? "NestorDHCP";
+const LASTFM_API_KEY =
+  import.meta.env.PUBLIC_LASTFM_API_KEY ?? "130e996340687500f9e282660628d30f";
 ---
 
 <BaseLayout
