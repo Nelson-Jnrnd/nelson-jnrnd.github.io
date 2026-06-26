@@ -49,6 +49,9 @@ const LASTFM_API_KEY =
       <p class="kicker">Recently played</p>
       <ul class="shelf" id="shelf" aria-busy="true"></ul>
       <p class="music__quiet music__quiet--shelf" id="shelf-quiet" hidden></p>
+
+      <!-- inspector panel: details for the clicked record (script-filled) -->
+      <div class="detail" id="detail" aria-live="polite" hidden></div>
     </section>
   </main>
 
@@ -61,9 +64,22 @@ const LASTFM_API_KEY =
   const PLACEHOLDER = "2a96cbd8b46e442fc41c2b86b821562f";
 
   const npEl = document.getElementById("np");
-  const npQuiet = document.getElementById("np-quiet");
   const shelfEl = document.getElementById("shelf");
   const shelfQuiet = document.getElementById("shelf-quiet");
+  const detailEl = document.getElementById("detail");
+
+  /** Thin wrapper around the Last.fm REST API (JSON). */
+  function api(params) {
+    const q = new URLSearchParams({
+      ...params,
+      api_key: LASTFM_API_KEY,
+      format: "json",
+    });
+    return fetch(`${ENDPOINT}?${q}`).then((r) => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.json();
+    });
+  }
 
   /** Pick the largest usable cover, or "" if none / placeholder only. */
   function coverUrl(images) {
@@ -127,9 +143,25 @@ const LASTFM_API_KEY =
     npEl.classList.toggle("is-playing", playing);
     npEl.replaceChildren();
 
-    const figure = document.createElement("div");
+    // The hero record is clickable too — but only for inspection. Selecting it
+    // never changes this section's state, and the spin stays tied to nowplaying.
+    const figure = document.createElement("button");
+    figure.type = "button";
     figure.className = "np__vinyl";
+    figure.setAttribute("aria-pressed", "false");
+    figure.setAttribute(
+      "aria-label",
+      `Inspect ${title || "this track"}${artist ? " by " + artist : ""}`
+    );
     figure.append(vinyl(track, { large: true }));
+    const playedLabel = playing
+      ? "Now playing"
+      : when
+        ? `Played ${relativeTime(when)}`
+        : "Last played";
+    figure.addEventListener("click", () =>
+      selectVinyl(figure, track, { playedLabel })
+    );
 
     const meta = document.createElement("div");
     meta.className = "np__meta";
@@ -173,21 +205,24 @@ const LASTFM_API_KEY =
       const title = (track.name || "").trim();
       const artist = (track.artist && track.artist["#text"] || "").trim();
 
+      const when = track.date && track.date.uts ? Number(track.date.uts) : 0;
+      const nowplaying =
+        track["@attr"] && track["@attr"].nowplaying === "true";
+
       const li = document.createElement("li");
       li.className = "shelf__item";
 
-      const link = document.createElement("a");
-      link.className = "record";
-      link.href = track.url || "#";
-      if (track.url) {
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-      }
-      link.setAttribute(
+      // A button, not a link: clicking inspects the record in the panel below
+      // (the Last.fm link lives in the panel) rather than navigating away.
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "record";
+      btn.setAttribute("aria-pressed", "false");
+      btn.setAttribute(
         "aria-label",
-        artist ? `${title} by ${artist}` : title
+        artist ? `Inspect ${title} by ${artist}` : `Inspect ${title}`
       );
-      link.append(vinyl(track));
+      btn.append(vinyl(track));
 
       const cap = document.createElement("span");
       cap.className = "record__cap";
@@ -199,8 +234,16 @@ const LASTFM_API_KEY =
       a.textContent = artist;
       cap.append(t, a);
 
-      link.append(cap);
-      li.append(link);
+      btn.append(cap);
+      const playedLabel = nowplaying
+        ? "Now playing"
+        : when
+          ? `Played ${relativeTime(when)}`
+          : "Recently played";
+      btn.addEventListener("click", () =>
+        selectVinyl(btn, track, { playedLabel })
+      );
+      li.append(btn);
       shelfEl.append(li);
     }
     shelfEl.setAttribute("aria-busy", "false");
@@ -224,6 +267,230 @@ const LASTFM_API_KEY =
   }
   shelfEl.addEventListener("scroll", updateShelfScroll, { passive: true });
   window.addEventListener("resize", updateShelfScroll, { passive: true });
+
+  /* ─── Inspecting a record (details panel) ──────────────────────────── */
+
+  let selectedBtn = null;
+  let seltoken = 0; // guards against out-of-order detail responses
+
+  /** Toggle the chosen vinyl's selected state and (re)fill the panel. */
+  function selectVinyl(btn, track, opts) {
+    if (selectedBtn === btn) {
+      deselect();
+      return;
+    }
+    if (selectedBtn) {
+      selectedBtn.classList.remove("is-selected");
+      selectedBtn.setAttribute("aria-pressed", "false");
+    }
+    selectedBtn = btn;
+    btn.classList.add("is-selected");
+    btn.setAttribute("aria-pressed", "true");
+
+    const refs = renderDetailBase(track, opts);
+    detailEl.scrollIntoView({ block: "nearest" });
+    enrichDetail(track, refs, ++seltoken);
+  }
+
+  function deselect() {
+    if (selectedBtn) {
+      selectedBtn.classList.remove("is-selected");
+      selectedBtn.setAttribute("aria-pressed", "false");
+      selectedBtn = null;
+    }
+    seltoken++; // invalidate any in-flight fetch
+    detailEl.hidden = true;
+    detailEl.replaceChildren();
+  }
+
+  /** Render the always-available info (straight from the scrobble). */
+  function renderDetailBase(track, { playedLabel }) {
+    const title = (track.name || "").trim();
+    const artist = (track.artist && track.artist["#text"] || "").trim();
+    const album = (track.album && track.album["#text"] || "").trim();
+    const art = coverUrl(track.image);
+
+    detailEl.replaceChildren();
+    detailEl.hidden = false;
+
+    const close = document.createElement("button");
+    close.type = "button";
+    close.className = "detail__close";
+    close.setAttribute("aria-label", "Close details");
+    close.textContent = "✕";
+    close.addEventListener("click", deselect);
+
+    const sleeve = document.createElement("div");
+    sleeve.className = "detail__sleeve" + (art ? "" : " detail__sleeve--empty");
+    if (art) sleeve.style.backgroundImage = `url("${art}")`;
+    else sleeve.textContent = "♪";
+
+    const body = document.createElement("div");
+    body.className = "detail__body";
+
+    const status = document.createElement("p");
+    status.className = "detail__status";
+    status.textContent = playedLabel || "";
+
+    const h = document.createElement("p");
+    h.className = "detail__title";
+    h.textContent = title || "Unknown track";
+
+    const sub = document.createElement("p");
+    sub.className = "detail__artist";
+    sub.textContent = album ? `${artist} — ${album}` : artist;
+
+    const summary = document.createElement("p");
+    summary.className = "detail__summary";
+    summary.hidden = true;
+
+    const tags = document.createElement("ul");
+    tags.className = "detail__tags";
+    tags.hidden = true;
+
+    const links = document.createElement("p");
+    links.className = "detail__links";
+    links.hidden = true;
+
+    const note = document.createElement("p");
+    note.className = "detail__note music__quiet";
+    note.hidden = true;
+
+    body.append(status, h, sub, summary, tags, links, note);
+    detailEl.append(close, sleeve, body);
+    return { title, artist, album, summary, tags, links, note, scrobbleUrl: track.url || "" };
+  }
+
+  /** HTML wiki blurbs → a short, clean, plain-text sentence or two. */
+  function cleanWiki(html) {
+    if (!html) return "";
+    const text =
+      new DOMParser().parseFromString(html, "text/html").body.textContent || "";
+    let t = text.replace(/\s*Read more on Last\.fm.*$/is, "").trim();
+    if (!t) return "";
+    const LIMIT = 240;
+    if (t.length > LIMIT) {
+      t = t.slice(0, LIMIT);
+      const dot = t.lastIndexOf(". ");
+      if (dot > 120) t = t.slice(0, dot + 1);
+      else t = t.replace(/[\s,;:]+\S*$/, "") + "…";
+    }
+    return t;
+  }
+
+  /** Up to five tag names from a track/album/artist getInfo payload. */
+  function pickTags(info) {
+    if (!info) return null;
+    const raw =
+      (info.toptags && info.toptags.tag) || (info.tags && info.tags.tag);
+    if (!raw) return null;
+    const arr = Array.isArray(raw) ? raw : [raw];
+    const names = arr
+      .map((x) => x && (x.name || "").trim())
+      .filter(Boolean)
+      .slice(0, 5);
+    return names.length ? names : null;
+  }
+
+  function renderLinks(el, items) {
+    el.replaceChildren();
+    items
+      .filter((it) => it.url)
+      .forEach((it, i) => {
+        if (i > 0) {
+          const sep = document.createElement("span");
+          sep.className = "detail__sep";
+          sep.setAttribute("aria-hidden", "true");
+          sep.textContent = "·";
+          el.append(sep);
+        }
+        const a = document.createElement("a");
+        a.href = it.url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = `${it.label} ↗`;
+        el.append(a);
+      });
+    el.hidden = el.childElementCount === 0;
+  }
+
+  /** Fetch track / album / artist details and fold them into the panel. */
+  async function enrichDetail(track, refs, token) {
+    const { artist, album, title } = refs;
+    if (!artist || !title) return;
+
+    let trackInfo = null,
+      albumInfo = null,
+      artistInfo = null,
+      fails = 0,
+      total = 0;
+
+    const calls = [];
+    total++;
+    calls.push(
+      api({ method: "track.getInfo", artist, track: title, username: LASTFM_USERNAME })
+        .then((d) => (trackInfo = d && d.track))
+        .catch(() => fails++)
+    );
+    if (album) {
+      total++;
+      calls.push(
+        api({ method: "album.getInfo", artist, album })
+          .then((d) => (albumInfo = d && d.album))
+          .catch(() => fails++)
+      );
+    }
+    total++;
+    calls.push(
+      api({ method: "artist.getInfo", artist })
+        .then((d) => (artistInfo = d && d.artist))
+        .catch(() => fails++)
+    );
+
+    await Promise.all(calls);
+    if (token !== seltoken) return; // a newer selection won
+
+    // Links — fall back to the scrobble's own track URL if getInfo failed.
+    const trackUrl = (trackInfo && trackInfo.url) || refs.scrobbleUrl;
+    const albumUrl =
+      (albumInfo && albumInfo.url) ||
+      (trackInfo && trackInfo.album && trackInfo.album.url) ||
+      "";
+    const artistUrl = (artistInfo && artistInfo.url) || "";
+    renderLinks(refs.links, [
+      { label: "Track", url: trackUrl },
+      ...(album ? [{ label: "Album", url: albumUrl }] : []),
+      { label: "Artist", url: artistUrl },
+    ]);
+
+    // A short blurb — prefer the track wiki, else the artist bio.
+    const summary =
+      cleanWiki(trackInfo && trackInfo.wiki && trackInfo.wiki.summary) ||
+      cleanWiki(artistInfo && artistInfo.bio && artistInfo.bio.summary);
+    if (summary) {
+      refs.summary.textContent = summary;
+      refs.summary.hidden = false;
+    }
+
+    // Tags — track first, then album, then artist.
+    const tags = pickTags(trackInfo) || pickTags(albumInfo) || pickTags(artistInfo);
+    if (tags) {
+      refs.tags.replaceChildren();
+      for (const name of tags) {
+        const li = document.createElement("li");
+        li.className = "detail__tag";
+        li.textContent = name;
+        refs.tags.append(li);
+      }
+      refs.tags.hidden = false;
+    }
+
+    // Quiet failure note only if every call failed (base info still shows).
+    if (fails >= total) {
+      refs.note.textContent = "Couldn't load details.";
+      refs.note.hidden = false;
+    }
+  }
 
   function quietNow(message) {
     npEl.setAttribute("data-state", "empty");
@@ -252,16 +519,12 @@ const LASTFM_API_KEY =
       return;
     }
 
-    const url =
-      `${ENDPOINT}?method=user.getrecenttracks` +
-      `&user=${encodeURIComponent(LASTFM_USERNAME)}` +
-      `&api_key=${encodeURIComponent(LASTFM_API_KEY)}` +
-      `&format=json&limit=12`;
-
     try {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
+      const data = await api({
+        method: "user.getrecenttracks",
+        user: LASTFM_USERNAME,
+        limit: "12",
+      });
       const tracks =
         data && data.recenttracks && Array.isArray(data.recenttracks.track)
           ? data.recenttracks.track

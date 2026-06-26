@@ -480,13 +480,17 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
 
 @keyframes vinyl-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: no-preference) {
+  /* spinning is reserved exclusively for a track Last.fm marks as nowplaying */
   .np.is-playing .vinyl__spin {
     animation: vinyl-spin 5.5s linear infinite;
   }
-  .record:hover .vinyl__spin,
-  .record:focus-visible .vinyl__spin {
-    animation: vinyl-spin 9s linear infinite;
-  }
+}
+
+/* selected-for-inspection ring (does not imply playing) */
+.is-selected > .vinyl {
+  box-shadow:
+    0 0 0 3px var(--green),
+    0 6px 18px rgba(0, 0, 0, 0.5);
 }
 
 /* ---------- now playing / last played ---------- */
@@ -498,6 +502,21 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
   flex-wrap: wrap;
 }
 .np__placeholder { opacity: 0.5; }
+.np__vinyl {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  border-radius: 50%;
+}
+.np__vinyl .vinyl { transition: box-shadow 0.2s ease; }
+.np__vinyl:focus-visible { outline: none; }
+.np__vinyl:focus-visible .vinyl {
+  box-shadow: 0 0 0 3px var(--gold), 0 6px 18px rgba(0, 0, 0, 0.5);
+}
 .np__meta { flex: 1 1 14rem; min-width: 0; }
 .np__status {
   display: inline-flex;
@@ -562,21 +581,25 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
 }
 .shelf__item { scroll-snap-align: start; }
 .record {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
   width: 8.5rem;
+  padding: 0;
   color: var(--text);
 }
-.record .vinyl { --size: 8.5rem; transition: transform 0.2s ease; }
-.record:hover { text-decoration: none; }
+.record .vinyl { --size: 8.5rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
 .record:hover .vinyl { transform: translateY(-3px); }
 .record:focus-visible { outline: none; }
 .record:focus-visible .vinyl {
-  outline: 2px solid var(--green);
-  outline-offset: 4px;
-  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--gold), 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 .record__cap {
   display: flex;
@@ -605,6 +628,116 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
 @media (max-width: 33rem) {
   .record, .record .vinyl, .record__title, .record__artist { width: 7rem; max-width: 7rem; }
   .record .vinyl { --size: 7rem; }
+}
+
+/* ---------- details panel (inspecting a record) ---------- */
+.detail {
+  position: relative;
+  margin-top: 1.75rem;
+  display: flex;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  align-items: flex-start;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-soft);
+  padding: clamp(1rem, 3.5vw, 1.5rem);
+}
+.detail[hidden] { display: none; }
+.detail__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  line-height: 1;
+  color: var(--text-faint);
+  padding: 0.35rem 0.45rem;
+  border-radius: 6px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.detail__close:hover { color: var(--text); background: rgba(236, 233, 225, 0.06); }
+.detail__close:focus-visible { outline: 2px solid var(--green); outline-offset: 1px; }
+
+.detail__sleeve {
+  flex: 0 0 auto;
+  width: clamp(4.5rem, 20vw, 6.5rem);
+  aspect-ratio: 1;
+  border-radius: 6px;
+  background-color: #121210;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+.detail__sleeve--empty {
+  display: grid;
+  place-items: center;
+  font-size: 1.7rem;
+  color: var(--gold-soft);
+  background:
+    radial-gradient(circle at 38% 34%, rgba(227, 178, 60, 0.25), transparent 50%),
+    conic-gradient(from 210deg, #1d1d1a, #121210, #1d1d1a);
+}
+.detail__body { flex: 1 1 auto; min-width: 0; padding-right: 1.5rem; }
+.detail__status {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 0 0 0.5rem;
+}
+.detail__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.25;
+  margin: 0 0 0.2rem;
+}
+.detail__artist { color: var(--text-dim); font-size: 0.95rem; margin: 0; }
+.detail__summary {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0.8rem 0 0;
+}
+.detail__tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.8rem 0 0;
+  padding: 0;
+}
+.detail__tag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.01em;
+  color: var(--text-faint);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.18rem 0.5rem;
+}
+.detail__links {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  margin: 0.85rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.detail__sep { color: var(--text-faint); }
+.detail__note { margin: 0.85rem 0 0; }
+
+@media (max-width: 33rem) {
+  .detail__body { padding-right: 0; }
 }
 
 /* ---------- 404 ---------- */
