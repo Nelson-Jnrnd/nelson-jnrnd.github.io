@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------ *
-   Nelson Jeanrenaud — personal site
+   Nelson Jeanrenaud personal site
    A quiet, document-style page. Off-black background, soft white text,
    restrained gold + green accents (loosely Jamaican). No decoration for
    its own sake: typography, spacing and alignment do the work.
@@ -53,7 +53,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* gentle, single page-load fade — no scroll choreography */
+/* gentle, single page-load fade; no scroll choreography */
 @media (prefers-reduced-motion: no-preference) {
   body { animation: page-in 0.5s ease both; }
   @keyframes page-in {
