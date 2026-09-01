@@ -77,6 +77,24 @@ a:focus-visible {
   border-radius: 2px;
 }
 
+/* Reference links (Wikipedia and friends) read as a single, consistent
+   register: always green, always a dotted rule. Gold stays reserved for
+   links that go somewhere of mine — a project, a page, a contact. */
+a.ref {
+  color: var(--green);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(95, 168, 119, 0.45);
+  text-underline-offset: 3px;
+}
+a.ref:hover {
+  color: var(--green);
+  text-decoration-style: solid;
+  text-decoration-color: var(--green);
+}
+a.ref:focus-visible { outline-color: var(--green); }
+
 /* ---------- text rhythm ---------- */
 p { margin: 0 0 1.1rem; }
 p:last-child { margin-bottom: 0; }
@@ -132,12 +150,6 @@ strong { color: var(--text); font-weight: 600; }
   gap: 0.55rem;
 }
 .brand:hover { color: var(--text); text-decoration: none; }
-.brand__dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--green);
-  display: inline-block;
-}
 .nav {
   display: flex;
   gap: clamp(0.85rem, 2.5vw, 1.5rem);
@@ -147,6 +159,46 @@ strong { color: var(--text); font-weight: 600; }
 }
 .nav a { color: var(--text-dim); }
 .nav a:hover { color: var(--gold); text-decoration: none; }
+
+/* ---------- availability banner ---------- */
+/* Sits directly under the app bar: a quiet green ribbon, italic, with
+   hairlines running out to either side of the text. */
+.openbar {
+  background: linear-gradient(
+    90deg,
+    rgba(95, 168, 119, 0.03),
+    rgba(95, 168, 119, 0.11) 50%,
+    rgba(95, 168, 119, 0.03)
+  );
+  border-bottom: 1px solid rgba(95, 168, 119, 0.22);
+}
+.openbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.7rem, 3vw, 1.15rem);
+  margin: 0;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+  font-style: italic;
+  font-size: 0.98rem;
+  letter-spacing: 0.015em;
+  color: var(--green);
+  text-align: center;
+}
+.openbar__inner::before,
+.openbar__inner::after {
+  content: "";
+  flex: 0 1 4.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green-soft));
+}
+.openbar__inner::after {
+  background: linear-gradient(90deg, var(--green-soft), transparent);
+}
+@media (max-width: 26rem) {
+  .openbar__inner::before, .openbar__inner::after { flex-basis: 1.5rem; }
+}
 
 /* ---------- main column ---------- */
 main { padding: clamp(2.5rem, 7vw, 4.5rem) 0 1rem; }
@@ -183,8 +235,6 @@ h2 {
 h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; }
 
 .lead { color: var(--text-dim); }
-.accent-gold { color: var(--gold); }
-.accent-green { color: var(--green); }
 
 /* ---------- intro ---------- */
 .intro { padding-top: 0; }
@@ -211,44 +261,18 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
 .intro__role .sep { color: var(--text-faint); margin: 0 0.45rem; }
 .portrait {
   flex: 0 0 auto;
-  width: clamp(72px, 18vw, 104px);
-  height: clamp(72px, 18vw, 104px);
-  border-radius: 12px;
+  width: clamp(104px, 30vw, 168px);
+  aspect-ratio: 4 / 5;
+  height: auto;
+  border-radius: 14px;
   object-fit: cover;
+  object-position: center 28%;
   border: 1px solid var(--border-strong);
   filter: saturate(0.96);
 }
 .intro__body { font-size: 1.08rem; }
 .intro__body p { color: var(--text); }
 .intro__body .lead { color: var(--text-dim); }
-
-/* status pill */
-.status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.02em;
-  color: var(--text-dim);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.32rem 0.8rem;
-  margin-top: 1.4rem;
-}
-.status__dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 0 0 rgba(95, 168, 119, 0.5);
-}
-@media (prefers-reduced-motion: no-preference) {
-  .status__dot { animation: pulse 2.6s ease-out infinite; }
-  @keyframes pulse {
-    0%   { box-shadow: 0 0 0 0 rgba(95, 168, 119, 0.45); }
-    70%  { box-shadow: 0 0 0 6px rgba(95, 168, 119, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(95, 168, 119, 0); }
-  }
-}
 
 /* ---------- experience / work ---------- */
 .entry { padding: 1.15rem 0; }
@@ -271,7 +295,6 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
 }
 .entry__title { margin-top: 0.5rem; }
 .entry__desc { color: var(--text-dim); margin-top: 0.5rem; font-size: 0.97rem; }
-.entry__desc a { color: var(--gold); }
 
 /* ---------- projects ---------- */
 .project { padding: 1.15rem 0; }
@@ -330,7 +353,10 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
 }
 .tag:hover { border-color: var(--border-strong); color: var(--text); }
 .tag--link { color: var(--gold); border-color: var(--border-strong); }
-.tag--link:hover { color: var(--green); border-color: var(--green-soft); text-decoration: none; }
+.tag--link:hover { color: var(--gold); border-color: var(--gold-soft); text-decoration: none; }
+/* reference tags match the .ref register: green, never gold */
+.tag--ref { color: var(--green); border-color: rgba(95, 168, 119, 0.28); }
+.tag--ref:hover { color: var(--green); border-color: var(--green-soft); text-decoration: none; }
 
 /* ---------- contact ---------- */
 .contact__lead { color: var(--text-dim); margin-bottom: 1.5rem; }
@@ -538,6 +564,11 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
 }
 @media (prefers-reduced-motion: no-preference) {
   .np.is-playing .np__dot { animation: pulse 2.6s ease-out infinite; }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(95, 168, 119, 0.45); }
+    70%  { box-shadow: 0 0 0 6px rgba(95, 168, 119, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(95, 168, 119, 0); }
+  }
 }
 .np__title {
   font-size: clamp(1.25rem, 1.05rem + 1vw, 1.6rem);
@@ -757,7 +788,7 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
   .nav a:first-child { margin-left: 0; }
 }
 @media (max-width: 33rem) {
-  .portrait { width: 64px; height: 64px; }
+  .portrait { width: clamp(88px, 26vw, 112px); }
   .tk__row { grid-template-columns: 1fr; gap: 0.2rem; }
   .tk__label { padding-top: 0; }
   .link-row { flex-direction: column; gap: 0.15rem; }

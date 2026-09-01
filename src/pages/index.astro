@@ -7,11 +7,20 @@ const email = "nelsonjeanrenaud@gmail.com";
 const github = "https://github.com/nelson-jnrnd";
 const linkedin = "https://www.linkedin.com/in/nelson-jeanrenaud-b32374222";
 const cv = "/cv/nelson-jeanrenaud-cv.pdf";
+
+/* Reference links (Wikipedia) all share one look — see `.ref` in global.css.
+   Links that point at something I made or run stay gold. */
+const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
 ---
 
 <BaseLayout>
   <SiteHeader />
   <span id="top"></span>
+
+  <!-- ───────────── Availability banner ───────────── -->
+  <aside class="openbar" aria-label="Availability">
+    <p class="openbar__inner wrap">Open to work</p>
+  </aside>
 
   <main class="wrap">
     <!-- ───────────────── Intro ───────────────── -->
@@ -20,32 +29,29 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
         <div class="intro__id">
           <h1>Nelson Jeanrenaud</h1>
           <p class="intro__role">
-            software engineer <span class="sep">·</span> switzerland
+            <a class="ref" href={w("Software_engineering")} target="_blank" rel="noopener noreferrer">software engineer</a>
+            <span class="sep">·</span>
+            <a class="ref" href={w("Switzerland")} target="_blank" rel="noopener noreferrer">switzerland</a>
           </p>
         </div>
         <img
           class="portrait"
           src="/images/portrait.jpg"
           alt="Nelson Jeanrenaud"
-          width="104"
-          height="104"
+          width="320"
+          height="400"
           loading="eager"
         />
       </div>
 
       <div class="intro__body">
         <p>
-          I sit in front of a screen and read code. I used to write it; now I talk with
-          people and LLMs.
+          I sit in front of a screen, read code and talk with robots.
         </p>
         <p class="lead">
-          I still like systems that are useful and don't make the maintainer (usually future me)
+          I like systems that are useful and don't make the maintainer (usually future me)
           miserable.
         </p>
-        <span class="status">
-          <span class="status__dot" aria-hidden="true"></span>
-          Open to work
-        </span>
       </div>
     </section>
 
@@ -63,7 +69,10 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
         <p class="entry__desc">
           Right now I'm the software architect and full-stack dev on an agricultural automation
           R&amp;D project at HEIG-VD's Institute of Industrial Automation. The stack:
-          <span class="accent-green">C# → ASP.NET Core → Blazor + WPF</span>.
+          <a class="ref" href={w("C_Sharp_(programming_language)")} target="_blank" rel="noopener noreferrer">C#</a> →
+          <a class="ref" href={w("ASP.NET_Core")} target="_blank" rel="noopener noreferrer">ASP.NET Core</a> →
+          <a class="ref" href={w("Blazor")} target="_blank" rel="noopener noreferrer">Blazor</a> +
+          <a class="ref" href={w("Windows_Presentation_Foundation")} target="_blank" rel="noopener noreferrer">WPF</a>.
         </p>
       </div>
 
@@ -88,7 +97,9 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
         </div>
         <h3 class="entry__title">Software developer</h3>
         <p class="entry__desc">
-          Maintained and extended CARI, a large <span class="accent-green">Java</span> application used by Swiss road traffic offices.
+          Maintained and extended CARI, a large
+          <a class="ref" href={w("Java_(programming_language)")} target="_blank" rel="noopener noreferrer">Java</a>
+          application used by Swiss road traffic offices.
           Mostly legacy code and the steady work of debugging, reviewing, refactoring, and improving
           things one PR at a time.
         </p>
@@ -102,10 +113,13 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
         <h3 class="entry__title">Teaching assistant</h3>
         <p class="entry__desc">
           Assisted both the OOP and Cloud Computing bachelor courses, helping students with
-          object-oriented modelling (<span class="accent-green">Java</span>) and cloud topics
-          (<span class="accent-green">AWS</span>/<span class="accent-green">GCP</span>,
-          <span class="accent-green">Docker</span>, <span class="accent-green">Kubernetes</span>,
-          <span class="accent-green">Terraform</span> and <span class="accent-green">Ansible</span>).
+          object-oriented modelling
+          (<a class="ref" href={w("Java_(programming_language)")} target="_blank" rel="noopener noreferrer">Java</a>) and cloud topics
+          (<a class="ref" href={w("Amazon_Web_Services")} target="_blank" rel="noopener noreferrer">AWS</a>/<a class="ref" href={w("Google_Cloud_Platform")} target="_blank" rel="noopener noreferrer">GCP</a>,
+          <a class="ref" href={w("Docker_(software)")} target="_blank" rel="noopener noreferrer">Docker</a>,
+          <a class="ref" href={w("Kubernetes")} target="_blank" rel="noopener noreferrer">Kubernetes</a>,
+          <a class="ref" href={w("Terraform_(software)")} target="_blank" rel="noopener noreferrer">Terraform</a> and
+          <a class="ref" href={w("Ansible_(software)")} target="_blank" rel="noopener noreferrer">Ansible</a>).
         </p>
       </div>
     </section>
@@ -117,15 +131,15 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
 
       <div class="project">
         <div class="project__head">
-          <h3>Formula 1 data analysis</h3>
-          <span class="project__meta"><span class="accent-green">Python</span> · 2021 – 2024</span>
+          <h3><a class="ref" href={w("Formula_One")} target="_blank" rel="noopener noreferrer">Formula 1</a> data analysis</h3>
+          <span class="project__meta"><a class="ref" href={w("Python_(programming_language)")} target="_blank" rel="noopener noreferrer">Python</a> · 2021 – 2024</span>
         </div>
         <p class="project__desc">
           Ran a blog where, each race weekend, I dove deep into the available data to find the how and
           why behind particular results, and to follow the improvements made to the cars across the
           season. For that I built tooling for telemetry and session analysis in
-          <span class="accent-green">Python</span>, pulling race data and generating performance
-          reports and charts.
+          <a class="ref" href={w("Python_(programming_language)")} target="_blank" rel="noopener noreferrer">Python</a>,
+          pulling race data and generating performance reports and charts.
         </p>
       </div>
 
@@ -135,10 +149,15 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
           <span class="project__meta">B.Sc. thesis · 2023</span>
         </div>
         <p class="project__desc">
-          Machine learning for the call to pit in Formula 1: gathering and preparing data, then
-          exploring models (<span class="accent-green">RF/NN/RNN</span>) to capture the relationship
+          <a class="ref" href={w("Machine_learning")} target="_blank" rel="noopener noreferrer">Machine learning</a>
+          for the call to pit in
+          <a class="ref" href={w("Formula_One")} target="_blank" rel="noopener noreferrer">Formula 1</a>:
+          gathering and preparing data, then
+          exploring models (<a class="ref" href={w("Random_forest")} target="_blank" rel="noopener noreferrer">RF</a>/<a class="ref" href={w("Artificial_neural_network")} target="_blank" rel="noopener noreferrer">NN</a>/<a class="ref" href={w("Recurrent_neural_network")} target="_blank" rel="noopener noreferrer">RNN</a>)
+          to capture the relationship
           between race strategy and situation data, with a focus on explainability
-          (<span class="accent-green">XAI</span>), digging into why the model says what it says.
+          (<a class="ref" href={w("Explainable_artificial_intelligence")} target="_blank" rel="noopener noreferrer">XAI</a>),
+          digging into why the model says what it says.
           Graded 5.6/6.
         </p>
       </div>
@@ -151,19 +170,45 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
       <div class="tk">
         <div class="tk__row">
           <span class="tk__label">Languages</span>
-          <span class="tk__items">C#, Java, Python, SQL, JavaScript</span>
+          <span class="tk__items">
+            <a class="ref" href={w("C_Sharp_(programming_language)")} target="_blank" rel="noopener noreferrer">C#</a>,
+            <a class="ref" href={w("Java_(programming_language)")} target="_blank" rel="noopener noreferrer">Java</a>,
+            <a class="ref" href={w("Python_(programming_language)")} target="_blank" rel="noopener noreferrer">Python</a>,
+            <a class="ref" href={w("SQL")} target="_blank" rel="noopener noreferrer">SQL</a>,
+            <a class="ref" href={w("JavaScript")} target="_blank" rel="noopener noreferrer">JavaScript</a>
+          </span>
         </div>
         <div class="tk__row">
           <span class="tk__label">Frameworks</span>
-          <span class="tk__items">ASP.NET Core, Blazor, WPF, AngularJS, Spring</span>
+          <span class="tk__items">
+            <a class="ref" href={w("ASP.NET_Core")} target="_blank" rel="noopener noreferrer">ASP.NET Core</a>,
+            <a class="ref" href={w("Blazor")} target="_blank" rel="noopener noreferrer">Blazor</a>,
+            <a class="ref" href={w("Windows_Presentation_Foundation")} target="_blank" rel="noopener noreferrer">WPF</a>,
+            <a class="ref" href={w("AngularJS")} target="_blank" rel="noopener noreferrer">AngularJS</a>,
+            <a class="ref" href={w("Spring_Framework")} target="_blank" rel="noopener noreferrer">Spring</a>
+          </span>
         </div>
         <div class="tk__row">
           <span class="tk__label">Infrastructure</span>
-          <span class="tk__items">Git, Docker, Kubernetes, GCP, AWS, Terraform, Ansible, CI/CD</span>
+          <span class="tk__items">
+            <a class="ref" href={w("Git")} target="_blank" rel="noopener noreferrer">Git</a>,
+            <a class="ref" href={w("Docker_(software)")} target="_blank" rel="noopener noreferrer">Docker</a>,
+            <a class="ref" href={w("Kubernetes")} target="_blank" rel="noopener noreferrer">Kubernetes</a>,
+            <a class="ref" href={w("Google_Cloud_Platform")} target="_blank" rel="noopener noreferrer">GCP</a>,
+            <a class="ref" href={w("Amazon_Web_Services")} target="_blank" rel="noopener noreferrer">AWS</a>,
+            <a class="ref" href={w("Terraform_(software)")} target="_blank" rel="noopener noreferrer">Terraform</a>,
+            <a class="ref" href={w("Ansible_(software)")} target="_blank" rel="noopener noreferrer">Ansible</a>,
+            <a class="ref" href={w("CI/CD")} target="_blank" rel="noopener noreferrer">CI/CD</a>
+          </span>
         </div>
         <div class="tk__row">
           <span class="tk__label">Data</span>
-          <span class="tk__items">Pandas, NumPy, scikit-learn, TensorFlow</span>
+          <span class="tk__items">
+            <a class="ref" href={w("Pandas_(software)")} target="_blank" rel="noopener noreferrer">Pandas</a>,
+            <a class="ref" href={w("NumPy")} target="_blank" rel="noopener noreferrer">NumPy</a>,
+            <a class="ref" href={w("Scikit-learn")} target="_blank" rel="noopener noreferrer">scikit-learn</a>,
+            <a class="ref" href={w("TensorFlow")} target="_blank" rel="noopener noreferrer">TensorFlow</a>
+          </span>
         </div>
       </div>
     </section>
@@ -176,14 +221,14 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
         Usually hanging out in the sun, playing tennis, watching racecars, and listening to music.
       </p>
       <div class="tags" aria-label="Interests">
-        <span class="tag">Motorsport</span>
-        <span class="tag">Tennis</span>
-        <span class="tag">Board games</span>
-        <span class="tag">Magic: The Gathering</span>
-        <span class="tag">Dungeons &amp; Dragons</span>
+        <a class="tag tag--ref" href={w("Motorsport")} target="_blank" rel="noopener noreferrer">Motorsport</a>
+        <a class="tag tag--ref" href={w("Tennis")} target="_blank" rel="noopener noreferrer">Tennis</a>
+        <a class="tag tag--ref" href={w("Board_game")} target="_blank" rel="noopener noreferrer">Board games</a>
+        <a class="tag tag--ref" href={w("Magic:_The_Gathering")} target="_blank" rel="noopener noreferrer">Magic: The Gathering</a>
+        <a class="tag tag--ref" href={w("Dungeons_%26_Dragons")} target="_blank" rel="noopener noreferrer">Dungeons &amp; Dragons</a>
         <a class="tag tag--link" href="https://paleomap.nelson-j.ch/">Dinosaurs ↗</a>
         <a class="tag tag--link" href="/music">Music ↗</a>
-        <span class="tag">Dogs</span>
+        <a class="tag tag--ref" href={w("Dog")} target="_blank" rel="noopener noreferrer">Dogs</a>
       </div>
     </section>
 
