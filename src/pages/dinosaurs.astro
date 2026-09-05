@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import { Image } from "astro:assets";
+import mapShot from "../images/dinosaurs/exploration-map.png";
+import findShot from "../images/dinosaurs/occurrence-panel.png";
+import treeShot from "../images/dinosaurs/taxonomy-browser.png";
+import puzzleShot from "../images/dinosaurs/dinordle-puzzle.png";
+
+const appUrl = "https://paleomap.nelson-j.ch/";
+---
+
+<BaseLayout
+  title="Dinosaurs · Nelson Jeanrenaud"
+  description="A personal project: a map that shows where and when dinosaur fossils have actually been found, from about 250 million years ago to the end of the age of dinosaurs."
+>
+  <SiteHeader />
+  <span id="top"></span>
+
+  <main class="wrap dino">
+    <!-- ───────────────── Head ───────────────── -->
+    <section class="section dino__head" aria-label="Dinosaurs">
+      <p class="kicker">Side project</p>
+      <h1 class="dino__title">A map of the dinosaurs</h1>
+      <p class="lead dino__tagline">
+        Where — and when — dinosaur fossils have actually been dug up, across
+        the roughly 180 million years dinosaurs walked the Earth.
+      </p>
+    </section>
+
+    <!-- ───────────────── Hero screenshot ───────────────── -->
+    <section class="section dino__hero" aria-label="A look at the map">
+      <Image
+        src={mapShot}
+        alt="The map screen: an old world map with colourful dots marking dinosaur fossil discoveries, and a timeline slider running along the top."
+        width={1400}
+        loading="eager"
+      />
+      <p class="dino__caption">
+        Slide through time and the map redraws the continents to match — this
+        view is set to roughly 72 million years ago, not long before the
+        asteroid.
+      </p>
+    </section>
+
+    <!-- ───────────────── Story ───────────────── -->
+    <section class="section dino__body">
+      <p>
+        A while back I got curious about dinosaurs again — properly curious,
+        not just "big lizard, roar." I wanted to know where they actually
+        lived, and that turned out to be a surprisingly tricky question,
+        because the continents themselves were in completely different places
+        back then. The land was still drifting apart while dinosaurs were
+        around, so a present-day map is the wrong map to use.
+      </p>
+      <p>
+        So, as a hobby project, I built one that isn't. It's a map that
+        redraws the continents the way scientists believe they looked at any
+        point from about 250 million years ago up to the asteroid impact that
+        ended the dinosaurs' reign, with real fossil discoveries plotted on
+        top. Drag a slider and two things move together: the shape of the
+        land, and the dots marking where dinosaurs have actually been found.
+      </p>
+      <p>
+        I tried to build it to be honest rather than flashy. A dot marks a
+        place a fossil was dug up — not a guess at everywhere that animal
+        might have roamed, which is a different thing and easy to blur
+        together without meaning to. And when something isn't known for sure,
+        the map says so instead of quietly papering over the gap.
+      </p>
+    </section>
+
+    <!-- ───────────────── Gallery ───────────────── -->
+    <section class="section dino__gallery" aria-label="More of the project">
+      <p class="kicker">A closer look</p>
+      <div class="dino__grid">
+        <figure class="dino__item">
+          <Image
+            src={findShot}
+            alt="A detail card open for a single fossil discovery, showing what it is, roughly when it lived, and where the information came from."
+            width={900}
+          />
+          <figcaption>
+            Click any dot to see what it is, roughly when it lived, and where
+            that information comes from.
+          </figcaption>
+        </figure>
+        <figure class="dino__item">
+          <Image
+            src={treeShot}
+            alt="A browsable dinosaur family tree, from broad groups down to individual species."
+            width={900}
+          />
+          <figcaption>
+            A family tree you can browse — from big groups like "armoured
+            dinosaurs" down to individual species.
+          </figcaption>
+        </figure>
+        <figure class="dino__item">
+          <Image
+            src={puzzleShot}
+            alt="A daily dinosaur-guessing puzzle called Dinordle, styled after the word game Wordle."
+            width={900}
+          />
+          <figcaption>
+            There's also a daily guessing game, Dinordle — like Wordle, but
+            each guess narrows down a dinosaur instead of a word.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ───────────────── CTA ───────────────── -->
+    <section class="section dino__cta">
+      <a class="dino__link" href={appUrl} target="_blank" rel="noopener noreferrer">
+        Explore the map ↗
+      </a>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
