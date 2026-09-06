@@ -52,9 +52,8 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
               <span class="dino__zoom-hint" aria-hidden="true">⤢</span>
             </button>
             <figcaption class="dino__caption">
-              Slide through time and the map redraws the continents to
-              match. This one's set to about 72 million years ago, not long
-              before the asteroid.
+              Set to about 72 million years ago here, not long before the
+              asteroid.
             </figcaption>
           </figure>
           <figure class="dino__slide">
@@ -118,25 +117,16 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
     <!-- ───────────────── Story ───────────────── -->
     <section class="section dino__body">
       <p>
-        I got curious about dinosaurs again a while back and wanted to know
-        where they actually lived. Turns out that's a hard question, because
-        the continents were in completely different places back then. They
-        were still drifting apart while dinosaurs were around, so a
-        present-day map is the wrong map.
+        I built a map that plots dinosaur fossil finds across deep time. Drag
+        the timeline through the Triassic, Jurassic and Cretaceous, about 252
+        to 66 million years ago, and the continents redraw to their
+        reconstructed positions for that age, with the fossils known from
+        that period shown on top.
       </p>
       <p>
-        So I built one, as a hobby project. It redraws the continents the way
-        scientists think they looked at any point from about 250 million
-        years ago up to the asteroid impact, with real fossil discoveries
-        plotted on top. Drag the slider and both move together: the shape of
-        the land, and the dots showing where dinosaurs have actually been
-        found.
-      </p>
-      <p>
-        A dot marks a place a fossil was actually dug up, not a guess at
-        everywhere that animal might have roamed. Those are different things
-        and easy to mix up. When something isn't known for sure, the map says
-        so instead of hiding it.
+        Each dot marks a place a fossil was dug up, not a guess at where the
+        animal roamed. Anything reconstructed or uncertain gets labelled as
+        such.
       </p>
     </section>
 
