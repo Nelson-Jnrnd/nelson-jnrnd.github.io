@@ -812,12 +812,44 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
   scroll-snap-stop: always;
   margin: 0;
 }
-.dino__slide :global(img) {
+.dino__slide img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 10px;
   border: 1px solid var(--border-strong);
+}
+.dino__zoom {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  border-radius: 10px;
+}
+.dino__zoom:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+.dino__zoom-hint {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--bg) 65%, transparent);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1;
+  pointer-events: none;
 }
 .dino__caption {
   margin-top: 0.75rem;
@@ -891,6 +923,51 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
 }
 .dino__link:hover { background: var(--gold-soft); color: var(--bg); text-decoration: none; }
 .dino__link:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+
+/* ---------- lightbox (full-size screenshot) ---------- */
+.dino__lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.25rem, 6vw, 3.5rem);
+  background: rgba(10, 10, 9, 0.92);
+  backdrop-filter: blur(6px);
+}
+.dino__lightbox[hidden] { display: none; }
+.dino__lightbox-img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+.dino__lightbox-close {
+  position: fixed;
+  top: clamp(0.75rem, 3vw, 1.5rem);
+  right: clamp(0.75rem, 3vw, 1.5rem);
+  appearance: none;
+  -webkit-appearance: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-soft);
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.dino__lightbox-close:hover { border-color: var(--gold-soft); color: var(--gold); }
+.dino__lightbox-close:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
 
 /* ---------- 404 ---------- */
 .notfound { padding: clamp(3rem, 12vw, 6rem) 0; }
