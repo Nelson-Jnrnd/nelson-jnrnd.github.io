@@ -49,8 +49,11 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
           I sit in front of a screen, read code and talk with robots.
         </p>
         <p class="lead">
-          I like systems that are useful and don't make the maintainer (usually future me)
-          miserable.
+          I like systems that are useful and don't make the maintainer miserable.
+        </p>
+        <p>
+          Looking for a software engineer / full-stack role in Switzerland — .NET, industrial
+          automation or applied AI.
         </p>
       </div>
     </section>
@@ -67,8 +70,12 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
         </div>
         <h3 class="entry__title">Software architect &amp; full-stack developer</h3>
         <p class="entry__desc">
-          Right now I'm the software architect and full-stack dev on an agricultural automation
-          R&amp;D project at HEIG-VD's Institute of Industrial Automation. The stack:
+          Architecting and building, in collaboration with
+          <a class="ref" href="https://www.innosuisse.ch/" target="_blank" rel="noopener noreferrer">Innosuisse</a>,
+          the control software for an AI-optimized hydroponic lettuce installation at HEIG-VD's
+          Institute of Industrial Automation — together with a digital twin that runs thousands of
+          machine cycles in a virtual environment to test and validate behaviour before it ever
+          touches the real hardware. The stack:
           <a class="ref" href={w("C_Sharp_(programming_language)")} target="_blank" rel="noopener noreferrer">C#</a> →
           <a class="ref" href={w("ASP.NET_Core")} target="_blank" rel="noopener noreferrer">ASP.NET Core</a> →
           <a class="ref" href={w("Blazor")} target="_blank" rel="noopener noreferrer">Blazor</a> +
@@ -76,7 +83,42 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
         </p>
       </div>
 
-      <h2 style="margin-top: 2.5rem;">Where I've been useful</h2>
+      <h2 style="margin-top: 2.5rem;">My past experiences</h2>
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__org"><span class="at">Abraxas Informatik AG</span> · Morges</span>
+          <span class="entry__date">Aug 2023 – Oct 2024</span>
+        </div>
+        <h3 class="entry__title">Software developer</h3>
+        <p class="entry__desc">
+          Maintained and extended CARI, a large
+          <a class="ref" href={w("Java_(programming_language)")} target="_blank" rel="noopener noreferrer">Java</a>
+          application used by Swiss road traffic offices (bureau des autos).
+          Mostly legacy code: debugging, reviewing, and refactoring a long-lived codebase without
+          breaking what already works.
+        </p>
+      </div>
+
+      <div class="entry">
+        <div class="entry__head">
+          <span class="entry__org"><span class="at">HEIG-VD</span> · Institute of Information &amp; Communication Technology · Yverdon-les-Bains</span>
+          <span class="entry__date">Aug 2023 – Oct 2024</span>
+        </div>
+        <h3 class="entry__title">Assistant to Prof. <a class="ref" href="https://people.hes-so.ch/fr/profile/2002425133-marcel-graf" target="_blank" rel="noopener noreferrer">Marcel Graf</a></h3>
+        <p class="entry__desc">
+          Assisted both the
+          <a class="ref" href={w("Object-oriented_programming")} target="_blank" rel="noopener noreferrer">OOP (object-oriented programming)</a>
+          and Cloud Computing bachelor courses, helping students with object-oriented modelling —
+          structuring code as objects that bundle data and behaviour — in
+          <a class="ref" href={w("Java_(programming_language)")} target="_blank" rel="noopener noreferrer">Java</a>, and cloud topics
+          (<a class="ref" href={w("Amazon_Web_Services")} target="_blank" rel="noopener noreferrer">AWS</a>/<a class="ref" href={w("Google_Cloud_Platform")} target="_blank" rel="noopener noreferrer">GCP</a>,
+          <a class="ref" href={w("Docker_(software)")} target="_blank" rel="noopener noreferrer">Docker</a>,
+          <a class="ref" href={w("Kubernetes")} target="_blank" rel="noopener noreferrer">Kubernetes</a>,
+          <a class="ref" href={w("Terraform_(software)")} target="_blank" rel="noopener noreferrer">Terraform</a> and
+          <a class="ref" href={w("Ansible_(software)")} target="_blank" rel="noopener noreferrer">Ansible</a>).
+        </p>
+      </div>
 
       <div class="entry">
         <div class="entry__head">
@@ -89,37 +131,22 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
           equipment.
         </p>
       </div>
+    </section>
+
+    <!-- ───────────────── Education ───────────────── -->
+    <section class="section" id="education" aria-label="Education">
+      <p class="kicker">Education</p>
+      <h2>Where I studied</h2>
 
       <div class="entry">
         <div class="entry__head">
-          <span class="entry__org"><span class="at">Abraxas Informatik AG</span> · Morges</span>
-          <span class="entry__date">Aug 2023 – Oct 2024</span>
+          <span class="entry__org"><span class="at">HEIG-VD</span> · Yverdon-les-Bains</span>
+          <span class="entry__date">Class of 2023</span>
         </div>
-        <h3 class="entry__title">Software developer</h3>
+        <h3 class="entry__title">Bachelor of Science in Computer Science</h3>
         <p class="entry__desc">
-          Maintained and extended CARI, a large
-          <a class="ref" href={w("Java_(programming_language)")} target="_blank" rel="noopener noreferrer">Java</a>
-          application used by Swiss road traffic offices.
-          Mostly legacy code and the steady work of debugging, reviewing, refactoring, and improving
-          things one PR at a time.
-        </p>
-      </div>
-
-      <div class="entry">
-        <div class="entry__head">
-          <span class="entry__org"><span class="at">HEIG-VD</span> · Institute of Information &amp; Communication Technology · Yverdon-les-Bains</span>
-          <span class="entry__date">Aug 2023 – Oct 2024</span>
-        </div>
-        <h3 class="entry__title">Teaching assistant</h3>
-        <p class="entry__desc">
-          Assisted both the OOP and Cloud Computing bachelor courses, helping students with
-          object-oriented modelling
-          (<a class="ref" href={w("Java_(programming_language)")} target="_blank" rel="noopener noreferrer">Java</a>) and cloud topics
-          (<a class="ref" href={w("Amazon_Web_Services")} target="_blank" rel="noopener noreferrer">AWS</a>/<a class="ref" href={w("Google_Cloud_Platform")} target="_blank" rel="noopener noreferrer">GCP</a>,
-          <a class="ref" href={w("Docker_(software)")} target="_blank" rel="noopener noreferrer">Docker</a>,
-          <a class="ref" href={w("Kubernetes")} target="_blank" rel="noopener noreferrer">Kubernetes</a>,
-          <a class="ref" href={w("Terraform_(software)")} target="_blank" rel="noopener noreferrer">Terraform</a> and
-          <a class="ref" href={w("Ansible_(software)")} target="_blank" rel="noopener noreferrer">Ansible</a>).
+          Bachelor's degree, capped with a thesis on machine learning for pit-stop decision
+          modelling in <a class="ref" href={w("Formula_One")} target="_blank" rel="noopener noreferrer">Formula 1</a> (see Projects).
         </p>
       </div>
     </section>
@@ -166,7 +193,7 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
     <!-- ───────────────── Toolkit ───────────────── -->
     <section class="section" id="toolkit" aria-label="Toolkit">
       <p class="kicker">Tools</p>
-      <h2>How I build without making future me hate me</h2>
+      <h2>How I build software</h2>
       <div class="tk">
         <div class="tk__row">
           <span class="tk__label">Languages</span>
