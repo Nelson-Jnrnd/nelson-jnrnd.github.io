@@ -21,7 +21,7 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
 
 <BaseLayout
   title="Dinosaurs · Nelson Jeanrenaud"
-  description="A personal project: a map that shows where and when dinosaur fossils have actually been found, from about 250 million years ago to the end of the age of dinosaurs."
+  description="A personal project: a map showing where and when dinosaur fossils have actually been found, from about 250 million years ago to the end of the age of dinosaurs."
 >
   <SiteHeader />
   <span id="top"></span>
@@ -32,8 +32,8 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
       <p class="kicker">Side project</p>
       <h1 class="dino__title">A map of the dinosaurs</h1>
       <p class="lead dino__tagline">
-        Where — and when — dinosaur fossils have actually been dug up, across
-        the roughly 180 million years dinosaurs walked the Earth.
+        Where and when dinosaur fossils have actually been dug up, across the
+        roughly 180 million years dinosaurs walked the Earth.
       </p>
     </section>
 
@@ -53,8 +53,8 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
             </button>
             <figcaption class="dino__caption">
               Slide through time and the map redraws the continents to
-              match — this view is set to roughly 72 million years ago, not
-              long before the asteroid.
+              match. This one's set to about 72 million years ago, not long
+              before the asteroid.
             </figcaption>
           </figure>
           <figure class="dino__slide">
@@ -81,8 +81,8 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
               <span class="dino__zoom-hint" aria-hidden="true">⤢</span>
             </button>
             <figcaption class="dino__caption">
-              A family tree you can browse — from big groups like "armoured
-              dinosaurs" down to individual species.
+              A family tree you can browse, from big groups like armoured
+              dinosaurs down to individual species.
             </figcaption>
           </figure>
           <figure class="dino__slide">
@@ -95,8 +95,9 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
               <span class="dino__zoom-hint" aria-hidden="true">⤢</span>
             </button>
             <figcaption class="dino__caption">
-              There's also a daily guessing game, Dinordle — like Wordle,
-              but each guess narrows down a dinosaur instead of a word.
+              There's also a daily guessing game called Dinordle. Like
+              Wordle, but each guess narrows down a dinosaur instead of a
+              word.
             </figcaption>
           </figure>
         </div>
@@ -117,27 +118,25 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
     <!-- ───────────────── Story ───────────────── -->
     <section class="section dino__body">
       <p>
-        A while back I got curious about dinosaurs again — properly curious,
-        not just "big lizard, roar." I wanted to know where they actually
-        lived, and that turned out to be a surprisingly tricky question,
-        because the continents themselves were in completely different places
-        back then. The land was still drifting apart while dinosaurs were
-        around, so a present-day map is the wrong map to use.
+        I got curious about dinosaurs again a while back and wanted to know
+        where they actually lived. Turns out that's a hard question, because
+        the continents were in completely different places back then. They
+        were still drifting apart while dinosaurs were around, so a
+        present-day map is the wrong map.
       </p>
       <p>
-        So, as a hobby project, I built one that isn't. It's a map that
-        redraws the continents the way scientists believe they looked at any
-        point from about 250 million years ago up to the asteroid impact that
-        ended the dinosaurs' reign, with real fossil discoveries plotted on
-        top. Drag a slider and two things move together: the shape of the
-        land, and the dots marking where dinosaurs have actually been found.
+        So I built one, as a hobby project. It redraws the continents the way
+        scientists think they looked at any point from about 250 million
+        years ago up to the asteroid impact, with real fossil discoveries
+        plotted on top. Drag the slider and both move together: the shape of
+        the land, and the dots showing where dinosaurs have actually been
+        found.
       </p>
       <p>
-        I tried to build it to be honest rather than flashy. A dot marks a
-        place a fossil was dug up — not a guess at everywhere that animal
-        might have roamed, which is a different thing and easy to blur
-        together without meaning to. And when something isn't known for sure,
-        the map says so instead of quietly papering over the gap.
+        A dot marks a place a fossil was actually dug up, not a guess at
+        everywhere that animal might have roamed. Those are different things
+        and easy to mix up. When something isn't known for sure, the map says
+        so instead of hiding it.
       </p>
     </section>
 
