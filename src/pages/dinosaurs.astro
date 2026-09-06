@@ -29,19 +29,69 @@ const appUrl = "https://paleomap.nelson-j.ch/";
       </p>
     </section>
 
-    <!-- ───────────────── Hero screenshot ───────────────── -->
-    <section class="section dino__hero" aria-label="A look at the map">
-      <Image
-        src={mapShot}
-        alt="The map screen: an old world map with colourful dots marking dinosaur fossil discoveries, and a timeline slider running along the top."
-        width={1400}
-        loading="eager"
-      />
-      <p class="dino__caption">
-        Slide through time and the map redraws the continents to match — this
-        view is set to roughly 72 million years ago, not long before the
-        asteroid.
-      </p>
+    <!-- ───────────────── Screenshots ───────────────── -->
+    <section class="section dino__carousel-section" aria-label="Screenshots of the app">
+      <div class="dino__carousel">
+        <div class="dino__track" id="dino-track" tabindex="0" aria-label="paleo-map screenshots, use the arrow keys to browse">
+          <figure class="dino__slide">
+            <Image
+              src={mapShot}
+              alt="The map screen: an old world map with colourful dots marking dinosaur fossil discoveries, and a timeline slider running along the top."
+              width={960}
+              loading="eager"
+            />
+            <figcaption class="dino__caption">
+              Slide through time and the map redraws the continents to
+              match — this view is set to roughly 72 million years ago, not
+              long before the asteroid.
+            </figcaption>
+          </figure>
+          <figure class="dino__slide">
+            <Image
+              src={findShot}
+              alt="A detail card open for a single fossil discovery, showing what it is, roughly when it lived, and where the information came from."
+              width={960}
+            />
+            <figcaption class="dino__caption">
+              Click any dot to see what it is, roughly when it lived, and
+              where that information comes from.
+            </figcaption>
+          </figure>
+          <figure class="dino__slide">
+            <Image
+              src={treeShot}
+              alt="A browsable dinosaur family tree, from broad groups down to individual species."
+              width={960}
+            />
+            <figcaption class="dino__caption">
+              A family tree you can browse — from big groups like "armoured
+              dinosaurs" down to individual species.
+            </figcaption>
+          </figure>
+          <figure class="dino__slide">
+            <Image
+              src={puzzleShot}
+              alt="A daily dinosaur-guessing puzzle called Dinordle, styled after the word game Wordle."
+              width={960}
+            />
+            <figcaption class="dino__caption">
+              There's also a daily guessing game, Dinordle — like Wordle,
+              but each guess narrows down a dinosaur instead of a word.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="dino__controls">
+          <button class="dino__nav dino__nav--prev" type="button" aria-label="Previous screenshot">‹ Prev</button>
+          <div class="dino__dots" role="tablist" aria-label="Choose a screenshot">
+            <button class="dino__dot" type="button" aria-current="true" aria-label="Screenshot 1 of 4"></button>
+            <button class="dino__dot" type="button" aria-current="false" aria-label="Screenshot 2 of 4"></button>
+            <button class="dino__dot" type="button" aria-current="false" aria-label="Screenshot 3 of 4"></button>
+            <button class="dino__dot" type="button" aria-current="false" aria-label="Screenshot 4 of 4"></button>
+          </div>
+          <button class="dino__nav dino__nav--next" type="button" aria-label="Next screenshot">Next ›</button>
+        </div>
+      </div>
     </section>
 
     <!-- ───────────────── Story ───────────────── -->
@@ -71,46 +121,6 @@ const appUrl = "https://paleomap.nelson-j.ch/";
       </p>
     </section>
 
-    <!-- ───────────────── Gallery ───────────────── -->
-    <section class="section dino__gallery" aria-label="More of the project">
-      <p class="kicker">A closer look</p>
-      <div class="dino__grid">
-        <figure class="dino__item">
-          <Image
-            src={findShot}
-            alt="A detail card open for a single fossil discovery, showing what it is, roughly when it lived, and where the information came from."
-            width={900}
-          />
-          <figcaption>
-            Click any dot to see what it is, roughly when it lived, and where
-            that information comes from.
-          </figcaption>
-        </figure>
-        <figure class="dino__item">
-          <Image
-            src={treeShot}
-            alt="A browsable dinosaur family tree, from broad groups down to individual species."
-            width={900}
-          />
-          <figcaption>
-            A family tree you can browse — from big groups like "armoured
-            dinosaurs" down to individual species.
-          </figcaption>
-        </figure>
-        <figure class="dino__item">
-          <Image
-            src={puzzleShot}
-            alt="A daily dinosaur-guessing puzzle called Dinordle, styled after the word game Wordle."
-            width={900}
-          />
-          <figcaption>
-            There's also a daily guessing game, Dinordle — like Wordle, but
-            each guess narrows down a dinosaur instead of a word.
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
     <!-- ───────────────── CTA ───────────────── -->
     <section class="section dino__cta">
       <a class="dino__link" href={appUrl} target="_blank" rel="noopener noreferrer">
@@ -121,3 +131,77 @@ const appUrl = "https://paleomap.nelson-j.ch/";
 
   <SiteFooter />
 </BaseLayout>
+
+<script>
+  // A single-image-at-a-time carousel for the screenshots: prev/next
+  // buttons and dots drive a native scroll-snap track, so it also just
+  // works with touch swipes and trackpad scrolling.
+  const track = document.getElementById("dino-track");
+  const carousel = track?.closest(".dino__carousel");
+  if (track && carousel) {
+    const slides = Array.from(track.children);
+    const dots = Array.from(carousel.querySelectorAll(".dino__dot"));
+    const prevBtn = carousel.querySelector(".dino__nav--prev");
+    const nextBtn = carousel.querySelector(".dino__nav--next");
+
+    const closestIndex = () => {
+      const trackLeft = track.getBoundingClientRect().left;
+      let closest = 0;
+      let smallestGap = Infinity;
+      slides.forEach((slide, i) => {
+        const gap = Math.abs(slide.getBoundingClientRect().left - trackLeft);
+        if (gap < smallestGap) {
+          smallestGap = gap;
+          closest = i;
+        }
+      });
+      return closest;
+    };
+
+    const goTo = (index) => {
+      const clamped = Math.max(0, Math.min(slides.length - 1, index));
+      slides[clamped].scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "start",
+      });
+    };
+
+    const sync = () => {
+      const active = closestIndex();
+      dots.forEach((dot, i) =>
+        dot.setAttribute("aria-current", String(i === active))
+      );
+      if (prevBtn instanceof HTMLButtonElement) prevBtn.disabled = active === 0;
+      if (nextBtn instanceof HTMLButtonElement)
+        nextBtn.disabled = active === slides.length - 1;
+    };
+
+    prevBtn?.addEventListener("click", () => goTo(closestIndex() - 1));
+    nextBtn?.addEventListener("click", () => goTo(closestIndex() + 1));
+    dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
+
+    track.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        goTo(closestIndex() + 1);
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        goTo(closestIndex() - 1);
+      }
+    });
+
+    let scrollTimer;
+    track.addEventListener(
+      "scroll",
+      () => {
+        clearTimeout(scrollTimer);
+        scrollTimer = window.setTimeout(sync, 100);
+      },
+      { passive: true }
+    );
+    window.addEventListener("resize", sync, { passive: true });
+
+    sync();
+  }
+</script>
