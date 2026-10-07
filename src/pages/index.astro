@@ -34,6 +34,21 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
             <a class="ref" href={w("Switzerland")} target="_blank" rel="noopener noreferrer">switzerland</a>
           </p>
         </div>
+      </div>
+
+      <div class="intro__body">
+        <div class="intro__copy">
+          <p class="intro__statement">
+            I design and build .NET software for industrial systems, from operator interfaces and PLC integration to digital twins.
+          </p>
+          <p class="intro__availability">
+            Looking for a .NET software engineering role in industrial automation in Switzerland.
+          </p>
+          <div class="intro__actions" aria-label="Explore my work">
+            <a href="#projects">View projects</a>
+            <a href={cv} download>Download CV (PDF)</a>
+          </div>
+        </div>
         <img
           class="portrait"
           src="/images/portrait.jpg"
@@ -42,19 +57,6 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
           height="800"
           loading="eager"
         />
-      </div>
-
-      <div class="intro__body">
-        <p class="intro__statement">
-          I design and build .NET software for industrial systems, from operator interfaces and PLC integration to digital twins.
-        </p>
-        <p class="intro__availability">
-          Looking for a .NET software engineering role in industrial automation in Switzerland.
-        </p>
-        <div class="intro__actions" aria-label="Explore my work">
-          <a href="#projects">View projects</a>
-          <a href={cv} download>Download CV (PDF)</a>
-        </div>
       </div>
     </section>
 

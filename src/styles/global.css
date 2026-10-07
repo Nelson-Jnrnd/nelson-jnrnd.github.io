@@ -238,12 +238,7 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
 
 /* ---------- intro ---------- */
 .intro { padding-top: 0; }
-.intro__top {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 1.75rem;
-}
+.intro__top { margin-bottom: 1.75rem; }
 .intro__id { flex: 1 1 auto; min-width: 0; }
 .intro h1 {
   font-size: clamp(1.8rem, 1.3rem + 2.4vw, 2.6rem);
@@ -261,7 +256,7 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
 .intro__role .sep { color: var(--text-faint); margin: 0 0.45rem; }
 .portrait {
   flex: 0 0 auto;
-  width: clamp(104px, 30vw, 168px);
+  width: 136px;
   aspect-ratio: 4 / 5;
   height: auto;
   border-radius: 14px;
@@ -269,19 +264,25 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
   border: 1px solid var(--border-strong);
   filter: saturate(0.96);
 }
+.intro__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 136px;
+  gap: 1.5rem;
+  align-items: start;
+}
 .intro__statement {
   color: var(--text);
-  font-size: clamp(1.15rem, 1.05rem + 0.35vw, 1.25rem);
-  font-weight: 500;
-  line-height: 1.55;
+  font-size: 1.08rem;
+  font-weight: 400;
+  line-height: 1.7;
   margin-bottom: 1.1rem;
 }
 .intro__availability {
   color: var(--text-dim);
-  font-family: var(--mono);
-  font-size: 0.9rem;
+  font-family: var(--sans);
+  font-size: 0.97rem;
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.7;
   margin-bottom: 1.4rem;
 }
 .intro__actions {
@@ -1013,7 +1014,8 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
   .nav a:first-child { margin-left: 0; }
 }
 @media (max-width: 33rem) {
-  .portrait { width: clamp(88px, 26vw, 112px); }
+  .intro__body { grid-template-columns: 1fr; gap: 1.25rem; }
+  .intro__body .portrait { grid-row: 1; width: 112px; }
   .tk__row { grid-template-columns: 1fr; gap: 0.2rem; }
   .tk__label { padding-top: 0; }
   .link-row { flex-direction: column; gap: 0.15rem; }
