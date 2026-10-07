@@ -190,50 +190,50 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
     </section>
 
     <!-- ───────────────── Toolkit ───────────────── -->
-    <section class="section" id="toolkit" aria-label="Toolkit">
+    <section class="section" id="toolkit" aria-labelledby="toolkit-title">
       <p class="kicker">Tools</p>
-      <h2>How I build software</h2>
+      <h2 id="toolkit-title">Technologies I work with</h2>
       <div class="tk">
         <div class="tk__row">
           <span class="tk__label">Languages</span>
           <span class="tk__items">
-            <a class="ref" href={w("C_Sharp_(programming_language)")} target="_blank" rel="noopener noreferrer">C#</a>,
-            <a class="ref" href={w("Java_(programming_language)")} target="_blank" rel="noopener noreferrer">Java</a>,
-            <a class="ref" href={w("Python_(programming_language)")} target="_blank" rel="noopener noreferrer">Python</a>,
-            <a class="ref" href={w("SQL")} target="_blank" rel="noopener noreferrer">SQL</a>,
-            <a class="ref" href={w("JavaScript")} target="_blank" rel="noopener noreferrer">JavaScript</a>
+            <strong class="tk__focus">C#</strong>,
+            Java,
+            Python,
+            SQL,
+            JavaScript
           </span>
         </div>
         <div class="tk__row">
           <span class="tk__label">Frameworks</span>
           <span class="tk__items">
-            <a class="ref" href={w("ASP.NET_Core")} target="_blank" rel="noopener noreferrer">ASP.NET Core</a>,
-            <a class="ref" href={w("Blazor")} target="_blank" rel="noopener noreferrer">Blazor</a>,
-            <a class="ref" href={w("Windows_Presentation_Foundation")} target="_blank" rel="noopener noreferrer">WPF</a>,
-            <a class="ref" href={w("AngularJS")} target="_blank" rel="noopener noreferrer">AngularJS</a>,
-            <a class="ref" href={w("Spring_Framework")} target="_blank" rel="noopener noreferrer">Spring</a>
+            <strong class="tk__focus">ASP.NET Core</strong>,
+            <strong class="tk__focus">Blazor</strong>,
+            <strong class="tk__focus">WPF</strong>,
+            AngularJS,
+            Spring
           </span>
         </div>
         <div class="tk__row">
           <span class="tk__label">Infrastructure</span>
           <span class="tk__items">
-            <a class="ref" href={w("Git")} target="_blank" rel="noopener noreferrer">Git</a>,
-            <a class="ref" href={w("Docker_(software)")} target="_blank" rel="noopener noreferrer">Docker</a>,
-            <a class="ref" href={w("Kubernetes")} target="_blank" rel="noopener noreferrer">Kubernetes</a>,
-            <a class="ref" href={w("Google_Cloud_Platform")} target="_blank" rel="noopener noreferrer">GCP</a>,
-            <a class="ref" href={w("Amazon_Web_Services")} target="_blank" rel="noopener noreferrer">AWS</a>,
-            <a class="ref" href={w("Terraform_(software)")} target="_blank" rel="noopener noreferrer">Terraform</a>,
-            <a class="ref" href={w("Ansible_(software)")} target="_blank" rel="noopener noreferrer">Ansible</a>,
-            <a class="ref" href={w("CI/CD")} target="_blank" rel="noopener noreferrer">CI/CD</a>
+            Git,
+            Docker,
+            Kubernetes,
+            GCP,
+            AWS,
+            Terraform,
+            Ansible,
+            CI/CD
           </span>
         </div>
         <div class="tk__row">
           <span class="tk__label">Data</span>
           <span class="tk__items">
-            <a class="ref" href={w("Pandas_(software)")} target="_blank" rel="noopener noreferrer">Pandas</a>,
-            <a class="ref" href={w("NumPy")} target="_blank" rel="noopener noreferrer">NumPy</a>,
-            <a class="ref" href={w("Scikit-learn")} target="_blank" rel="noopener noreferrer">scikit-learn</a>,
-            <a class="ref" href={w("TensorFlow")} target="_blank" rel="noopener noreferrer">TensorFlow</a>
+            Pandas,
+            NumPy,
+            scikit-learn,
+            TensorFlow
           </span>
         </div>
       </div>
