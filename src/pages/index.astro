@@ -2,6 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import { Image } from "astro:assets";
+import atlasShot from "../images/dinosaurs/exploration-map.png";
+import qualifyingDelta from "../images/projects/australia-2024-qualifying-delta.png";
+import "../styles/projects.css";
 
 const email = "nelsonjeanrenaud@gmail.com";
 const github = "https://github.com/nelson-jnrnd";
@@ -151,42 +155,77 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
     </section>
 
     <!-- ───────────────── Projects ───────────────── -->
-    <section class="section" id="projects" aria-label="Selected projects">
+    <section class="section" id="projects" aria-label="Personal and academic projects">
       <p class="kicker">Projects</p>
-      <h2>What I've built for myself</h2>
+      <h2>Personal and academic projects</h2>
 
-      <div class="project">
+      <article class="project">
         <div class="project__head">
-          <h3><a class="ref" href={w("Formula_One")} target="_blank" rel="noopener noreferrer">Formula 1</a> data analysis</h3>
-          <span class="project__meta"><a class="ref" href={w("Python_(programming_language)")} target="_blank" rel="noopener noreferrer">Python</a> · 2021 – 2024</span>
+          <h3><a href="/dinosaurs">Mesozoic Dinosaur Atlas</a></h3>
+          <span class="project__meta">Personal project</span>
         </div>
         <p class="project__desc">
-          Ran a blog where, each race weekend, I dove deep into the available data to find the how and
-          why behind particular results, and to follow the improvements made to the cars across the
-          season. For that I built tooling for telemetry and session analysis in
-          <a class="ref" href={w("Python_(programming_language)")} target="_blank" rel="noopener noreferrer">Python</a>,
-          pulling race data and generating performance reports and charts.
+          I built an interactive atlas that connects dinosaur fossil discoveries with a timeline
+          and reconstructed continents. Explore individual finds, browse the dinosaur family tree,
+          or play the daily Dinordle guessing game.
         </p>
-      </div>
+        <figure class="project__figure">
+          <a href="/dinosaurs" aria-label="See the Mesozoic Dinosaur Atlas project">
+            <Image src={atlasShot} alt="Dinosaur fossil discoveries plotted on reconstructed continents, with a timeline set to about 72 million years ago." width={960} loading="lazy" />
+          </a>
+          <figcaption>The atlas combines geographical and geological time exploration.</figcaption>
+        </figure>
+        <div class="project__actions">
+          <a href="/dinosaurs">See the project</a>
+          <a href="https://paleomap.nelson-j.ch/" target="_blank" rel="noopener noreferrer">Explore the live atlas</a>
+        </div>
+      </article>
 
-      <div class="project">
+      <article class="project" id="formula-one-analysis">
         <div class="project__head">
-          <h3>Pit-stop decision modelling</h3>
+          <h3><a href="/projects/formula-one-analysis">Formula 1 data analysis</a></h3>
+          <span class="project__meta">Python · 2021 – 2024</span>
+        </div>
+        <p class="project__desc">
+          I ran a race-analysis blog and built Python tooling to turn session and telemetry data
+          into performance charts and reports. One example compares Ocon and Gasly's qualifying
+          laps at the 2024 Australian Grand Prix to examine where their lap times diverged.
+        </p>
+        <figure class="project__figure">
+          <a href="/projects/formula-one-analysis" aria-label="Read the Australia 2024 qualifying analysis sample">
+            <Image src={qualifyingDelta} alt="Archived chart comparing the time difference between Ocon and Gasly over a qualifying lap at the 2024 Australian Grand Prix." width={960} loading="lazy" />
+          </a>
+          <figcaption>A representative chart from my March 2024 qualifying analysis.</figcaption>
+        </figure>
+        <div class="project__actions">
+          <a href="/projects/formula-one-analysis">Read an analysis sample</a>
+          <a href="https://github.com/Nelson-Jnrnd/F1_Telemetry_Charts" target="_blank" rel="noopener noreferrer">View telemetry tooling</a>
+        </div>
+      </article>
+
+      <article class="project" id="pit-stop-modelling">
+        <div class="project__head">
+          <h3><a href="/projects/pit-stop-modelling">Pit-stop decision modelling</a></h3>
           <span class="project__meta">B.Sc. thesis · 2023</span>
         </div>
         <p class="project__desc">
-          <a class="ref" href={w("Machine_learning")} target="_blank" rel="noopener noreferrer">Machine learning</a>
-          for the call to pit in
-          <a class="ref" href={w("Formula_One")} target="_blank" rel="noopener noreferrer">Formula 1</a>:
-          gathering and preparing data, then
-          exploring models (<a class="ref" href={w("Random_forest")} target="_blank" rel="noopener noreferrer">RF</a>/<a class="ref" href={w("Artificial_neural_network")} target="_blank" rel="noopener noreferrer">NN</a>/<a class="ref" href={w("Recurrent_neural_network")} target="_blank" rel="noopener noreferrer">RNN</a>)
-          to capture the relationship
-          between race strategy and situation data, with a focus on explainability
-          (<a class="ref" href={w("Explainable_artificial_intelligence")} target="_blank" rel="noopener noreferrer">XAI</a>),
-          digging into why the model says what it says.
-          Graded 5.6/6.
+          For my bachelor's thesis, I collected and prepared Formula 1 race data, then compared
+          random forests, neural networks and recurrent neural networks for predicting pit stops
+          and tyre choices. I examined what drove their predictions and the limitations of
+          learning from historical team decisions.
         </p>
-      </div>
+        <figure class="project__figure">
+          <a href="/projects/pit-stop-modelling" aria-label="Read the pit-stop decision modelling thesis summary">
+            <img src="/projects/pit-stop-probabilities-stroll-2023.svg" alt="Thesis chart showing lap-by-lap predicted pit-stop probabilities for Lance Stroll in Spain 2023, with actual pit stops marked by red vertical lines." width="1067" height="480" loading="lazy" />
+          </a>
+          <figcaption>Predicted pit-stop probabilities compared with actual stops. A high probability does not establish that stopping is optimal.</figcaption>
+        </figure>
+        <div class="project__actions">
+          <a href="/projects/pit-stop-modelling">Read the thesis summary</a>
+          <a href="https://github.com/Nelson-Jnrnd/f1-pit-predictor-report/blob/master/report.pdf" target="_blank" rel="noopener noreferrer">Read the public report (French PDF)</a>
+        </div>
+        <p class="project__note">Academic project · graded 5.6/6. The public report is labelled an intermediate submission.</p>
+      </article>
     </section>
 
     <!-- ───────────────── Toolkit ───────────────── -->
@@ -252,7 +291,7 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
         <a class="tag tag--ref" href={w("Board_game")} target="_blank" rel="noopener noreferrer">Board games</a>
         <a class="tag tag--ref" href={w("Magic:_The_Gathering")} target="_blank" rel="noopener noreferrer">Magic: The Gathering</a>
         <a class="tag tag--ref" href={w("Dungeons_%26_Dragons")} target="_blank" rel="noopener noreferrer">Dungeons &amp; Dragons</a>
-        <a class="tag tag--link" href="/dinosaurs">Dinosaurs ↗</a>
+        <span class="tag">Dinosaurs</span>
         <a class="tag tag--link" href="/music">Music ↗</a>
         <a class="tag tag--ref" href={w("Dog")} target="_blank" rel="noopener noreferrer">Dogs</a>
       </div>

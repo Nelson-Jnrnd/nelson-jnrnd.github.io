@@ -29,8 +29,8 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
   <main class="wrap dino">
     <!-- ───────────────── Head ───────────────── -->
     <section class="section dino__head" aria-label="Dinosaurs">
-      <p class="kicker">Side project</p>
-      <h1 class="dino__title">A map of the dinosaurs</h1>
+      <p class="kicker">Personal project</p>
+      <h1 class="dino__title">Mesozoic Dinosaur Atlas</h1>
       <p class="lead dino__tagline">
         Where and when dinosaur fossils have actually been dug up, across the
         roughly 180 million years dinosaurs walked the Earth.
@@ -116,12 +116,31 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
 
     <!-- ───────────────── Story ───────────────── -->
     <section class="section dino__body">
+      <h2>What I built</h2>
       <p>
         I built a map that plots dinosaur fossil finds across deep time. Drag
         the timeline through the Triassic, Jurassic and Cretaceous, about 252
         to 66 million years ago, and the continents redraw to their
         reconstructed positions for that age, with the fossils known from
         that period shown on top.
+      </p>
+      <h3>Data and implementation</h3>
+      <p>
+        The interface uses React and loads fossil and geographical data from JSON and GeoJSON
+        snapshots. The published dataset identifies Mesozoic Dinosauria occurrences from the
+        Paleobiology Database and the Scotese PALEOMAP-2016 rotation model for reconstruction.
+      </p>
+      <h3>Connecting time, place and evidence</h3>
+      <p>
+        A fossil's present-day discovery location and its reconstructed position in deep time
+        are different views of the same evidence. The timeline connects those views, while
+        occurrence details retain source information. An occurrence list also provides access
+        to the discoveries when the map cannot render.
+      </p>
+      <p>
+        <a href="https://paleomap.nelson-j.ch/data/index.json" target="_blank" rel="noopener noreferrer">View the published dataset metadata</a>
+        <span class="sep">·</span>
+        <a href="/#projects">Back to projects</a>
       </p>
     </section>
 

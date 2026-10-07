@@ -1,0 +1,34 @@
+/* Shared presentation for personal and academic project evidence. */
+.project__figure, .project-evidence {
+  margin: 1.25rem 0;
+}
+.project__figure img, .project-evidence img {
+  display: block;
+  background: #fff;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+}
+.project__figure figcaption, .project-evidence figcaption {
+  margin-top: 0.55rem;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.project__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+.project__head h3 { margin-bottom: 0; }
+.project__note { color: var(--text-dim); font-size: 0.9rem; }
+.project-detail .section { padding-block: 2rem; }
+.project-detail .section:first-child { padding-top: 3rem; }
+.project-detail p { color: var(--text-dim); }
+.project-detail .lead { color: var(--text); }
+.project-detail__back { display: inline-block; margin-bottom: 1.5rem; }
+.project-detail__sources { padding-left: 1.25rem; color: var(--text-dim); }
+.project-detail__sources li + li { margin-top: 0.5rem; }
