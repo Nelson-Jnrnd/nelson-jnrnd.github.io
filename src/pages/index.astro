@@ -2,11 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import { cv } from "../data/profile";
 
 const email = "nelsonjeanrenaud@gmail.com";
 const github = "https://github.com/nelson-jnrnd";
 const linkedin = "https://www.linkedin.com/in/nelson-jeanrenaud-b32374222";
-const cv = "/cv/nelson-jeanrenaud-cv.pdf";
 
 /* Reference links (Wikipedia) all share one look — see `.ref` in global.css.
    Links that point at something I made or run stay gold. */
@@ -45,12 +45,16 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
       </div>
 
       <div class="intro__body">
-        <p>
-          I used to write code. Now I watch a robot do it.
+        <p class="intro__statement">
+          I design and build .NET software for industrial systems, from operator interfaces and PLC integration to digital twins.
         </p>
-        <p>
-          Looking for a .NET / Industrial automation Software engineer role in Switzerland
+        <p class="intro__availability">
+          Looking for a .NET software engineering role in industrial automation in Switzerland.
         </p>
+        <div class="intro__actions" aria-label="Explore my work">
+          <a href="#projects">View projects</a>
+          <a href={cv} download>Download CV (PDF)</a>
+        </div>
       </div>
     </section>
 
