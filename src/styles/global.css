@@ -77,9 +77,8 @@ a:focus-visible {
   border-radius: 2px;
 }
 
-/* Reference links (Wikipedia and friends) read as a single, consistent
-   register: always green, always a dotted rule. Gold stays reserved for
-   links that go somewhere of mine — a project, a page, a contact. */
+/* Organization and professional-reference links use green dotted rules.
+   Gold marks personal projects, pages, and contact destinations. */
 a.ref {
   color: var(--green);
   text-decoration: underline;
@@ -344,12 +343,9 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
   padding: 0.3rem 0.7rem;
   transition: border-color 0.15s ease, color 0.15s ease;
 }
-.tag:hover { border-color: var(--border-strong); color: var(--text); }
+a.tag:hover { border-color: var(--border-strong); color: var(--text); }
 .tag--link { color: var(--gold); border-color: var(--border-strong); }
 .tag--link:hover { color: var(--gold); border-color: var(--gold-soft); text-decoration: none; }
-/* reference tags match the .ref register: green, never gold */
-.tag--ref { color: var(--green); border-color: rgba(95, 168, 119, 0.28); }
-.tag--ref:hover { color: var(--green); border-color: var(--green-soft); text-decoration: none; }
 
 /* ---------- contact ---------- */
 .contact__lead { color: var(--text-dim); margin-bottom: 1.5rem; }
