@@ -15,14 +15,14 @@ const report = "https://github.com/Nelson-Jnrnd/f1-pit-predictor-report";
       <p class="kicker">Academic project · B.Sc. thesis · 2023</p>
       <h1>Pit-stop decision modelling</h1>
       <p class="lead">Can historical race data help model when a Formula 1 team will pit and which tyres it will choose?</p>
-      <p>I collected and prepared race data, compared machine-learning approaches, and examined their predictions and limitations. The thesis was graded 5.6/6. This summary draws on the publicly available report, which is labelled an intermediate submission.</p>
+      <p>I collected and prepared race data, compared machine-learning approaches, and examined their predictions and limitations. My thesis was graded 5.6/6. You can read my intermediate report below.</p>
     </section>
     <section class="section" aria-labelledby="data">
       <h2 id="data">The prediction task</h2>
-      <p>The work considered two decisions: whether a car will pit, and which tyre compound it will use if it does. The sequence-based model used previous laps to predict a stop on the following lap.</p>
-      <p>I collected lap-by-lap race data using FastF1 and prepared inputs such as tyre age, stint, lap time, track status and the gap to other drivers. Historical team decisions provided the target labels.</p>
+      <p>I modelled two decisions: whether a car will pit, and which tyre compound it will use if it does. For the sequence-based model, I used previous laps to predict a stop on the following lap.</p>
+      <p>I collected lap-by-lap race data using FastF1 and prepared inputs such as tyre age, stint, lap time, track status and the gap to other drivers. I used historical team decisions as the target labels.</p>
       <h3>Models and evaluation</h3>
-      <p>I compared random forests, neural networks and recurrent neural networks. The report describes training on 2019–2022, reserving 2023 for testing, and separating training and validation data before preprocessing to avoid information leaking between them.</p>
+      <p>I compared random forests, neural networks and recurrent neural networks. I trained the models on races from 2019–2022 and reserved 2023 for testing. I separated the training and validation data before preprocessing to avoid information leaking between them.</p>
       <p>Pit stops are rare compared with laps without a stop. I examined precision, recall and F1 scores rather than relying on overall accuracy, alongside race-level probability traces and explanations of individual predictions.</p>
     </section>
     <section class="section" aria-labelledby="finding">
@@ -31,10 +31,10 @@ const report = "https://github.com/Nelson-Jnrnd/f1-pit-predictor-report";
         <a href="/projects/pit-stop-probabilities-stroll-2023.svg" target="_blank" rel="noopener noreferrer" aria-label="Open the pit-stop probability chart at full size">
           <img src="/projects/pit-stop-probabilities-stroll-2023.svg" alt="Predicted pit-stop probabilities over Lance Stroll's 2023 Spanish Grand Prix. Red vertical lines mark the prediction targets one lap before actual stops; the upper bars show tyre compounds." width="1067" height="480" loading="lazy" />
         </a>
-        <figcaption>Original report figure: Lance Stroll, Spain 2023. Predictions use the preceding lap; red markers show the target one lap before each actual pit stop.</figcaption>
+        <figcaption>A figure from my thesis: Lance Stroll, Spain 2023. Predictions use the preceding lap; red markers show the target one lap before each actual pit stop.</figcaption>
       </figure>
-      <p>In this example, the random-forest probabilities increased during a stint and fell after a stop, with a slower increase on hard tyres. The report identified tyre age, lap number and stint among the important inputs. The models nevertheless produced many false positive pit-stop predictions.</p>
-      <p>Learning to imitate historical decisions does not establish an optimal strategy. The experiments could capture relationships in race data while still struggling to pinpoint the stopping lap. That distinction is central to interpreting the results.</p>
+      <p>In this example, the random-forest probabilities increased during a stint and fell after a stop, with a slower increase on hard tyres. I identified tyre age, lap number and stint among the important inputs. My models nevertheless produced many false positive pit-stop predictions.</p>
+      <p>My models learned to imitate historical decisions, which does not establish an optimal strategy. They captured relationships in race data but still struggled to pinpoint the stopping lap. I therefore treated their probabilities as signals to examine rather than proof that a stop was the best decision.</p>
     </section>
     <section class="section" aria-labelledby="sources">
       <h2 id="sources">Read the research</h2>

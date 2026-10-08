@@ -18,7 +18,7 @@ const original = "https://github.com/Nelson-Jnrnd/nelson-jnrnd.github.io/blob/ma
       <p class="kicker">Personal project · Python · 2021–2024</p>
       <h1>Formula 1 data analysis</h1>
       <p class="lead">Turning race telemetry into an explanation of where lap time is gained and lost.</p>
-      <p>I built Python tooling for telemetry and session analysis and published race-weekend reports. This sample revisits my article “How Ocon got out of Q1”, published on 23 March 2024.</p>
+      <p>I built Python tooling for telemetry and session analysis and published race-weekend reports. Here I revisit my article “How Ocon got out of Q1”, which I published on 23 March 2024.</p>
     </section>
     <section class="section" aria-labelledby="question">
       <h2 id="question">The question</h2>
@@ -27,20 +27,20 @@ const original = "https://github.com/Nelson-Jnrnd/nelson-jnrnd.github.io/blob/ma
         <a href={delta.src} target="_blank" rel="noopener noreferrer" aria-label="Open the qualifying time-delta chart at full size">
           <Image src={delta} alt="Time-delta chart comparing Ocon and Gasly across a qualifying lap at the 2024 Australian Grand Prix." width={1200} />
         </a>
-        <figcaption>Original time-delta chart from the archived article. Open the image for a closer look.</figcaption>
+        <figcaption>My original time-delta chart from the article. Open the image for a closer look.</figcaption>
       </figure>
     </section>
     <section class="section" aria-labelledby="comparison">
       <h2 id="comparison">From lap time to driving behaviour</h2>
-      <p>My turn-three analysis associated Ocon's later braking and greater corner-entry speed with a gain of about two tenths. Comparing speed, throttle and brake traces helped distinguish the drivers' approaches rather than treating the final lap time as the whole explanation.</p>
+      <p>At turn three, I associated Ocon's later braking and greater corner-entry speed with a gain of about two tenths. I compared speed, throttle and brake traces to understand the drivers' approaches and what lay behind the final lap times.</p>
       <figure class="project-evidence">
         <a href={turnThree.src} target="_blank" rel="noopener noreferrer" aria-label="Open the turn-three telemetry chart at full size">
           <Image src={turnThree} alt="Original turn-three comparison chart showing Ocon and Gasly's telemetry and relative time difference." width={1200} loading="lazy" />
         </a>
-        <figcaption>The original corner-level chart used to examine turn three.</figcaption>
+        <figcaption>My original corner-level chart for turn three.</figcaption>
       </figure>
       <h3>What the data cannot establish</h3>
-      <p>Public telemetry is incomplete. Brake-pedal pressure is unavailable, and recorded gear changes do not necessarily show attempted shifts. My original article therefore left the impact of Gasly's reported shifting problems unresolved. The charts support observations of the recorded traces; they cannot recover every cause behind them.</p>
+      <p>Public telemetry is incomplete. Brake-pedal pressure is unavailable, and recorded gear changes do not necessarily show attempted shifts. I could not establish the impact of Gasly's reported shifting problems from those traces. I could describe the recorded behaviour, but not recover every cause behind it.</p>
     </section>
     <section class="section" aria-labelledby="evidence">
       <h2 id="evidence">Explore the work</h2>
