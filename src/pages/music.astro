@@ -166,7 +166,7 @@ const LASTFM_API_KEY =
     figure.setAttribute("aria-pressed", "false");
     figure.setAttribute(
       "aria-label",
-      `Inspect ${title || "this track"}${artist ? " by " + artist : ""}`
+      `Show details for ${title || "this track"}${artist ? " by " + artist : ""}`
     );
     figure.append(vinyl(track, { large: true }));
     const playedLabel = playing
@@ -235,7 +235,7 @@ const LASTFM_API_KEY =
       btn.setAttribute("aria-pressed", "false");
       btn.setAttribute(
         "aria-label",
-        artist ? `Inspect ${title} by ${artist}` : `Inspect ${title}`
+        artist ? `Show details for ${title} by ${artist}` : `Show details for ${title}`
       );
       btn.append(vinyl(track));
 
