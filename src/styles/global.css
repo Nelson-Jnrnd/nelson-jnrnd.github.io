@@ -256,7 +256,7 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
 .intro__role .sep { color: var(--text-faint); margin: 0 0.45rem; }
 .portrait {
   flex: 0 0 auto;
-  width: 136px;
+  width: 192px;
   aspect-ratio: 4 / 5;
   height: auto;
   border-radius: 14px;
@@ -266,7 +266,7 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
 }
 .intro__body {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 136px;
+  grid-template-columns: minmax(0, 1fr) 192px;
   gap: 1.5rem;
   align-items: start;
 }
@@ -1015,7 +1015,7 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
 }
 @media (max-width: 33rem) {
   .intro__body { grid-template-columns: 1fr; gap: 1.25rem; }
-  .intro__body .portrait { grid-row: 1; width: 112px; }
+  .intro__body .portrait { grid-row: 1; width: 160px; justify-self: center; }
   .tk__row { grid-template-columns: 1fr; gap: 0.2rem; }
   .tk__label { padding-top: 0; }
   .link-row { flex-direction: column; gap: 0.15rem; }
