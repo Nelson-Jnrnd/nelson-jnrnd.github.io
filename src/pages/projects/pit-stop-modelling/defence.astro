@@ -1,0 +1,95 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
+import { slides } from "../../../data/defence-slides";
+import "../../../styles/projects.css";
+---
+<BaseLayout title="Thesis defence slides · Nelson Jeanrenaud" description="Browse the 31 French slides from my bachelor's thesis defence on machine learning for Formula 1 pit-stop decisions.">
+  <SiteHeader />
+  <main id="top" class="wrap project-detail defence-page">
+    <section class="section">
+      <a class="project-detail__back" href="/projects/pit-stop-modelling/">Back to the project</a>
+      <p class="kicker">Bachelor's thesis · Defence presentation · French</p>
+      <h1>Thesis defence slides</h1>
+      <p class="lead">Machine Learning pour prendre la décision d’un arrêt au stand en Formule 1</p>
+      <p>My original 31-slide presentation. Open a slide at full size for a closer look, or expand its text below.</p>
+      <div class="project__actions">
+        <a href="/documents/pit-stop-modelling-defence-fr.pdf" download>Download slides (PDF, 3.2 MB)</a>
+        <a href="/projects/pit-stop-modelling/report/">Read my intermediate report</a>
+      </div>
+    </section>
+    <section class="section slide-reader" aria-label="Thesis defence slides">
+      <nav class="slide-controls" aria-label="Slide navigation" hidden>
+        <button type="button" data-previous>Previous</button>
+        <label for="slide-choice">Slide</label>
+        <select id="slide-choice">{slides.map(slide => <option value={slide.number}>{slide.number}. {slide.title}</option>)}</select>
+        <button type="button" data-next>Next</button>
+        <span data-status role="status" aria-live="polite"></span>
+      </nav>
+      {slides.map(slide => <figure class="slide-page" id={`slide-${slide.number}`} lang="fr">
+        <a href={slide.image} target="_blank" rel="noopener noreferrer" aria-label={`Ouvrir la diapositive ${slide.number} en plein format`}>
+          <img src={slide.image} alt={`Diapositive ${slide.number} : ${slide.title}`} width="1600" height="900" loading={slide.number === 1 ? "eager" : "lazy"} decoding="async" />
+        </a>
+        <figcaption>Diapositive {slide.number} sur {slides.length}</figcaption>
+        <details><summary>Texte de la diapositive</summary><div class="slide-transcript">{slide.text}</div></details>
+      </figure>)}
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+<script>
+  const reader = document.querySelector<HTMLElement>(".slide-reader");
+  const pages = Array.from(reader?.querySelectorAll<HTMLElement>(".slide-page") ?? []);
+  const controls = reader?.querySelector<HTMLElement>(".slide-controls");
+  const choice = reader?.querySelector<HTMLSelectElement>("#slide-choice");
+  const previous = reader?.querySelector<HTMLButtonElement>("[data-previous]");
+  const next = reader?.querySelector<HTMLButtonElement>("[data-next]");
+  const status = reader?.querySelector<HTMLElement>("[data-status]");
+  if (reader && controls && choice && previous && next && status && pages.length) {
+    let index = 0;
+    const show = (value: number, updateHash = true) => {
+      index = Math.max(0, Math.min(pages.length - 1, value));
+      pages.forEach((page, position) => { page.hidden = position !== index; });
+      choice.value = String(index + 1);
+      previous.disabled = index === 0;
+      next.disabled = index === pages.length - 1;
+      status.textContent = `Slide ${index + 1} of ${pages.length}`;
+      if (updateHash) history.replaceState(null, "", `#slide-${index + 1}`);
+    };
+    const fromHash = () => {
+      const match = /^#slide-(\d+)$/.exec(location.hash);
+      show(match ? Number(match[1]) - 1 : 0, false);
+    };
+    controls.hidden = false;
+    previous.addEventListener("click", () => show(index - 1));
+    next.addEventListener("click", () => show(index + 1));
+    choice.addEventListener("change", () => show(Number(choice.value) - 1));
+    reader.addEventListener("keydown", event => {
+      if ((event.target as HTMLElement).closest("select, input, textarea, details")) return;
+      if (event.key === "ArrowLeft") { event.preventDefault(); show(index - 1); }
+      if (event.key === "ArrowRight") { event.preventDefault(); show(index + 1); }
+    });
+    window.addEventListener("hashchange", fromHash);
+    fromHash();
+  }
+</script>
+
+<style>
+  .defence-page { max-width: 68rem; }
+  .slide-controls { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-bottom: 1.5rem; }
+  .slide-controls[hidden], .slide-page[hidden] { display: none; }
+  .slide-controls select { min-width: 0; max-width: 100%; width: 22rem; flex: 1 1 12rem; }
+  .slide-controls button, .slide-controls select { padding: .5rem .75rem; background: var(--bg-soft); color: var(--text); border: 1px solid var(--border-strong); font: inherit; }
+  .slide-controls button { cursor: pointer; }
+  .slide-controls button:disabled { color: var(--text-faint); cursor: default; }
+  .slide-controls :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+  .slide-controls [data-status] { color: var(--text-dim); font-size: .9rem; }
+  .slide-page { margin: 0 0 2rem; }
+  .slide-page img { width: 100%; height: auto; display: block; border: 1px solid var(--border-strong); }
+  .slide-page figcaption { margin-block: .5rem; color: var(--text-dim); }
+  .slide-page details { color: var(--text-dim); }
+  .slide-page summary { cursor: pointer; color: var(--gold); }
+  .slide-transcript { white-space: pre-wrap; overflow-wrap: anywhere; margin-top: 1rem; }
+</style>

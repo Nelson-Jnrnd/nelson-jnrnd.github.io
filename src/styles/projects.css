@@ -32,3 +32,6 @@
 .project-detail__back { display: inline-block; margin-bottom: 1.5rem; }
 .project-detail__sources { padding-left: 1.25rem; color: var(--text-dim); }
 .project-detail__sources li + li { margin-top: 0.5rem; }
+
+.report-reader { display: block; width: 100%; height: min(80vh, 1000px); min-height: 400px; border: 1px solid var(--border-strong); background: var(--bg-soft); color: var(--text); padding: .5rem; }
+.report-reader p { color: var(--text); padding: 1rem; }
