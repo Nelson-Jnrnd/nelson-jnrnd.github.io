@@ -324,7 +324,7 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
   padding-top: 0.15rem;
 }
 .tk__items { color: var(--text); }
-.tk__items .dim { color: var(--text-faint); }
+.tk__focus { font-weight: 600; }
 
 /* ---------- interests ---------- */
 .tags {
