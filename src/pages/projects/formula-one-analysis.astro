@@ -6,10 +6,9 @@ import { Image } from "astro:assets";
 import delta from "../../images/projects/australia-2024-qualifying-delta.png";
 import turnThree from "../../images/projects/australia-2024-turn-3.png";
 import "../../styles/projects.css";
-const original = "https://github.com/Nelson-Jnrnd/nelson-jnrnd.github.io/blob/main/archive/legacy-site-2026-06-02/_posts/2024-03-23-How-Ocon-got-out-of-Q1.md";
 ---
 
-<BaseLayout title="Formula 1 analysis · Nelson Jeanrenaud" description="A sample of my Python telemetry analysis: comparing Ocon and Gasly in qualifying at the 2024 Australian Grand Prix, with original archived charts.">
+<BaseLayout title="Formula 1 analysis · Nelson Jeanrenaud" description="A sample of my Python telemetry analysis: comparing Ocon and Gasly in qualifying at the 2024 Australian Grand Prix, with my original charts.">
   <SiteHeader />
   <span id="top"></span>
   <main class="wrap project-detail">
@@ -43,10 +42,10 @@ const original = "https://github.com/Nelson-Jnrnd/nelson-jnrnd.github.io/blob/ma
       <p>Public telemetry is incomplete. Brake-pedal pressure is unavailable, and recorded gear changes do not necessarily show attempted shifts. I could not establish the impact of Gasly's reported shifting problems from those traces. I could describe the recorded behaviour, but not recover every cause behind it.</p>
     </section>
     <section class="section" aria-labelledby="evidence">
-      <h2 id="evidence">Article and code</h2>
+      <h2 id="evidence">Read my articles</h2>
       <ul class="project-detail__sources">
-        <li><a href={original} target="_blank" rel="noopener noreferrer">Read the original archived article</a></li>
-        <li><a href="https://github.com/Nelson-Jnrnd/F1_Telemetry_Charts" target="_blank" rel="noopener noreferrer">View my telemetry code</a></li>
+        <li><a href="/blog/how-ocon-got-out-of-q1/">Read How Ocon got out of Q1</a></li>
+        <li><a href="/blog/">Browse all my Formula 1 articles</a></li>
         <li><a href="/projects/pit-stop-modelling">Related academic work: pit-stop decision modelling</a></li>
       </ul>
     </section>

@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import { articles } from "../../data/articles";
+import "../../styles/articles.css";
+---
+<BaseLayout title="Blog · Nelson Jeanrenaud" description="My original Formula 1 articles, with telemetry comparisons and race-weekend analysis of Alpine's 2024 season.">
+  <SiteHeader />
+  <main id="top" class="wrap article-page">
+    <section class="section">
+      <a href="/projects/formula-one-analysis/">About my Formula 1 analysis project</a>
+      <h1>Blog</h1>
+      <p class="lead">My Formula 1 race-weekend articles, combining telemetry with an explanation of what happened on track.</p>
+      <p class="article-note">These articles were originally published in 2024. Their original text and charts are preserved here.</p>
+    </section>
+    <section aria-label="Articles">
+      {articles.map(article => <article class="section blog-entry">
+        <time datetime={article.date}>{new Date(`${article.date}T12:00:00Z`).toLocaleDateString("en-GB", {day:"numeric", month:"long", year:"numeric", timeZone:"UTC"})}</time>
+        <h2><a href={article.url}>{article.title}</a></h2>
+        <p>{article.description}</p>
+      </article>)}
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>

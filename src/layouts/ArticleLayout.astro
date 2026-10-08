@@ -1,0 +1,29 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import { articles } from "../data/articles";
+import "../styles/articles.css";
+const { title, date, description } = Astro.props.frontmatter;
+const related = articles.filter(article => article.title !== title);
+const displayDate = new Date(`${date}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+---
+<BaseLayout title={`${title} · Nelson Jeanrenaud`} description={description} type="article" published={`${date}T00:00:00Z`}>
+  <SiteHeader />
+  <main id="top" class="wrap article-page">
+    <header class="section">
+      <a href="/blog/">Back to blog</a>
+      <p class="kicker">Formula 1 analysis · <time datetime={date}>{displayDate}</time></p>
+      <h1>{title}</h1>
+      <p class="lead">{description}</p>
+      <p class="article-note">Originally published in {date.slice(0, 4)}. The analysis reflects the information available at the time.</p>
+    </header>
+    <article class="article-body"><slot /></article>
+    <nav class="section" aria-label="More articles">
+      <h2>More Formula 1 analysis</h2>
+      <ul>{related.map(article => <li><a href={article.url}>{article.title}</a></li>)}</ul>
+      <a href="/projects/formula-one-analysis/">About my Formula 1 analysis project</a>
+    </nav>
+  </main>
+  <SiteFooter />
+</BaseLayout>
