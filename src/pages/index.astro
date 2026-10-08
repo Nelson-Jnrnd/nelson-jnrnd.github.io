@@ -17,11 +17,6 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
   <SiteHeader />
   <span id="top"></span>
 
-  <!-- ───────────── Availability banner ───────────── -->
-  <aside class="openbar" aria-label="Availability">
-    <p class="openbar__inner wrap">Open to work</p>
-  </aside>
-
   <main class="wrap">
     <!-- ───────────────── Intro ───────────────── -->
     <section class="section intro" aria-label="Introduction">
@@ -33,6 +28,7 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
             <span class="sep">·</span>
             <a class="ref" href={w("Switzerland")} target="_blank" rel="noopener noreferrer">switzerland</a>
           </p>
+          <p class="intro__status" aria-label="Availability">Open to new opportunities</p>
         </div>
       </div>
 

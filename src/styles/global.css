@@ -160,46 +160,6 @@ strong { color: var(--text); font-weight: 600; }
 .nav a { color: var(--text-dim); }
 .nav a:hover { color: var(--gold); text-decoration: none; }
 
-/* ---------- availability banner ---------- */
-/* Sits directly under the app bar: a quiet green ribbon, italic, with
-   hairlines running out to either side of the text. */
-.openbar {
-  background: linear-gradient(
-    90deg,
-    rgba(95, 168, 119, 0.03),
-    rgba(95, 168, 119, 0.11) 50%,
-    rgba(95, 168, 119, 0.03)
-  );
-  border-bottom: 1px solid rgba(95, 168, 119, 0.22);
-}
-.openbar__inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(0.7rem, 3vw, 1.15rem);
-  margin: 0 auto;
-  padding-top: 0.55rem;
-  padding-bottom: 0.55rem;
-  font-style: italic;
-  font-size: 0.98rem;
-  letter-spacing: 0.015em;
-  color: var(--green);
-  text-align: center;
-}
-.openbar__inner::before,
-.openbar__inner::after {
-  content: "";
-  flex: 0 1 4.5rem;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--green-soft));
-}
-.openbar__inner::after {
-  background: linear-gradient(90deg, var(--green-soft), transparent);
-}
-@media (max-width: 26rem) {
-  .openbar__inner::before, .openbar__inner::after { flex-basis: 1.5rem; }
-}
-
 /* ---------- main column ---------- */
 main { padding: clamp(2.5rem, 7vw, 4.5rem) 0 1rem; }
 
@@ -254,6 +214,14 @@ h3 { font-size: 1.05rem; font-weight: 600; margin: 0; letter-spacing: -0.005em; 
   color: var(--text-dim);
 }
 .intro__role .sep { color: var(--text-faint); margin: 0 0.45rem; }
+.intro__status {
+  margin: 1rem 0 0;
+  color: var(--green);
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
 .portrait {
   flex: 0 0 auto;
   width: 192px;
