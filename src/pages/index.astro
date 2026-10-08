@@ -2,22 +2,17 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import { cv } from "../data/profile";
 
 const email = "nelsonjeanrenaud@gmail.com";
 const github = "https://github.com/nelson-jnrnd";
 const linkedin = "https://www.linkedin.com/in/nelson-jeanrenaud-b32374222";
-const cv = "/cv/nelson-jeanrenaud-cv.pdf";
 
 ---
 
 <BaseLayout>
   <SiteHeader />
   <span id="top"></span>
-
-  <!-- ───────────── Availability banner ───────────── -->
-  <aside class="openbar" aria-label="Availability">
-    <p class="openbar__inner wrap">Open to work</p>
-  </aside>
 
   <main class="wrap">
     <!-- ───────────────── Intro ───────────────── -->
@@ -30,6 +25,22 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
             <span class="sep">·</span>
             switzerland
           </p>
+          <p class="intro__status" aria-label="Availability">Open to new opportunities</p>
+        </div>
+      </div>
+
+      <div class="intro__body">
+        <div class="intro__copy">
+          <p class="intro__statement">
+            I design and build .NET software for industrial systems, from operator interfaces and PLC integration to digital twins.
+          </p>
+          <p class="intro__availability">
+            Looking for a .NET software engineering role in industrial automation in Switzerland.
+          </p>
+          <div class="intro__actions" aria-label="Explore my work">
+            <a href="#projects">View projects</a>
+            <a href={cv} download>Download CV (PDF)</a>
+          </div>
         </div>
         <img
           class="portrait"
@@ -39,15 +50,6 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
           height="800"
           loading="eager"
         />
-      </div>
-
-      <div class="intro__body">
-        <p>
-          I used to write code. Now I watch a robot do it.
-        </p>
-        <p>
-          Looking for a .NET / Industrial automation Software engineer role in Switzerland
-        </p>
       </div>
     </section>
 
@@ -61,22 +63,14 @@ const cv = "/cv/nelson-jeanrenaud-cv.pdf";
           <span class="entry__org"><span class="at">HEIG-VD</span> · Institute of Industrial Automation · Yverdon-les-Bains</span>
           <span class="entry__date">Apr 2025 – Present</span>
         </div>
-        <h3 class="entry__title">Software architect &amp; full-stack developer</h3>
+        <h3 class="entry__title">R&amp;D Collaborator</h3>
         <p class="entry__desc">
-          Architecting and building, in collaboration with
-          <a class="ref" href="https://www.innosuisse.ch/" target="_blank" rel="noopener noreferrer">Innosuisse</a>
-          and our industrial partner
-          <a class="ref" href="https://www.techponics.ag/" target="_blank" rel="noopener noreferrer">Techponics</a>,
-          the control software for an AI-optimized hydroponic lettuce installation at HEIG-VD's
-          Institute of Industrial Automation. I work closely with automation engineers on the PLC
-          code, interfacing with it over ADS communication. The project also includes a digital twin that runs thousands of
-          machine cycles in a virtual environment to test and validate behaviour before it ever
-          touches the real hardware. The stack:
-          C# →
-          ASP.NET Core →
-          Blazor +
-          WPF.
+          Designing and building .NET control software for an automated hydroponic lettuce
+          installation. My work includes requirements and modelling, a Blazor web HMI,
+          integration with PLCs, cameras and AI models, a DLL plugin framework, and a real-time
+          3D digital twin for testing machine behaviour.
         </p>
+        <p class="entry__desc"><a href="/work/heig-vd">More about my work at HEIG-VD</a></p>
       </div>
 
       <h2 style="margin-top: 2.5rem;">My past experiences</h2>

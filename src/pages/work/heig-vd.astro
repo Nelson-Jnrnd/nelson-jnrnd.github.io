@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+---
+
+<BaseLayout
+  title="Industrial software at HEIG-VD · Nelson Jeanrenaud"
+  description="My work at HEIG-VD: software architecture, .NET operator interfaces, PLC integration over ADS, and a WPF digital twin for automated hydroponic lettuce production."
+>
+  <SiteHeader />
+  <main class="wrap heig" id="top">
+    <header class="heig__intro">
+      <a class="heig__back" href="/#work">Back to work experience</a>
+      <p class="kicker">HEIG-VD · Institute of Industrial Automation</p>
+      <h1>Industrial control software<br />and a digital twin</h1>
+      <p class="heig__lead">
+        I turn the requirements of an automated hydroponic lettuce installation into
+        operator interfaces, machine integration, and software that can be tested in simulation.
+      </p>
+      <dl class="heig__facts">
+        <div><dt>Role</dt><dd>R&amp;D Collaborator</dd></div>
+        <div><dt>Period</dt><dd>April 2025 – Present</dd></div>
+        <div><dt>Location</dt><dd>Yverdon-les-Bains, Switzerland</dd></div>
+      </dl>
+    </header>
+
+    <section class="heig__section" aria-labelledby="context-title">
+      <h2 id="context-title">Context</h2>
+      <p>
+        At HEIG-VD's Institute of Industrial Automation, I work on control software for
+        an AI-optimized hydroponic lettuce installation with industrial partner
+        <a href="https://www.techponics.ag/" target="_blank" rel="noopener noreferrer">Techponics</a>.
+        The software connects PLCs, cameras, and AI models and orchestrates the installation's
+        operation through a web interface.
+      </p>
+      <p>
+        The work brings together application development, automation, and AI. My focus is the
+        software architecture and full-stack implementation. I coordinate integration and
+        technical decisions with automation engineers, AI engineers, and electronics engineers.
+      </p>
+    </section>
+
+    <section class="heig__section" aria-labelledby="contribution-title">
+      <h2 id="contribution-title">My contribution</h2>
+      <ul class="heig__contributions">
+        <li><strong>Requirements and modelling.</strong> I work with the team to define use cases and how the installation's
+          processes should operate. I translate these decisions into requirements and specifications,
+          domain models, and UML designs.</li>
+        <li><strong>Application architecture.</strong> I structure the C#/.NET software using object-oriented
+          design and clean architecture principles.</li>
+        <li><strong>Web HMI.</strong> I build a modern web interface with Blazor so operators can interact
+          with the installation.</li>
+        <li><strong>PLC integration.</strong> I interface with the PLCs over ADS, working with automation
+          engineers to connect application behaviour and machine control.</li>
+        <li><strong>Plugin framework.</strong> I design an extension framework so installation configuration
+          can be extended with separate DLL modules without recompiling the core application.</li>
+        <li><strong>Digital twin.</strong> I develop a real-time 3D simulation in WPF with time acceleration
+          and fault simulation for testing machine behaviour.</li>
+      </ul>
+    </section>
+
+    <p class="heig__closing"><a href="/#work">Back to work experience</a></p>
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .heig__intro { padding: clamp(2.5rem, 7vw, 4rem) 0 2.5rem; }
+  .heig__back { display: inline-block; font-family: var(--mono); font-size: 0.8rem; margin-bottom: 2.5rem; }
+  .heig h1 { font-size: clamp(2rem, 1.5rem + 2vw, 2.8rem); line-height: 1.15; letter-spacing: -0.025em; margin: 0 0 1.25rem; }
+  .heig__lead { color: var(--text-dim); }
+  .heig__facts { border-top: 1px solid var(--border); margin: 1.8rem 0 0; padding-top: 1.2rem; }
+  .heig__facts > div { display: grid; grid-template-columns: 5rem 1fr; gap: 0.7rem; margin: 0.3rem 0; }
+  .heig__facts dt { font-family: var(--mono); font-size: 0.8rem; color: var(--text-dim); padding-top: 0.2rem; }
+  .heig__facts dd { margin: 0; }
+  .heig__section { padding: 2.5rem 0; border-top: 1px solid var(--border); }
+  .heig__section p, .heig__contributions { color: var(--text-dim); }
+  .heig__contributions { margin: 0; padding-left: 1.2rem; }
+  .heig__contributions li { padding-left: 0.2rem; margin-bottom: 1rem; }
+  .heig__contributions li:last-child { margin-bottom: 0; }
+  .heig__closing { padding: 0.5rem 0 3rem; font-family: var(--mono); font-size: 0.85rem; }
+  @media (max-width: 30rem) {
+    .heig__facts > div { grid-template-columns: 1fr; gap: 0; margin-bottom: 0.8rem; }
+  }
+</style>

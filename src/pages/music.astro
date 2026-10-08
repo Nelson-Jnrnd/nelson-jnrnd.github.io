@@ -25,11 +25,12 @@ const LASTFM_API_KEY =
   <main class="wrap music">
     <section class="section music__head" aria-label="Music">
       <h1 class="music__title">Music</h1>
+      <p class="music__intro">What I’m listening to, via Last.fm. Select a record to see track and artist details.</p>
     </section>
 
     <!-- ─── Current / Last played ─── -->
-    <section class="section music__now" aria-label="Now playing" aria-live="polite">
-      <div class="np" id="np" data-state="loading">
+    <section class="section music__now" aria-label="Current listening" aria-live="polite">
+      <div class="np" id="np" data-state="loading" aria-busy="true" tabindex="-1">
         <!-- vinyl + meta are injected here by the script -->
         <div class="np__placeholder" aria-hidden="true">
           <div class="vinyl vinyl--lg">
@@ -46,19 +47,25 @@ const LASTFM_API_KEY =
 
     <!-- ─── Recently played shelf ─── -->
     <section class="section music__recent" aria-label="Recently played">
-      <p class="kicker">Recently played</p>
+      <div class="shelf__heading">
+        <p class="kicker">Recently played</p>
+        <div class="shelf__controls" id="shelf-controls" role="group" aria-label="Browse recent records" hidden>
+          <button type="button" id="shelf-previous" aria-controls="shelf">Previous</button>
+          <button type="button" id="shelf-next" aria-controls="shelf">Next</button>
+        </div>
+      </div>
       <ul class="shelf" id="shelf" aria-busy="true"></ul>
       <p class="music__quiet music__quiet--shelf" id="shelf-quiet" hidden></p>
 
       <!-- inspector panel: details for the clicked record (script-filled) -->
-      <div class="detail" id="detail" aria-live="polite" hidden></div>
+      <div class="detail" id="detail" role="region" aria-label="Selected record details" hidden></div>
     </section>
   </main>
 
   <SiteFooter />
 </BaseLayout>
 
-<script define:vars={{ LASTFM_USERNAME, LASTFM_API_KEY }}>
+<script is:inline define:vars={{ LASTFM_USERNAME, LASTFM_API_KEY }}>
   const ENDPOINT = "https://ws.audioscrobbler.com/2.0/";
   // Last.fm serves this image when a release has no cover art.
   const PLACEHOLDER = "2a96cbd8b46e442fc41c2b86b821562f";
@@ -68,17 +75,25 @@ const LASTFM_API_KEY =
   const shelfQuiet = document.getElementById("shelf-quiet");
   const detailEl = document.getElementById("detail");
 
+  const shelfControls = document.getElementById("shelf-controls");
+  const previousBtn = document.getElementById("shelf-previous");
+  const nextBtn = document.getElementById("shelf-next");
+  const REQUEST_TIMEOUT_MS = 8000;
+
   /** Thin wrapper around the Last.fm REST API (JSON). */
-  function api(params) {
-    const q = new URLSearchParams({
-      ...params,
-      api_key: LASTFM_API_KEY,
-      format: "json",
-    });
-    return fetch(`${ENDPOINT}?${q}`).then((r) => {
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      return r.json();
-    });
+  async function api(params) {
+    const q = new URLSearchParams({ ...params, api_key: LASTFM_API_KEY, format: "json" });
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+    try {
+      const response = await fetch(`${ENDPOINT}?${q}`, { signal: controller.signal });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      if (data.error) throw new Error("Last.fm unavailable");
+      return data;
+    } finally {
+      clearTimeout(timer);
+    }
   }
 
   /** Pick the largest usable cover, or "" if none / placeholder only. */
@@ -151,7 +166,7 @@ const LASTFM_API_KEY =
     figure.setAttribute("aria-pressed", "false");
     figure.setAttribute(
       "aria-label",
-      `Inspect ${title || "this track"}${artist ? " by " + artist : ""}`
+      `Show details for ${title || "this track"}${artist ? " by " + artist : ""}`
     );
     figure.append(vinyl(track, { large: true }));
     const playedLabel = playing
@@ -220,7 +235,7 @@ const LASTFM_API_KEY =
       btn.setAttribute("aria-pressed", "false");
       btn.setAttribute(
         "aria-label",
-        artist ? `Inspect ${title} by ${artist}` : `Inspect ${title}`
+        artist ? `Show details for ${title} by ${artist}` : `Show details for ${title}`
       );
       btn.append(vinyl(track));
 
@@ -253,6 +268,9 @@ const LASTFM_API_KEY =
   /** Fade only the edge(s) that have off-screen records. */
   function updateShelfScroll() {
     const slack = shelfEl.scrollWidth - shelfEl.clientWidth;
+    shelfControls.hidden = slack <= 4;
+    previousBtn.disabled = shelfEl.scrollLeft <= 4;
+    nextBtn.disabled = shelfEl.scrollLeft >= slack - 4;
     if (slack <= 4) {
       shelfEl.removeAttribute("data-scroll");
       return;
@@ -267,6 +285,13 @@ const LASTFM_API_KEY =
   }
   shelfEl.addEventListener("scroll", updateShelfScroll, { passive: true });
   window.addEventListener("resize", updateShelfScroll, { passive: true });
+
+  function browseShelf(direction) {
+    shelfEl.scrollBy({ left: direction * shelfEl.clientWidth * 0.8, behavior: "instant" });
+    updateShelfScroll();
+  }
+  previousBtn.addEventListener("click", () => browseShelf(-1));
+  nextBtn.addEventListener("click", () => browseShelf(1));
 
   /* ─── Inspecting a record (details panel) ──────────────────────────── */
 
@@ -288,11 +313,14 @@ const LASTFM_API_KEY =
     btn.setAttribute("aria-pressed", "true");
 
     const refs = renderDetailBase(track, opts);
-    detailEl.scrollIntoView({ block: "nearest" });
+    detailEl.scrollIntoView({ block: "nearest", behavior: "instant" });
+    detailEl.querySelector(".detail__close").focus({ preventScroll: true });
     enrichDetail(track, refs, ++seltoken);
   }
 
   function deselect() {
+    const returnFocus = detailEl.contains(document.activeElement);
+    const trigger = selectedBtn;
     if (selectedBtn) {
       selectedBtn.classList.remove("is-selected");
       selectedBtn.setAttribute("aria-pressed", "false");
@@ -301,6 +329,7 @@ const LASTFM_API_KEY =
     seltoken++; // invalidate any in-flight fetch
     detailEl.hidden = true;
     detailEl.replaceChildren();
+    if (returnFocus && trigger?.isConnected) trigger.focus({ preventScroll: true });
   }
 
   /** Render the always-available info (straight from the scrobble). */
@@ -317,13 +346,13 @@ const LASTFM_API_KEY =
     close.type = "button";
     close.className = "detail__close";
     close.setAttribute("aria-label", "Close details");
-    close.textContent = "✕";
+    close.textContent = "Close";
     close.addEventListener("click", deselect);
 
     const sleeve = document.createElement("div");
     sleeve.className = "detail__sleeve" + (art ? "" : " detail__sleeve--empty");
     if (art) sleeve.style.backgroundImage = `url("${art}")`;
-    else sleeve.textContent = "♪";
+    else { sleeve.textContent = "No cover"; sleeve.setAttribute("aria-label", "Cover artwork unavailable"); }
 
     const body = document.createElement("div");
     body.className = "detail__body";
@@ -356,6 +385,7 @@ const LASTFM_API_KEY =
     note.className = "detail__note music__quiet";
     note.hidden = true;
 
+    renderLinks(links, [{ label: "Track on Last.fm", url: track.url || "" }]);
     body.append(status, h, sub, summary, tags, links, note);
     detailEl.append(close, sleeve, body);
     return { title, artist, album, summary, tags, links, note, scrobbleUrl: track.url || "" };
@@ -487,12 +517,12 @@ const LASTFM_API_KEY =
 
     // Quiet failure note only if every call failed (base info still shows).
     if (fails >= total) {
-      refs.note.textContent = "Couldn't load details.";
+      refs.note.textContent = "Additional details are unavailable. Track information is still shown.";
       refs.note.hidden = false;
     }
   }
 
-  function quietNow(message) {
+  function quietNow(message, retry = false) {
     npEl.setAttribute("data-state", "empty");
     npEl.classList.remove("is-playing");
     npEl.replaceChildren();
@@ -502,20 +532,48 @@ const LASTFM_API_KEY =
     const p = document.createElement("p");
     p.className = "music__quiet";
     p.textContent = message;
-    npEl.append(ph, p);
+    const meta = document.createElement("div");
+    meta.className = "np__meta";
+    meta.append(p);
+    if (retry) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "music__retry";
+      button.textContent = "Retry";
+      button.addEventListener("click", load);
+      meta.append(button);
+    }
+    npEl.append(ph, meta);
   }
 
   function quietShelf(message) {
     shelfEl.setAttribute("aria-busy", "false");
     shelfEl.replaceChildren();
     shelfQuiet.textContent = message;
-    shelfQuiet.hidden = false;
+    shelfQuiet.hidden = !message;
+    updateShelfScroll();
   }
 
+  detailEl.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") { event.preventDefault(); deselect(); }
+  });
+
+  let loading = false;
   async function load() {
+    if (loading) return;
+    loading = true;
+    const restoreRetryFocus = npEl.contains(document.activeElement);
+    deselect();
+    npEl.setAttribute("aria-busy", "true");
+    shelfEl.setAttribute("aria-busy", "true");
+    shelfQuiet.hidden = true;
+    quietNow("Loading listening history…");
+    npEl.setAttribute("data-state", "loading");
     if (!LASTFM_USERNAME || !LASTFM_API_KEY) {
       quietNow("Nothing to show right now.");
       quietShelf("");
+      npEl.setAttribute("aria-busy", "false");
+      loading = false;
       return;
     }
 
@@ -531,8 +589,8 @@ const LASTFM_API_KEY =
           : [];
 
       if (!tracks.length) {
-        quietNow("Nothing to show right now.");
-        quietShelf("");
+        quietNow("No listening history to show yet.");
+        quietShelf("Recent records will appear here after listening.");
         return;
       }
 
@@ -541,10 +599,43 @@ const LASTFM_API_KEY =
       if (rest.length) renderShelf(rest);
       else quietShelf("");
     } catch (err) {
-      quietNow("Couldn't reach Last.fm just now.");
+      quietNow("Couldn’t reach Last.fm just now. Please try again.", true);
       quietShelf("");
+    } finally {
+      loading = false;
+      npEl.setAttribute("aria-busy", "false");
+      shelfEl.setAttribute("aria-busy", "false");
+      if (restoreRetryFocus) {
+        (npEl.querySelector("button") || npEl).focus({ preventScroll: true });
+      }
     }
   }
 
   load();
 </script>
+
+
+<style is:global>
+  .music .music__intro { max-width: 34rem; margin: 0.8rem 0 0; color: var(--text-dim); }
+  .music .shelf__heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .music .shelf__heading .kicker { margin: 0; }
+  .music .shelf__controls { display: flex; gap: 0.5rem; }
+  .music .shelf__controls[hidden] { display: none; }
+  .music .shelf__controls button, .music .music__retry {
+    font: 0.8rem var(--mono); color: var(--text); background: var(--bg-soft);
+    border: 1px solid var(--border-strong); border-radius: 6px; padding: 0.55rem 0.7rem;
+    min-height: 44px; cursor: pointer;
+  }
+  .music .shelf__controls button:disabled { color: var(--text-dim); opacity: 0.65; cursor: default; }
+  .music .shelf__controls button:focus-visible, .music .music__retry:focus-visible {
+    outline: 2px solid var(--green); outline-offset: 3px;
+  }
+  .music .detail { padding-top: 3.25rem; }
+  .music .detail__close { min-width: 60px; min-height: 44px; color: var(--text-dim); }
+  .music .detail__sleeve--empty { font: 0.7rem var(--mono); }
+  .music .detail__title, .music .detail__artist, .music .np__title, .music .np__sub { overflow-wrap: anywhere; }
+  @media (max-width: 33rem) {
+    .music .shelf__heading { align-items: flex-start; flex-direction: column; gap: 0.5rem; }
+    .music .detail { flex-direction: column; }
+  }
+</style>
