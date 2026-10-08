@@ -148,7 +148,7 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
         </div>
         <h3 class="entry__title">Bachelor of Science in Computer Science</h3>
         <p class="entry__desc">
-          Bachelor's degree, capped with a thesis on machine learning for pit-stop decision
+          Bachelor's degree, with a thesis on machine learning for pit-stop decision
           modelling in <a class="ref" href={w("Formula_One")} target="_blank" rel="noopener noreferrer">Formula 1</a> (see Projects).
         </p>
       </div>
@@ -173,7 +173,7 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
           <a href="/dinosaurs" aria-label="See the Mesozoic Dinosaur Atlas project">
             <Image src={atlasShot} alt="Dinosaur fossil discoveries plotted on reconstructed continents, with a timeline set to about 72 million years ago." width={960} loading="lazy" />
           </a>
-          <figcaption>The atlas combines geographical and geological time exploration.</figcaption>
+          <figcaption>Browse fossil discoveries by location and time.</figcaption>
         </figure>
         <div class="project__actions">
           <a href="/dinosaurs">See the project</a>
@@ -195,11 +195,11 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
           <a href="/projects/formula-one-analysis" aria-label="Read the Australia 2024 qualifying analysis sample">
             <Image src={qualifyingDelta} alt="Archived chart comparing the time difference between Ocon and Gasly over a qualifying lap at the 2024 Australian Grand Prix." width={960} loading="lazy" />
           </a>
-          <figcaption>A representative chart from my March 2024 qualifying analysis.</figcaption>
+          <figcaption>A chart from my March 2024 qualifying analysis.</figcaption>
         </figure>
         <div class="project__actions">
-          <a href="/projects/formula-one-analysis">Read an analysis sample</a>
-          <a href="https://github.com/Nelson-Jnrnd/F1_Telemetry_Charts" target="_blank" rel="noopener noreferrer">View telemetry tooling</a>
+          <a href="/projects/formula-one-analysis">Read my qualifying analysis</a>
+          <a href="https://github.com/Nelson-Jnrnd/F1_Telemetry_Charts" target="_blank" rel="noopener noreferrer">View my telemetry code</a>
         </div>
       </article>
 
@@ -218,7 +218,7 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
           <a href="/projects/pit-stop-modelling" aria-label="Read the pit-stop decision modelling thesis summary">
             <img src="/projects/pit-stop-probabilities-stroll-2023.svg" alt="Thesis chart showing lap-by-lap predicted pit-stop probabilities for Lance Stroll in Spain 2023, with actual pit stops marked by red vertical lines." width="1067" height="480" loading="lazy" />
           </a>
-          <figcaption>Predicted pit-stop probabilities compared with actual stops. A high probability does not establish that stopping is optimal.</figcaption>
+          <figcaption>Predicted pit-stop probabilities compared with actual stops. A high predicted probability does not mean it was the best time to pit.</figcaption>
         </figure>
         <div class="project__actions">
           <a href="/projects/pit-stop-modelling">Read the thesis summary</a>
