@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import { cv } from "../data/profile";
 import { Image } from "astro:assets";
 import atlasShot from "../images/dinosaurs/exploration-map.png";
 import qualifyingDelta from "../images/projects/australia-2024-qualifying-delta.png";
@@ -10,21 +11,12 @@ import "../styles/projects.css";
 const email = "nelsonjeanrenaud@gmail.com";
 const github = "https://github.com/nelson-jnrnd";
 const linkedin = "https://www.linkedin.com/in/nelson-jeanrenaud-b32374222";
-const cv = "/cv/nelson-jeanrenaud-cv.pdf";
 
-/* Reference links (Wikipedia) all share one look — see `.ref` in global.css.
-   Links that point at something I made or run stay gold. */
-const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
 ---
 
 <BaseLayout>
   <SiteHeader />
   <span id="top"></span>
-
-  <!-- ───────────── Availability banner ───────────── -->
-  <aside class="openbar" aria-label="Availability">
-    <p class="openbar__inner wrap">Open to work</p>
-  </aside>
 
   <main class="wrap">
     <!-- ───────────────── Intro ───────────────── -->
@@ -33,10 +25,26 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
         <div class="intro__id">
           <h1>Nelson Jeanrenaud</h1>
           <p class="intro__role">
-            <a class="ref" href={w("Software_engineering")} target="_blank" rel="noopener noreferrer">software engineer</a>
+            software engineer
             <span class="sep">·</span>
-            <a class="ref" href={w("Switzerland")} target="_blank" rel="noopener noreferrer">switzerland</a>
+            switzerland
           </p>
+          <p class="intro__status" aria-label="Availability">Open to new opportunities</p>
+        </div>
+      </div>
+
+      <div class="intro__body">
+        <div class="intro__copy">
+          <p class="intro__statement">
+            I design and build .NET software for industrial systems, from operator interfaces and PLC integration to digital twins.
+          </p>
+          <p class="intro__availability">
+            Looking for a .NET software engineering role in industrial automation in Switzerland.
+          </p>
+          <div class="intro__actions" aria-label="Explore my work">
+            <a href="#projects">View projects</a>
+            <a href={cv} download>Download CV (PDF)</a>
+          </div>
         </div>
         <img
           class="portrait"
@@ -46,15 +54,6 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
           height="800"
           loading="eager"
         />
-      </div>
-
-      <div class="intro__body">
-        <p>
-          I used to write code. Now I watch a robot do it.
-        </p>
-        <p>
-          Looking for a .NET / Industrial automation Software engineer role in Switzerland
-        </p>
       </div>
     </section>
 
@@ -68,22 +67,14 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
           <span class="entry__org"><span class="at">HEIG-VD</span> · Institute of Industrial Automation · Yverdon-les-Bains</span>
           <span class="entry__date">Apr 2025 – Present</span>
         </div>
-        <h3 class="entry__title">Software architect &amp; full-stack developer</h3>
+        <h3 class="entry__title">R&amp;D Collaborator</h3>
         <p class="entry__desc">
-          Architecting and building, in collaboration with
-          <a class="ref" href="https://www.innosuisse.ch/" target="_blank" rel="noopener noreferrer">Innosuisse</a>
-          and our industrial partner
-          <a class="ref" href="https://www.techponics.ag/" target="_blank" rel="noopener noreferrer">Techponics</a>,
-          the control software for an AI-optimized hydroponic lettuce installation at HEIG-VD's
-          Institute of Industrial Automation. I work closely with automation engineers on the PLC
-          code, interfacing with it over ADS communication. The project also includes a digital twin that runs thousands of
-          machine cycles in a virtual environment to test and validate behaviour before it ever
-          touches the real hardware. The stack:
-          <a class="ref" href={w("C_Sharp_(programming_language)")} target="_blank" rel="noopener noreferrer">C#</a> →
-          <a class="ref" href={w("ASP.NET_Core")} target="_blank" rel="noopener noreferrer">ASP.NET Core</a> →
-          <a class="ref" href={w("Blazor")} target="_blank" rel="noopener noreferrer">Blazor</a> +
-          <a class="ref" href={w("Windows_Presentation_Foundation")} target="_blank" rel="noopener noreferrer">WPF</a>.
+          Designing and building .NET control software for an automated hydroponic lettuce
+          installation. My work includes requirements and modelling, a Blazor web HMI,
+          integration with PLCs, cameras and AI models, a DLL plugin framework, and a real-time
+          3D digital twin for testing machine behaviour.
         </p>
+        <p class="entry__desc"><a href="/work/heig-vd">More about my work at HEIG-VD</a></p>
       </div>
 
       <h2 style="margin-top: 2.5rem;">My past experiences</h2>
@@ -93,13 +84,11 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
           <span class="entry__org"><span class="at">Abraxas Informatik AG</span> · Morges</span>
           <span class="entry__date">Aug 2023 – Oct 2024</span>
         </div>
-        <h3 class="entry__title">Software developer</h3>
+        <h3 class="entry__title">Software developer · Part-time</h3>
         <p class="entry__desc">
-          Maintained and extended CARI, a large
-          <a class="ref" href={w("Java_(programming_language)")} target="_blank" rel="noopener noreferrer">Java</a>
-          application used by Swiss road traffic offices (bureau des autos).
-          Mostly legacy code: debugging, reviewing, and refactoring a long-lived codebase without
-          breaking what already works.
+          Maintained and extended CARI, a Java application used by Swiss road traffic offices
+          (bureau des autos). Investigated defects, reviewed code, and refactored an established
+          application while preserving its existing behaviour.
         </p>
       </div>
 
@@ -108,18 +97,12 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
           <span class="entry__org"><span class="at">HEIG-VD</span> · Institute of Information &amp; Communication Technology · Yverdon-les-Bains</span>
           <span class="entry__date">Aug 2023 – Oct 2024</span>
         </div>
-        <h3 class="entry__title">Assistant to Prof. <a class="ref" href="https://people.hes-so.ch/fr/profile/2002425133-marcel-graf" target="_blank" rel="noopener noreferrer">Marcel Graf</a></h3>
+        <h3 class="entry__title">Teaching assistant — Object-Oriented Programming and Cloud Computing · Part-time</h3>
         <p class="entry__desc">
-          Assisted both the
-          <a class="ref" href={w("Object-oriented_programming")} target="_blank" rel="noopener noreferrer">OOP (object-oriented programming)</a>
-          and Cloud Computing bachelor courses, helping students with object-oriented modelling —
-          structuring code as objects that bundle data and behaviour — in
-          <a class="ref" href={w("Java_(programming_language)")} target="_blank" rel="noopener noreferrer">Java</a>, and cloud topics
-          (<a class="ref" href={w("Amazon_Web_Services")} target="_blank" rel="noopener noreferrer">AWS</a>/<a class="ref" href={w("Google_Cloud_Platform")} target="_blank" rel="noopener noreferrer">GCP</a>,
-          <a class="ref" href={w("Docker_(software)")} target="_blank" rel="noopener noreferrer">Docker</a>,
-          <a class="ref" href={w("Kubernetes")} target="_blank" rel="noopener noreferrer">Kubernetes</a>,
-          <a class="ref" href={w("Terraform_(software)")} target="_blank" rel="noopener noreferrer">Terraform</a> and
-          <a class="ref" href={w("Ansible_(software)")} target="_blank" rel="noopener noreferrer">Ansible</a>).
+          Supported students in the bachelor courses taught by
+          <a class="ref" href="https://people.hes-so.ch/fr/profile/2002425133-marcel-graf" target="_blank" rel="noopener noreferrer">Prof. Marcel Graf</a>,
+          covering Java and object-oriented modelling, alongside cloud topics including
+          AWS, GCP, Docker, Kubernetes, Terraform, and Ansible.
         </p>
       </div>
 
@@ -149,7 +132,7 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
         <h3 class="entry__title">Bachelor of Science in Computer Science</h3>
         <p class="entry__desc">
           Bachelor's degree, with a thesis on machine learning for pit-stop decision
-          modelling in <a class="ref" href={w("Formula_One")} target="_blank" rel="noopener noreferrer">Formula 1</a> (see Projects).
+          modelling in Formula 1 (see Projects).
         </p>
       </div>
     </section>
@@ -229,50 +212,50 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
     </section>
 
     <!-- ───────────────── Toolkit ───────────────── -->
-    <section class="section" id="toolkit" aria-label="Toolkit">
+    <section class="section" id="toolkit" aria-labelledby="toolkit-title">
       <p class="kicker">Tools</p>
-      <h2>How I build software</h2>
+      <h2 id="toolkit-title">Technologies I work with</h2>
       <div class="tk">
         <div class="tk__row">
           <span class="tk__label">Languages</span>
           <span class="tk__items">
-            <a class="ref" href={w("C_Sharp_(programming_language)")} target="_blank" rel="noopener noreferrer">C#</a>,
-            <a class="ref" href={w("Java_(programming_language)")} target="_blank" rel="noopener noreferrer">Java</a>,
-            <a class="ref" href={w("Python_(programming_language)")} target="_blank" rel="noopener noreferrer">Python</a>,
-            <a class="ref" href={w("SQL")} target="_blank" rel="noopener noreferrer">SQL</a>,
-            <a class="ref" href={w("JavaScript")} target="_blank" rel="noopener noreferrer">JavaScript</a>
+            <strong class="tk__focus">C#</strong>,
+            Java,
+            Python,
+            SQL,
+            JavaScript
           </span>
         </div>
         <div class="tk__row">
           <span class="tk__label">Frameworks</span>
           <span class="tk__items">
-            <a class="ref" href={w("ASP.NET_Core")} target="_blank" rel="noopener noreferrer">ASP.NET Core</a>,
-            <a class="ref" href={w("Blazor")} target="_blank" rel="noopener noreferrer">Blazor</a>,
-            <a class="ref" href={w("Windows_Presentation_Foundation")} target="_blank" rel="noopener noreferrer">WPF</a>,
-            <a class="ref" href={w("AngularJS")} target="_blank" rel="noopener noreferrer">AngularJS</a>,
-            <a class="ref" href={w("Spring_Framework")} target="_blank" rel="noopener noreferrer">Spring</a>
+            <strong class="tk__focus">ASP.NET Core</strong>,
+            <strong class="tk__focus">Blazor</strong>,
+            <strong class="tk__focus">WPF</strong>,
+            AngularJS,
+            Spring
           </span>
         </div>
         <div class="tk__row">
           <span class="tk__label">Infrastructure</span>
           <span class="tk__items">
-            <a class="ref" href={w("Git")} target="_blank" rel="noopener noreferrer">Git</a>,
-            <a class="ref" href={w("Docker_(software)")} target="_blank" rel="noopener noreferrer">Docker</a>,
-            <a class="ref" href={w("Kubernetes")} target="_blank" rel="noopener noreferrer">Kubernetes</a>,
-            <a class="ref" href={w("Google_Cloud_Platform")} target="_blank" rel="noopener noreferrer">GCP</a>,
-            <a class="ref" href={w("Amazon_Web_Services")} target="_blank" rel="noopener noreferrer">AWS</a>,
-            <a class="ref" href={w("Terraform_(software)")} target="_blank" rel="noopener noreferrer">Terraform</a>,
-            <a class="ref" href={w("Ansible_(software)")} target="_blank" rel="noopener noreferrer">Ansible</a>,
-            <a class="ref" href={w("CI/CD")} target="_blank" rel="noopener noreferrer">CI/CD</a>
+            Git,
+            Docker,
+            Kubernetes,
+            GCP,
+            AWS,
+            Terraform,
+            Ansible,
+            CI/CD
           </span>
         </div>
         <div class="tk__row">
           <span class="tk__label">Data</span>
           <span class="tk__items">
-            <a class="ref" href={w("Pandas_(software)")} target="_blank" rel="noopener noreferrer">Pandas</a>,
-            <a class="ref" href={w("NumPy")} target="_blank" rel="noopener noreferrer">NumPy</a>,
-            <a class="ref" href={w("Scikit-learn")} target="_blank" rel="noopener noreferrer">scikit-learn</a>,
-            <a class="ref" href={w("TensorFlow")} target="_blank" rel="noopener noreferrer">TensorFlow</a>
+            Pandas,
+            NumPy,
+            scikit-learn,
+            TensorFlow
           </span>
         </div>
       </div>
@@ -286,14 +269,14 @@ const w = (slug: string) => `https://en.wikipedia.org/wiki/${slug}`;
         Usually hanging out in the sun, playing tennis, watching racecars, and listening to music.
       </p>
       <div class="tags" aria-label="Interests">
-        <a class="tag tag--ref" href={w("Motorsport")} target="_blank" rel="noopener noreferrer">Motorsport</a>
-        <a class="tag tag--ref" href={w("Tennis")} target="_blank" rel="noopener noreferrer">Tennis</a>
-        <a class="tag tag--ref" href={w("Board_game")} target="_blank" rel="noopener noreferrer">Board games</a>
-        <a class="tag tag--ref" href={w("Magic:_The_Gathering")} target="_blank" rel="noopener noreferrer">Magic: The Gathering</a>
-        <a class="tag tag--ref" href={w("Dungeons_%26_Dragons")} target="_blank" rel="noopener noreferrer">Dungeons &amp; Dragons</a>
+        <span class="tag">Motorsport</span>
+        <span class="tag">Tennis</span>
+        <span class="tag">Board games</span>
+        <span class="tag">Magic: The Gathering</span>
+        <span class="tag">Dungeons &amp; Dragons</span>
         <span class="tag">Dinosaurs</span>
         <a class="tag tag--link" href="/music">Music ↗</a>
-        <a class="tag tag--ref" href={w("Dog")} target="_blank" rel="noopener noreferrer">Dogs</a>
+        <span class="tag">Dogs</span>
       </div>
     </section>
 

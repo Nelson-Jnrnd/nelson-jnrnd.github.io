@@ -42,7 +42,7 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
       <div class="dino__carousel">
         <div class="dino__track" id="dino-track" tabindex="0" aria-label="paleo-map screenshots, use the arrow keys to browse">
           <figure class="dino__slide">
-            <button class="dino__zoom" type="button" data-full={mapFull.src} aria-label="View this screenshot full-size">
+            <button class="dino__zoom" type="button" data-full={mapFull.src} aria-label="View exploration map full-size">
               <Image
                 src={mapShot}
                 alt="The map screen: an old world map with colourful dots marking dinosaur fossil discoveries, and a timeline slider running along the top."
@@ -57,7 +57,7 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
             </figcaption>
           </figure>
           <figure class="dino__slide">
-            <button class="dino__zoom" type="button" data-full={findFull.src} aria-label="View this screenshot full-size">
+            <button class="dino__zoom" type="button" data-full={findFull.src} aria-label="View fossil detail full-size">
               <Image
                 src={findShot}
                 alt="A detail card open for a single fossil discovery, showing what it is, roughly when it lived, and where the information came from."
@@ -71,7 +71,7 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
             </figcaption>
           </figure>
           <figure class="dino__slide">
-            <button class="dino__zoom" type="button" data-full={treeFull.src} aria-label="View this screenshot full-size">
+            <button class="dino__zoom" type="button" data-full={treeFull.src} aria-label="View dinosaur family tree full-size">
               <Image
                 src={treeShot}
                 alt="A browsable dinosaur family tree, from broad groups down to individual species."
@@ -85,7 +85,7 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
             </figcaption>
           </figure>
           <figure class="dino__slide">
-            <button class="dino__zoom" type="button" data-full={puzzleFull.src} aria-label="View this screenshot full-size">
+            <button class="dino__zoom" type="button" data-full={puzzleFull.src} aria-label="View Dinordle puzzle full-size">
               <Image
                 src={puzzleShot}
                 alt="A daily dinosaur-guessing puzzle called Dinordle, styled after the word game Wordle."
@@ -102,14 +102,14 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
         </div>
 
         <div class="dino__controls">
-          <button class="dino__nav dino__nav--prev" type="button" aria-label="Previous screenshot">‹ Prev</button>
-          <div class="dino__dots" role="tablist" aria-label="Choose a screenshot">
-            <button class="dino__dot" type="button" aria-current="true" aria-label="Screenshot 1 of 4"></button>
-            <button class="dino__dot" type="button" aria-current="false" aria-label="Screenshot 2 of 4"></button>
-            <button class="dino__dot" type="button" aria-current="false" aria-label="Screenshot 3 of 4"></button>
-            <button class="dino__dot" type="button" aria-current="false" aria-label="Screenshot 4 of 4"></button>
+          <button class="dino__nav dino__nav--prev" type="button" aria-controls="dino-track" aria-label="Previous screenshot">‹ Prev</button>
+          <div class="dino__dots" role="group" aria-label="Choose a screenshot">
+            <button class="dino__dot" type="button" aria-controls="dino-track" aria-current="true" aria-label="Screenshot 1 of 4"></button>
+            <button class="dino__dot" type="button" aria-controls="dino-track" aria-current="false" aria-label="Screenshot 2 of 4"></button>
+            <button class="dino__dot" type="button" aria-controls="dino-track" aria-current="false" aria-label="Screenshot 3 of 4"></button>
+            <button class="dino__dot" type="button" aria-controls="dino-track" aria-current="false" aria-label="Screenshot 4 of 4"></button>
           </div>
-          <button class="dino__nav dino__nav--next" type="button" aria-label="Next screenshot">Next ›</button>
+          <button class="dino__nav dino__nav--next" type="button" aria-controls="dino-track" aria-label="Next screenshot">Next ›</button>
         </div>
       </div>
     </section>
@@ -153,10 +153,10 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
   </main>
 
   <!-- Full-size view for a tapped/clicked screenshot -->
-  <div class="dino__lightbox" id="dino-lightbox" hidden>
-    <button class="dino__lightbox-close" id="dino-lightbox-close" type="button" aria-label="Close">✕</button>
-    <img class="dino__lightbox-img" id="dino-lightbox-img" src="" alt="" />
-  </div>
+  <dialog class="dino__lightbox" id="dino-lightbox" aria-label="Full-size app screenshot">
+    <button class="dino__lightbox-close" id="dino-lightbox-close" type="button" aria-label="Close screenshot" autofocus>✕</button>
+    <img class="dino__lightbox-img" id="dino-lightbox-img" alt="" />
+  </dialog>
 
   <SiteFooter />
 </BaseLayout>
@@ -187,17 +187,26 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
       return closest;
     };
 
-    const goTo = (index) => {
+    const goTo = (index: number) => {
       const clamped = Math.max(0, Math.min(slides.length - 1, index));
-      slides[clamped].scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-        inline: "start",
+      track.scrollTo({
+        left: clamped * track.clientWidth,
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth",
       });
     };
 
     const sync = () => {
       const active = closestIndex();
+      slides.forEach((slide, i) => {
+        if (slide instanceof HTMLElement) {
+          if (i !== active && slide.contains(document.activeElement)) {
+            track.focus({ preventScroll: true });
+          }
+          slide.inert = i !== active;
+        }
+      });
       dots.forEach((dot, i) =>
         dot.setAttribute("aria-current", String(i === active))
       );
@@ -220,7 +229,7 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
       }
     });
 
-    let scrollTimer;
+    let scrollTimer: number;
     track.addEventListener(
       "scroll",
       () => {
@@ -238,38 +247,48 @@ const [mapFull, findFull, treeFull, puzzleFull] = await Promise.all(
   const lightbox = document.getElementById("dino-lightbox");
   const lightboxImg = document.getElementById("dino-lightbox-img");
   const lightboxClose = document.getElementById("dino-lightbox-close");
-  if (lightbox instanceof HTMLElement && lightboxImg instanceof HTMLImageElement) {
-    let lastFocused = null;
+  if (lightbox instanceof HTMLDialogElement && lightboxImg instanceof HTMLImageElement) {
+    let trigger: HTMLButtonElement | null = null;
+    let previousOverflow = "";
 
-    const openLightbox = (button) => {
+    const openLightbox = (button: HTMLButtonElement) => {
       const full = button.dataset.full;
       const img = button.querySelector("img");
-      if (!full || !img) return;
+      if (!full || !img || lightbox.open) return;
       lightboxImg.src = full;
       lightboxImg.alt = img.alt;
-      lastFocused = document.activeElement;
-      lightbox.hidden = false;
+      trigger = button;
+      previousOverflow = document.body.style.overflow;
       document.body.style.overflow = "hidden";
+      lightbox.showModal();
       lightboxClose?.focus();
     };
 
     const closeLightbox = () => {
-      if (lightbox.hidden) return;
-      lightbox.hidden = true;
-      lightboxImg.removeAttribute("src");
-      document.body.style.overflow = "";
-      if (lastFocused instanceof HTMLElement) lastFocused.focus();
+      if (lightbox.open) lightbox.close();
     };
 
-    document.querySelectorAll(".dino__zoom").forEach((btn) => {
+    // Native modal dialogs make the rest of the page inert and support Escape.
+    lightbox.addEventListener("close", () => {
+      lightboxImg.removeAttribute("src");
+      document.body.style.overflow = previousOverflow;
+      trigger?.focus({ preventScroll: true });
+      trigger = null;
+    });
+
+    document.querySelectorAll<HTMLButtonElement>(".dino__zoom").forEach((btn) => {
       btn.addEventListener("click", () => openLightbox(btn));
     });
     lightboxClose?.addEventListener("click", closeLightbox);
     lightbox.addEventListener("click", (e) => {
       if (e.target === lightbox) closeLightbox();
     });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeLightbox();
+    // Keep keyboard focus on the sole control instead of cycling to browser chrome.
+    lightbox.addEventListener("keydown", (e) => {
+      if (e.key === "Tab") {
+        e.preventDefault();
+        lightboxClose?.focus();
+      }
     });
   }
 </script>
