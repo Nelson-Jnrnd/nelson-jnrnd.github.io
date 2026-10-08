@@ -15,7 +15,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
       <p class="kicker">HEIG-VD · Institute of Industrial Automation</p>
       <h1>Industrial control software<br />and a digital twin</h1>
       <p class="heig__lead">
-        Turning the requirements of an automated hydroponic lettuce installation into
+        I turn the requirements of an automated hydroponic lettuce installation into
         operator interfaces, machine integration, and software that can be tested in simulation.
       </p>
       <dl class="heig__facts">
@@ -26,8 +26,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
     </header>
 
     <section class="heig__section" aria-labelledby="context-title">
-      <p class="kicker">Context</p>
-      <h2 id="context-title">Software for a physical installation</h2>
+      <h2 id="context-title">Context</h2>
       <p>
         At HEIG-VD's Institute of Industrial Automation, I work on control software for
         an AI-optimized hydroponic lettuce installation with industrial partner
@@ -43,78 +42,22 @@ import SiteFooter from "../../components/SiteFooter.astro";
     </section>
 
     <section class="heig__section" aria-labelledby="contribution-title">
-      <p class="kicker">My contribution</p>
-      <h2 id="contribution-title">From requirements to implementation</h2>
+      <h2 id="contribution-title">My contribution</h2>
       <ul class="heig__contributions">
-        <li><strong>Requirements and modelling.</strong> Work with the team to define use cases and how the installation's
-          processes should operate. Translate these decisions into requirements and specifications,
+        <li><strong>Requirements and modelling.</strong> I work with the team to define use cases and how the installation's
+          processes should operate. I translate these decisions into requirements and specifications,
           domain models, and UML designs.</li>
-        <li><strong>Application architecture.</strong> Structure the C#/.NET software using object-oriented
+        <li><strong>Application architecture.</strong> I structure the C#/.NET software using object-oriented
           design and clean architecture principles.</li>
-        <li><strong>Web HMI.</strong> Build a modern web interface with Blazor so operators can interact
+        <li><strong>Web HMI.</strong> I build a modern web interface with Blazor so operators can interact
           with the installation.</li>
-        <li><strong>PLC integration.</strong> Interface with the PLCs over ADS, working with automation
+        <li><strong>PLC integration.</strong> I interface with the PLCs over ADS, working with automation
           engineers to connect application behaviour and machine control.</li>
-        <li><strong>Plugin framework.</strong> Design an extension framework so installation configuration
+        <li><strong>Plugin framework.</strong> I design an extension framework so installation configuration
           can be extended with separate DLL modules without recompiling the core application.</li>
-        <li><strong>Digital twin.</strong> Develop a real-time 3D simulation in WPF with time acceleration
+        <li><strong>Digital twin.</strong> I develop a real-time 3D simulation in WPF with time acceleration
           and fault simulation for testing machine behaviour.</li>
       </ul>
-    </section>
-
-    <section class="heig__section" aria-labelledby="system-title">
-      <p class="kicker">System overview</p>
-      <h2 id="system-title">Application, machine control, simulation</h2>
-      <dl class="heig__systems">
-        <div>
-          <dt>Web HMI and orchestration <span>ASP.NET Core · Blazor</span></dt>
-          <dd>The web interface supports operators, while the application connects PLCs, cameras,
-            and AI models to orchestrate the installation.</dd>
-        </div>
-        <div>
-          <dt>Machine integration <span>ADS · PLC</span></dt>
-          <dd>ADS connects the software to the PLC. I work with automation engineers on the
-            interface between application behaviour and machine control.</dd>
-        </div>
-        <div>
-          <dt>Extensible installation configuration <span>DLL plugins</span></dt>
-          <dd>The plugin framework keeps configuration extensions in separate software modules.
-            New modules can be added to extend an installation's configuration without rebuilding
-            the core application.</dd>
-        </div>
-        <div>
-          <dt>Digital twin <span>WPF · C#</span></dt>
-          <dd>A real-time 3D simulation represents machine behaviour, with time acceleration
-            and fault simulation to support testing.</dd>
-        </div>
-      </dl>
-    </section>
-
-    <section class="heig__section" aria-labelledby="testing-title">
-      <p class="kicker">Engineering focus</p>
-      <h2 id="testing-title">Testing beyond the real hardware</h2>
-      <p>
-        Software for a physical installation needs a way to examine machine behaviour while
-        development and integration are still underway. The digital twin gives this work a
-        virtual test environment alongside the PLC integration. Time acceleration helps examine
-        behaviour over longer simulated periods, while fault simulation allows abnormal conditions
-        to be explored.
-      </p>
-      <p>
-        Simulation supports preparation and investigation; it does not replace validation on
-        the installation. The software still needs to be checked against the behaviour of
-        the actual equipment during integration.
-      </p>
-    </section>
-
-    <section class="heig__section" aria-labelledby="status-title">
-      <p class="kicker">Ongoing work</p>
-      <h2 id="status-title">Development and integration</h2>
-      <p>
-        This is an ongoing R&amp;D role. Alongside implementation, I contribute to planning,
-        testing, and integration with the project stakeholders.
-      </p>
-      <p><a href="/cv/nelson-jeanrenaud-cv.pdf">Download my CV</a> for an overview of my experience.</p>
     </section>
 
     <p class="heig__closing"><a href="/#work">Back to work experience</a></p>
@@ -136,14 +79,8 @@ import SiteFooter from "../../components/SiteFooter.astro";
   .heig__contributions { margin: 0; padding-left: 1.2rem; }
   .heig__contributions li { padding-left: 0.2rem; margin-bottom: 1rem; }
   .heig__contributions li:last-child { margin-bottom: 0; }
-  .heig__systems { margin: 0; }
-  .heig__systems > div { padding: 1.2rem 1.4rem; border: 1px solid var(--border-strong); border-left: 2px solid var(--green); background: var(--bg-soft); margin: 0 0 0.8rem; }
-  .heig__systems dt { font-weight: 500; line-height: 1.5; }
-  .heig__systems dt span { display: block; font-family: var(--mono); color: var(--text-dim); font-size: 0.78rem; margin-top: 0.25rem; font-weight: 400; }
-  .heig__systems dd { margin: 0.7rem 0 0; color: var(--text-dim); }
   .heig__closing { padding: 0.5rem 0 3rem; font-family: var(--mono); font-size: 0.85rem; }
   @media (max-width: 30rem) {
     .heig__facts > div { grid-template-columns: 1fr; gap: 0; margin-bottom: 0.8rem; }
-    .heig__systems > div { padding: 1rem; }
   }
 </style>
