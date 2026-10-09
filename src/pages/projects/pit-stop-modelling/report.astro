@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
+import "../../../styles/projects.css";
+const pdf = "/documents/pit-stop-modelling-intermediate-report-fr.pdf";
+---
+<BaseLayout title="Intermediate thesis report · Nelson Jeanrenaud" description="Read my French intermediate bachelor's thesis report on modelling Formula 1 pit-stop decisions, submitted on 26 July 2023.">
+  <SiteHeader />
+  <main id="top" class="wrap project-detail">
+    <section class="section">
+      <a class="project-detail__back" href="/projects/pit-stop-modelling/">Back to the project</a>
+      <p class="kicker">Bachelor's thesis · French · 26 July 2023</p>
+      <h1>Intermediate thesis report</h1>
+      <p class="lead">Machine Learning pour prendre la décision d’un arrêt au stand en Formule 1</p>
+      <p>This is my intermediate submission, rather than the final thesis report. It covers the dataset, modelling approaches, experiments and results available on 26 July 2023.</p>
+      <div class="project__actions">
+        <a href={pdf} target="_blank" rel="noopener noreferrer">Open PDF in a new tab</a>
+        <a href={pdf} download>Download report (PDF, 2.1 MB)</a>
+        <a href="/projects/pit-stop-modelling/defence/">View my thesis defence slides</a>
+      </div>
+    </section>
+    <section class="section" aria-label="Report reader">
+      <p class="report-mobile-message"><a href={pdf} target="_blank" rel="noopener noreferrer">Open the report PDF</a> for full-size pages, zooming and navigation.</p>
+      <object class="report-reader" data={`${pdf}#view=FitH`} type="application/pdf" aria-label="French intermediate thesis report">
+        <p>Your browser cannot display the PDF here. <a href={pdf}>Open the report</a> to read it in your browser or PDF reader.</p>
+      </object>
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>

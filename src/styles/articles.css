@@ -1,0 +1,15 @@
+.article-page { padding-top: 2rem; }
+.article-page .section { padding-block: 2rem; }
+.article-page h1 { overflow-wrap: anywhere; }
+.article-page .kicker { margin-top: 1.5rem; }
+.article-note, .blog-entry time { color: var(--text-dim); font-size: .9rem; }
+.article-body { color: var(--text-dim); overflow-wrap: anywhere; }
+.article-body h2, .article-body h3 { color: var(--text); margin-top: 2.5rem; }
+.article-body img, .article-body video { display: block; max-width: 100%; width: 100%; height: auto; margin-block: 1.25rem; }
+.article-body img { background: white; border: 1px solid var(--border-strong); }
+.article-body blockquote { margin-inline: 0; padding-left: 1.25rem; border-left: 2px solid var(--green); }
+.article-body table { display: block; overflow-x: auto; border-collapse: collapse; margin-block: 1.5rem; font-size: .9rem; }
+.article-body td, .article-body th { padding: .5rem .75rem; border: 1px solid var(--border-strong); }
+.article-body .image-container { margin-block: 1.5rem; }
+.article-body hr { border: 0; border-top: 1px solid var(--border-strong); margin-block: 2rem; }
+.article-page nav li { margin-bottom: .5rem; }
