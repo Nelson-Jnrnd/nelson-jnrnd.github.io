@@ -19,7 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Nelson Jeanrenaud
-email: nelsonjeanrenaud@gmail.com
+email: contact@nelson-j.ch
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my portfolio! I'm a software developer with a B.Sc. in Computer Science and Communication Systems from HEIG-VD in the Software Development orientation, graduated in 2023.
   Here, you'll find my projects that demonstrate my skills and dedication to explore my passions in software, machine learning and data analysis.
