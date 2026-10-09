@@ -42,7 +42,7 @@ At the exit of Turn 14, Gasly corrected a severe slide, delaying throttle applic
 The start of the lap being very close between both drivers, it looks like the rears on Gasly’s cars overheat causing traction issue at the end of the lap. This seems to be a recurring issue from Pierre’s side of the garage as they already suffered from it in Saudi Arabia.
 
 <div class="image-container">
-    <video preload="none" controls playsinline loop muted class="responsive-img-large" aria-label="Gasly at Suzuka">
+    <video autoplay preload="auto" playsinline loop muted width="640" height="336" style="aspect-ratio: 40 / 21" class="responsive-img-large" aria-label="Gasly at Suzuka">
         <source src="/blog/japan_2024/gasly_snap_suzuka.mp4" type="video/mp4">
     </video>
 </div>
